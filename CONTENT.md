@@ -74,7 +74,7 @@ An Output Directory for the MindMesh - An Automation System to provide syncs of 
     * Proof of Stake: <https://decrypt.co/resources/proof-of-work-vs-proof-of-stake>
   * HyperLedger Fabric: <https://wiki.hyperledger.org/display/fabric>
   * Moloch - <https://github.com/MolochVentures/moloch>
-* Programing Languages
+* Application Languages
   * Rust
   * Golang
   * Scala/Clojure/Java
@@ -82,10 +82,10 @@ An Output Directory for the MindMesh - An Automation System to provide syncs of 
   * Kotlin
   * Haskell
   * Erlang
-  * F#/C#/.NET
   * Python (v3)
-* Shells
+* Scripting Languages
   * PowerShell
+  * F#/C#/.NET
   * Zsh
   * Bash
 * State Machine Languages
