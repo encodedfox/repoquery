@@ -1,7 +1,7 @@
 # Awesome Starred Repos List
 
 Programaticly generated list of awesome starred repositories. Generate your own with [stargazer](https://github.com/jmelfi/stargazer)!  
-Total starred repositories: `595`
+Total starred repositories: `591`
 ## Contents
 
   - [C](#c)
@@ -63,7 +63,7 @@ Total starred repositories: `595`
 | [SiriDB/siridb-server](https://github.com/SiriDB/siridb-server) | SiriDB is a highly-scalable, robust and super fast time series database. Build from the ground up SiriDB uses a unique mechanism to operate without a global index and allows server resources to be added on the fly. SiriDB's unique query language includes dynamic grouping of time series for easy analysis over large amounts of time series.   | MIT License | ⭐️481 |
 | [traildb/traildb](https://github.com/traildb/traildb) | TrailDB is an efficient tool for storing and querying series of events   | MIT License | ⭐️1077 |
 | [void-linux/xbps](https://github.com/void-linux/xbps) | The X Binary Package System (XBPS)   | - | ⭐️632 |
-| [wazuh/wazuh](https://github.com/wazuh/wazuh) | Wazuh - The Open Source Security Platform. Unified XDR and SIEM protection for endpoints and cloud workloads.   | - | ⭐️5728 |
+| [wazuh/wazuh](https://github.com/wazuh/wazuh) | Wazuh - The Open Source Security Platform. Unified XDR and SIEM protection for endpoints and cloud workloads.   | - | ⭐️5729 |
 | [wg/wrk](https://github.com/wg/wrk) | Modern HTTP benchmarking tool   | - | ⭐️34042 |
 | [zsh-users/zsh](https://github.com/zsh-users/zsh) | Mirror of the Z shell source code repository.   | - | ⭐️3065 | 
 
@@ -73,13 +73,13 @@ Total starred repositories: `595`
 | ----- | ----- | :---: |----: |
 | [EventStore/EventStore](https://github.com/EventStore/EventStore) | The stream database optimised for event sourcing   | - | ⭐️4796 |
 | [PowerShell/PowerShell](https://github.com/PowerShell/PowerShell) | PowerShell for every system!   | MIT License | ⭐️37543 |
-| [ravendb/ravendb](https://github.com/ravendb/ravendb) | ACID Document Database   | - | ⭐️3190 | 
+| [ravendb/ravendb](https://github.com/ravendb/ravendb) | ACID Document Database   | - | ⭐️3191 | 
 
 **[⬆ back to top](#contents)**
 ## C++
 | Name  | Description  | License  | Stars  |
 | ----- | ----- | :---: |----: |
-| [aria2/aria2](https://github.com/aria2/aria2) | aria2 is a lightweight multi-protocol & multi-source, cross platform download utility operated in command-line. It supports HTTP/HTTPS, FTP, SFTP, BitTorrent and Metalink.   | GNU GPLv2 | ⭐️29647 |
+| [aria2/aria2](https://github.com/aria2/aria2) | aria2 is a lightweight multi-protocol & multi-source, cross platform download utility operated in command-line. It supports HTTP/HTTPS, FTP, SFTP, BitTorrent and Metalink.   | GNU GPLv2 | ⭐️29649 |
 | [curv3d/curv](https://github.com/curv3d/curv) | a language for making art using mathematics   | Apache License 2.0 | ⭐️1081 |
 | [envoyproxy/envoy](https://github.com/envoyproxy/envoy) | Cloud-native high-performance edge/middle/service proxy   | Apache License 2.0 | ⭐️21611 |
 | [facebook/watchman](https://github.com/facebook/watchman) | Watches files and records, or triggers actions, when they change.    | MIT License | ⭐️11584 |
@@ -91,10 +91,10 @@ Total starred repositories: `595`
 | [pixie-io/pixie](https://github.com/pixie-io/pixie) | Instant Kubernetes-Native Application Observability   | Apache License 2.0 | ⭐️4416 |
 | [pwsafe/pwsafe](https://github.com/pwsafe/pwsafe) | PasswordSafe - popular secure and convenient password manager   | - | ⭐️584 |
 | [rethinkdb/rethinkdb](https://github.com/rethinkdb/rethinkdb) | The open-source database for the realtime web.   | - | ⭐️25968 |
-| [SerenityOS/serenity](https://github.com/SerenityOS/serenity) | The Serenity Operating System 🐞   | BSD 2-Clause "Simplified" License | ⭐️24166 |
+| [SerenityOS/serenity](https://github.com/SerenityOS/serenity) | The Serenity Operating System 🐞   | BSD 2-Clause "Simplified" License | ⭐️24165 |
 | [Tw1ddle/geometrize](https://github.com/Tw1ddle/geometrize) | :white_square_button: Geometrize is a desktop app that geometrizes images into geometric primitives   | - | ⭐️1064 |
 | [uncrustify/uncrustify](https://github.com/uncrustify/uncrustify) | Code beautifier   | GNU GPLv2 | ⭐️2653 |
-| [upx/upx](https://github.com/upx/upx) | UPX - the Ultimate Packer for eXecutables   | - | ⭐️11092 |
+| [upx/upx](https://github.com/upx/upx) | UPX - the Ultimate Packer for eXecutables   | - | ⭐️11093 |
 | [zeek/zeek](https://github.com/zeek/zeek) | Zeek is a powerful network analysis framework that is much different from the typical IDS you may know.   | - | ⭐️5064 | 
 
 **[⬆ back to top](#contents)**
@@ -103,7 +103,7 @@ Total starred repositories: `595`
 | ----- | ----- | :---: |----: |
 | [cormullion/juliamono](https://github.com/cormullion/juliamono) | repository for JuliaMono, a monospaced font with reasonable Unicode support.   | SIL Open Font License 1.1 | ⭐️1132 |
 | [mozilla/Fira](https://github.com/mozilla/Fira) | Mozilla's new typeface, used in Firefox OS   | - | ⭐️4865 |
-| [ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts) | Iconic font aggregator, collection, & patcher. 3,600+ icons, 50+ patched fonts: Hack, Source Code Pro, more. Glyph collections: Font Awesome, Material Design Icons, Octicons, & more   | - | ⭐️42310 | 
+| [ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts) | Iconic font aggregator, collection, & patcher. 3,600+ icons, 50+ patched fonts: Hack, Source Code Pro, more. Glyph collections: Font Awesome, Material Design Icons, Octicons, & more   | - | ⭐️42311 | 
 
 **[⬆ back to top](#contents)**
 ## Clojure
@@ -129,7 +129,7 @@ Total starred repositories: `595`
 | [arr-ai/wbnf](https://github.com/arr-ai/wbnf) | ωBNF implementation   | Apache License 2.0 | ⭐️7 |
 | [asteris-llc/converge](https://github.com/asteris-llc/converge) | A powerful and easy-to-use configuration management system.   | Apache License 2.0 | ⭐️254 |
 | [asynkron/protoactor-go](https://github.com/asynkron/protoactor-go) | Proto Actor - Ultra fast distributed actors for Go, C# and Java/Kotlin   | Apache License 2.0 | ⭐️4459 |
-| [avelino/awesome-go](https://github.com/avelino/awesome-go) | A curated list of awesome Go frameworks, libraries and software   | MIT License | ⭐️98151 |
+| [avelino/awesome-go](https://github.com/avelino/awesome-go) | A curated list of awesome Go frameworks, libraries and software   | MIT License | ⭐️98152 |
 | [aws/amazon-ssm-agent](https://github.com/aws/amazon-ssm-agent) | An agent to enable remote management of your EC2 instances, on-premises servers, or virtual machines (VMs).   | Apache License 2.0 | ⭐️930 |
 | [aws/aws-lambda-go](https://github.com/aws/aws-lambda-go) | Libraries, samples and tools to help Go developers develop AWS Lambda functions.   | Apache License 2.0 | ⭐️3237 |
 | [aws/aws-sdk-go](https://github.com/aws/aws-sdk-go) | AWS SDK for the Go programming language.   | Apache License 2.0 | ⭐️8220 |
@@ -139,7 +139,7 @@ Total starred repositories: `595`
 | [awslabs/clencli](https://github.com/awslabs/clencli) | CLENCLI enables you to quickly and predictably create, change, and improve your cloud projects. It is an open source tool that simplifies common tasks that many Cloud engineers have to perform on a daily basis by creating and maintaining the code structure and its documentation always up-to-date.   | Apache License 2.0 | ⭐️56 |
 | [awslabs/goformation](https://github.com/awslabs/goformation) | GoFormation is a Go library for working with CloudFormation templates.   | Apache License 2.0 | ⭐️795 |
 | [awslabs/yesiscan](https://github.com/awslabs/yesiscan) | Automatic license scanning and reports! (*archived*)  | Apache License 2.0 | ⭐️14 |
-| [bettercap/bettercap](https://github.com/bettercap/bettercap) | The Swiss Army knife for 802.11, BLE, IPv4 and IPv6 networks reconnaissance and MITM attacks.   | - | ⭐️13764 |
+| [bettercap/bettercap](https://github.com/bettercap/bettercap) | The Swiss Army knife for 802.11, BLE, IPv4 and IPv6 networks reconnaissance and MITM attacks.   | - | ⭐️13765 |
 | [blushft/go-diagrams](https://github.com/blushft/go-diagrams) | Create beautiful system diagrams with Go   | MIT License | ⭐️3972 |
 | [bosun-monitor/bosun](https://github.com/bosun-monitor/bosun) | Time Series Alerting Framework   | MIT License | ⭐️3343 |
 | [boyter/lc](https://github.com/boyter/lc) | licensechecker (lc) a command line application which scans directories and identifies what software license things are under producing reports as either SPDX, CSV, JSON, XLSX or CLI Tabular output. Dual-licensed under MIT or the UNLICENSE.   | MIT License | ⭐️110 |
@@ -152,14 +152,13 @@ Total starred repositories: `595`
 | [cayleygraph/cayley](https://github.com/cayleygraph/cayley) | An open-source graph database   | Apache License 2.0 | ⭐️14487 |
 | [cdk-team/CDK](https://github.com/cdk-team/CDK) | 📦  Make security testing of K8s, Docker, and Containerd easier.   | Apache License 2.0 | ⭐️2863 |
 | [chrislusf/gleam](https://github.com/chrislusf/gleam) | Fast, efficient, and scalable distributed map/reduce system, DAG execution, in memory or on disk, written in pure Go, runs standalone or distributedly.   | Apache License 2.0 | ⭐️3190 |
-| [cilium/cilium](https://github.com/cilium/cilium) | eBPF-based Networking, Security, and Observability   | Apache License 2.0 | ⭐️14677 |
+| [cilium/cilium](https://github.com/cilium/cilium) | eBPF-based Networking, Security, and Observability   | Apache License 2.0 | ⭐️14679 |
 | [CircleCI-Public/circleci-demo-go](https://github.com/CircleCI-Public/circleci-demo-go) | Example Go application running on CircleCI   | MIT License | ⭐️92 |
 | [circleci/ex](https://github.com/circleci/ex) | Common Go packages for the execution teams   | MIT License | ⭐️16 |
 | [cockroachdb/cockroach](https://github.com/cockroachdb/cockroach) | CockroachDB - the open source, cloud-native distributed SQL database.   | - | ⭐️26778 |
 | [concourse/concourse](https://github.com/concourse/concourse) | Concourse is a container-based continuous thing-doer written in Go.   | Apache License 2.0 | ⭐️6799 |
 | [containers/buildah](https://github.com/containers/buildah) | A tool that facilitates building OCI images.   | Apache License 2.0 | ⭐️6088 |
 | [containers/podman](https://github.com/containers/podman) | Podman: A tool for managing OCI containers and pods.   | Apache License 2.0 | ⭐️17183 |
-| [cucumber/gherkin-go](https://github.com/cucumber/gherkin-go) |  [READ-ONLY] Gherkin for Go - subtree of https://github.com/cucumber/gherkin -- moved to https://github.com/cucumber/gherkin (*archived*)  | MIT License | ⭐️87 |
 | [cucumber/godog](https://github.com/cucumber/godog) | Cucumber for golang   | MIT License | ⭐️1920 |
 | [DarthSim/overmind](https://github.com/DarthSim/overmind) | Process manager for Procfile-based applications and tmux   | MIT License | ⭐️2203 |
 | [DataDog/stratus-red-team](https://github.com/DataDog/stratus-red-team) | :cloud: :zap: Granular, Actionable Adversary Emulation for the Cloud   | Apache License 2.0 | ⭐️1237 |
@@ -173,12 +172,11 @@ Total starred repositories: `595`
 | [docuowl/docuowl](https://github.com/docuowl/docuowl) | 🦉 A documentation generator   | MIT License | ⭐️1215 |
 | [dominikh/go-tools](https://github.com/dominikh/go-tools) | Staticcheck - The advanced Go linter   | MIT License | ⭐️5265 |
 | [eBay/akutan](https://github.com/eBay/akutan) | A distributed knowledge graph store (*archived*)  | Apache License 2.0 | ⭐️1651 |
-| [erning/gorun](https://github.com/erning/gorun) | gorun is a tool enabling one to put a "bang line" in the source code of a Go program to run it, or to run such a source code file explicitly. It was created in an attempt to make experimenting with Go more appealing to people used to Python and similar languages which operate most visibly with source code.   | GNU GPLv3 | ⭐️905 |
-| [ethereum/go-ethereum](https://github.com/ethereum/go-ethereum) | Official Go implementation of the Ethereum protocol   | GNU LGPLv3 | ⭐️41517 |
+| [erning/gorun](https://github.com/erning/gorun) | gorun is a tool enabling one to put a "bang line" in the source code of a Go program to run it, or to run such a source code file explicitly. It was created in an attempt to make experimenting with Go more appealing to people used to Python and similar languages which operate most visibly with source code.   | GNU GPLv3 | ⭐️906 |
+| [ethereum/go-ethereum](https://github.com/ethereum/go-ethereum) | Official Go implementation of the Ethereum protocol   | GNU LGPLv3 | ⭐️41518 |
 | [facette/facette](https://github.com/facette/facette) | Time series data visualization software   | Modified BSD License | ⭐️1148 |
-| [fbiville/headache](https://github.com/fbiville/headache) | Utility to manage license headers in source files (*archived*)  | Apache License 2.0 | ⭐️37 |
 | [future-architect/vuls](https://github.com/future-architect/vuls) | Agent-less vulnerability scanner for Linux, FreeBSD, Container, WordPress, Programming language libraries, Network devices   | GNU GPLv3 | ⭐️9843 |
-| [fyne-io/fyne](https://github.com/fyne-io/fyne) | Cross platform GUI toolkit in Go inspired by Material Design   | - | ⭐️19723 |
+| [fyne-io/fyne](https://github.com/fyne-io/fyne) | Cross platform GUI toolkit in Go inspired by Material Design   | - | ⭐️19724 |
 | [galeone/tfgo](https://github.com/galeone/tfgo) | Tensorflow + Go, the gopher way   | Apache License 2.0 | ⭐️2183 |
 | [gardener/gardener](https://github.com/gardener/gardener) | Kubernetes-native system managing the full lifecycle of conformant Kubernetes clusters as a service on Alicloud, AWS, Azure, GCP, OpenStack, vSphere, KubeVirt, Hetzner, EquinixMetal, MetalStack, and OnMetal with minimal TCO.   | - | ⭐️2427 |
 | [GeertJohan/yubigo](https://github.com/GeertJohan/yubigo) |   Yubigo is a Yubikey client API library that provides an easy way to integrate the Yubico Yubikey into your existing Go-based user authentication infrastructure.   | BSD 2-Clause "Simplified" License | ⭐️123 |
@@ -197,7 +195,7 @@ Total starred repositories: `595`
 | [gocolly/colly](https://github.com/gocolly/colly) | Elegant Scraper and Crawler Framework for Golang   | Apache License 2.0 | ⭐️19131 |
 | [gogs/gogs](https://github.com/gogs/gogs) | Gogs is a painless self-hosted Git service   | MIT License | ⭐️41794 |
 | [gohugoio/hugo](https://github.com/gohugoio/hugo) | The world’s fastest framework for building websites.   | Apache License 2.0 | ⭐️65940 |
-| [golang/go](https://github.com/golang/go) | The Go programming language   | Modified BSD License | ⭐️109385 |
+| [golang/go](https://github.com/golang/go) | The Go programming language   | Modified BSD License | ⭐️109386 |
 | [golang/mock](https://github.com/golang/mock) | GoMock is a mocking framework for the Go programming language.   | Apache License 2.0 | ⭐️8627 |
 | [golang/oauth2](https://github.com/golang/oauth2) | Go OAuth2   | Modified BSD License | ⭐️4629 |
 | [google/go-cloud](https://github.com/google/go-cloud) | The Go Cloud Development Kit (Go CDK): A library and tools for open cloud development in Go.   | Apache License 2.0 | ⭐️8927 |
@@ -205,7 +203,6 @@ Total starred repositories: `595`
 | [GoogleContainerTools/container-structure-test](https://github.com/GoogleContainerTools/container-structure-test) | validate the structure of your container images   | Apache License 2.0 | ⭐️2013 |
 | [gopasspw/gopass](https://github.com/gopasspw/gopass) | The slightly more awesome standard unix password manager for teams   | MIT License | ⭐️5142 |
 | [goreleaser/goreleaser](https://github.com/goreleaser/goreleaser) | Deliver Go binaries as fast and easily as possible   | MIT License | ⭐️11337 |
-| [gorilla/mux](https://github.com/gorilla/mux) | A powerful HTTP router and URL matcher for building Go web servers with 🦍 (*archived*)  | Modified BSD License | ⭐️18109 |
 | [goss-org/goss](https://github.com/goss-org/goss) | Quick and Easy server testing/validation   | Apache License 2.0 | ⭐️5100 |
 | [goware/superr](https://github.com/goware/superr) | SupErr -- Go stdlib errors with super powers   | MIT License | ⭐️26 |
 | [grafana/k6](https://github.com/grafana/k6) | A modern load testing tool, using Go and JavaScript - https://k6.io   | GNU AGPLv3 | ⭐️19785 |
@@ -218,7 +215,7 @@ Total starred repositories: `595`
 | [h2non/gock](https://github.com/h2non/gock) | HTTP traffic mocking and testing made easy in Go ༼ʘ̚ل͜ʘ̚༽   | MIT License | ⭐️1812 |
 | [hahwul/DevSecOps](https://github.com/hahwul/DevSecOps) | 🔱 Collection and Roadmap for everyone who wants DevSecOps. Hope your DevOps are more safe 😎   | MIT License | ⭐️1201 |
 | [hashicorp/nomad](https://github.com/hashicorp/nomad) | Nomad is an easy-to-use, flexible, and performant workload orchestrator that can deploy a mix of microservice, batch, containerized, and non-containerized applications. Nomad is easy to operate and scale and has native Consul and Vault integrations.   | Mozilla Public License 2.0 | ⭐️13328 |
-| [hashicorp/packer](https://github.com/hashicorp/packer) | Packer is a tool for creating identical machine images for multiple platforms from a single source configuration.   | Mozilla Public License 2.0 | ⭐️14306 |
+| [hashicorp/packer](https://github.com/hashicorp/packer) | Packer is a tool for creating identical machine images for multiple platforms from a single source configuration.   | Mozilla Public License 2.0 | ⭐️14307 |
 | [hashicorp/serf](https://github.com/hashicorp/serf) | Service orchestration and management tool.   | Mozilla Public License 2.0 | ⭐️5603 |
 | [hashicorp/terraform](https://github.com/hashicorp/terraform) | Terraform enables you to safely and predictably create, change, and improve infrastructure. It is an open source tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned.   | Mozilla Public License 2.0 | ⭐️36553 |
 | [hashicorp/vault](https://github.com/hashicorp/vault) | A tool for secrets management, encryption as a service, and privileged access management   | Mozilla Public License 2.0 | ⭐️27168 |
@@ -228,13 +225,13 @@ Total starred repositories: `595`
 | [hyperledger/fabric-sdk-go](https://github.com/hyperledger/fabric-sdk-go) |    | Apache License 2.0 | ⭐️863 |
 | [i-rme/GOP-Server](https://github.com/i-rme/GOP-Server) | The GOP Server is an open-source web server for Linux and Windows systems that handles HTTP  requests to scripts programmed in Go returning the result of the execution to the client. The  software is able to, depending on the requested path, return static files or execute Go scripts,  which are compiled on the fly and have specific functionality.    | MIT License | ⭐️25 |
 | [ImparaAI/go-figure-api](https://github.com/ImparaAI/go-figure-api) | Go backend API for go figure app   | MIT License | ⭐️42 |
-| [influxdata/influxdb](https://github.com/influxdata/influxdb) | Scalable datastore for metrics, events, and real-time analytics   | MIT License | ⭐️25083 |
+| [influxdata/influxdb](https://github.com/influxdata/influxdb) | Scalable datastore for metrics, events, and real-time analytics   | MIT License | ⭐️25084 |
 | [infracost/infracost](https://github.com/infracost/infracost) | Cloud cost estimates for Terraform in pull requests💰📉 Love your cloud bill!   | Apache License 2.0 | ⭐️8782 |
 | [jaegertracing/jaeger](https://github.com/jaegertracing/jaeger) | CNCF Jaeger, a Distributed Tracing Platform   | Apache License 2.0 | ⭐️17319 |
 | [JanDeDobbeleer/oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh) | A blazing fast cross platform/shell prompt renderer   | MIT License | ⭐️10162 |
 | [jbrt/ec2cryptomatic](https://github.com/jbrt/ec2cryptomatic) | Encrypt EBS volumes from AWS EC2 instances   | GNU GPLv3 | ⭐️45 |
 | [jfeliu007/goplantuml](https://github.com/jfeliu007/goplantuml) | PlantUML Class Diagram Generator for golang projects   | MIT License | ⭐️1317 |
-| [johnkerl/miller](https://github.com/johnkerl/miller) | Miller is like awk, sed, cut, join, and sort for name-indexed data such as CSV, TSV, and tabular JSON   | - | ⭐️7009 |
+| [johnkerl/miller](https://github.com/johnkerl/miller) | Miller is like awk, sed, cut, join, and sort for name-indexed data such as CSV, TSV, and tabular JSON   | - | ⭐️7027 |
 | [jshiv/cronicle](https://github.com/jshiv/cronicle) | cronicle is a simple and scalable task scheduler that builds on the foundations of git, golang and standard logging   | MIT License | ⭐️17 |
 | [jstemmer/go-junit-report](https://github.com/jstemmer/go-junit-report) | Convert Go test output to JUnit XML   | MIT License | ⭐️665 |
 | [justone/dockviz](https://github.com/justone/dockviz) | Visualizing Docker data   | Apache License 2.0 | ⭐️1168 |
@@ -245,7 +242,7 @@ Total starred repositories: `595`
 | [knative/serving](https://github.com/knative/serving) | Kubernetes-based, scale-to-zero, request-driven compute   | Apache License 2.0 | ⭐️4901 |
 | [krzysztofreczek/go-structurizr](https://github.com/krzysztofreczek/go-structurizr) | A library for auto-generating C4 diagrams from Go applications   | MIT License | ⭐️211 |
 | [kubernetes/client-go](https://github.com/kubernetes/client-go) | Go client for Kubernetes.   | Apache License 2.0 | ⭐️7436 |
-| [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) | Production-Grade Container Scheduling and Management   | Apache License 2.0 | ⭐️96677 |
+| [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) | Production-Grade Container Scheduling and Management   | Apache License 2.0 | ⭐️96678 |
 | [kumahq/kuma](https://github.com/kumahq/kuma) | 🐻 The multi-zone service mesh for containers, Kubernetes and VMs. Built with Envoy. CNCF Sandbox Project.   | Apache License 2.0 | ⭐️3094 |
 | [KyleBanks/depth](https://github.com/KyleBanks/depth) | Visualize Go Dependency Trees   | MIT License | ⭐️821 |
 | [lib/pq](https://github.com/lib/pq) | Pure Go Postgres driver for database/sql   | MIT License | ⭐️7930 |
@@ -257,7 +254,7 @@ Total starred repositories: `595`
 | [mehrdadrad/mylg](https://github.com/mehrdadrad/mylg) | Network Diagnostic Tool   | MIT License | ⭐️2640 |
 | [micro/micro](https://github.com/micro/micro) | API first development platform   | Apache License 2.0 | ⭐️11630 |
 | [miekg/dns](https://github.com/miekg/dns) | DNS library in Go   | Modified BSD License | ⭐️6839 |
-| [mikefarah/yq](https://github.com/mikefarah/yq) | yq is a portable command-line YAML, JSON, XML, CSV and properties processor   | MIT License | ⭐️8185 |
+| [mikefarah/yq](https://github.com/mikefarah/yq) | yq is a portable command-line YAML, JSON, XML, CSV and properties processor   | MIT License | ⭐️8187 |
 | [minio/minio](https://github.com/minio/minio) | Multi-Cloud :cloud: Object Storage    | GNU AGPLv3 | ⭐️38023 |
 | [mitchellh/gox](https://github.com/mitchellh/gox) | A dead simple, no frills Go cross compile tool   | Mozilla Public License 2.0 | ⭐️4479 |
 | [mitinarseny/pingo](https://github.com/mitinarseny/pingo) | Ping library for Golang with multi-host support   | MIT License | ⭐️37 |
@@ -268,7 +265,7 @@ Total starred repositories: `595`
 | [mrtazz/checkmake](https://github.com/mrtazz/checkmake) | experimental linter/analyzer for Makefiles   | MIT License | ⭐️864 |
 | [nats-io/graft](https://github.com/nats-io/graft) | A RAFT Election implementation in Go.   | Apache License 2.0 | ⭐️149 |
 | [nats-io/jsm.go](https://github.com/nats-io/jsm.go) | JetStream Management Library for Golang   | Apache License 2.0 | ⭐️103 |
-| [nats-io/nats-server](https://github.com/nats-io/nats-server) | High-Performance server for NATS.io, the cloud and edge native messaging system.   | Apache License 2.0 | ⭐️12452 |
+| [nats-io/nats-server](https://github.com/nats-io/nats-server) | High-Performance server for NATS.io, the cloud and edge native messaging system.   | Apache License 2.0 | ⭐️12453 |
 | [nats-io/nats.go](https://github.com/nats-io/nats.go) | Golang client for NATS, the cloud native messaging system.   | Apache License 2.0 | ⭐️4434 |
 | [nats-io/natscli](https://github.com/nats-io/natscli) | The NATS Command Line Interface   | Apache License 2.0 | ⭐️285 |
 | [nats-io/nsc](https://github.com/nats-io/nsc) | Tool for creating nkey/jwt based configurations   | Apache License 2.0 | ⭐️61 |
@@ -284,18 +281,18 @@ Total starred repositories: `595`
 | [pelletier/go-toml](https://github.com/pelletier/go-toml) | Go library for the TOML file format   | MIT License | ⭐️1413 |
 | [peterhellberg/karta](https://github.com/peterhellberg/karta) | Experiments with map generation using Voronoi diagrams   | - | ⭐️91 |
 | [PhiloTFarnsworth/BitSprite](https://github.com/PhiloTFarnsworth/BitSprite) | A Free 8-Bit Sprite Generator.  Create 256 variants from a single template .PNG   | MIT License | ⭐️18 |
-| [pingcap/dm](https://github.com/pingcap/dm) | Data Migration Platform (*archived*)  | Apache License 2.0 | ⭐️457 |
 | [pingcap/dumpling](https://github.com/pingcap/dumpling) | Dumpling is a fast, easy-to-use tool written by Go for dumping data from the database(MySQL, TiDB...) to local/cloud(S3, GCP...) in multifarious formats(SQL, CSV...).   | Apache License 2.0 | ⭐️274 |
 | [pingcap/mysql-tester](https://github.com/pingcap/mysql-tester) | A Golang implementation of MySQL Test Framework   | Apache License 2.0 | ⭐️42 |
 | [pingcap/ng-monitoring](https://github.com/pingcap/ng-monitoring) |    | Apache License 2.0 | ⭐️27 |
 | [pingcap/parser](https://github.com/pingcap/parser) | A MySQL Compatible SQL Parser   | Apache License 2.0 | ⭐️1328 |
 | [pingcap/tidb](https://github.com/pingcap/tidb) | TiDB is an open-source, cloud-native, distributed, MySQL-Compatible database for elastic scale and real-time analytics. Try AI-powered Chat2Query free at : https://tidbcloud.com/free-trial   | Apache License 2.0 | ⭐️33607 |
 | [pingcap/tidb-tools](https://github.com/pingcap/tidb-tools) | tidb-tools are some useful tool collections for TiDB.   | Apache License 2.0 | ⭐️260 |
+| [pingcap/tiflow](https://github.com/pingcap/tiflow) | This repo maintains DM (a data migration platform) and TiCDC (change data capture for TiDB)   | Apache License 2.0 | ⭐️338 |
 | [pinterest/knox](https://github.com/pinterest/knox) | Knox is a secret management service   | Apache License 2.0 | ⭐️1146 |
 | [praetorian-inc/gokart](https://github.com/praetorian-inc/gokart) | A static analysis tool for securing Go code   | Apache License 2.0 | ⭐️2086 |
 | [prometheus/blackbox_exporter](https://github.com/prometheus/blackbox_exporter) | Blackbox prober exporter   | Apache License 2.0 | ⭐️3510 |
 | [prometheus/client_golang](https://github.com/prometheus/client_golang) | Prometheus instrumentation library for Go applications   | Apache License 2.0 | ⭐️4450 |
-| [prometheus/prometheus](https://github.com/prometheus/prometheus) | The Prometheus monitoring system and time series database.   | Apache License 2.0 | ⭐️47202 |
+| [prometheus/prometheus](https://github.com/prometheus/prometheus) | The Prometheus monitoring system and time series database.   | Apache License 2.0 | ⭐️47203 |
 | [pterm/pterm](https://github.com/pterm/pterm) | ✨ #PTerm is a modern Go module to easily beautify console output. Featuring charts, progressbars, tables, trees, text input, select menus and much more 🚀 It's completely configurable and 100% cross-platform compatible.   | MIT License | ⭐️3270 |
 | [purpleidea/mgmt](https://github.com/purpleidea/mgmt) | Next generation distributed, event-driven, parallel config management!   | GNU GPLv3 | ⭐️3105 |
 | [pyrra-dev/pyrra](https://github.com/pyrra-dev/pyrra) | Making SLOs with Prometheus manageable, accessible, and easy to use for everyone!   | Apache License 2.0 | ⭐️803 |
@@ -326,7 +323,7 @@ Total starred repositories: `595`
 | [slackhq/go-audit](https://github.com/slackhq/go-audit) | go-audit is an alternative to the auditd daemon that ships with many distros   | MIT License | ⭐️1488 |
 | [songgao/colorgo](https://github.com/songgao/colorgo) | Colorize (highlight) `go build` command output   | - | ⭐️112 |
 | [spencerkimball/stargazers](https://github.com/spencerkimball/stargazers) | Analyze GitHub stars   | Apache License 2.0 | ⭐️404 |
-| [spf13/cobra](https://github.com/spf13/cobra) | A Commander for modern Go CLI interactions   | Apache License 2.0 | ⭐️31085 |
+| [spf13/cobra](https://github.com/spf13/cobra) | A Commander for modern Go CLI interactions   | Apache License 2.0 | ⭐️31086 |
 | [spf13/viper](https://github.com/spf13/viper) | Go configuration with fangs   | MIT License | ⭐️22321 |
 | [src-d/enry](https://github.com/src-d/enry) | A faster file programming language detector   | Apache License 2.0 | ⭐️443 |
 | [src-d/go-license-detector](https://github.com/src-d/go-license-detector) | Reliable project licenses detector.   | - | ⭐️226 |
@@ -346,12 +343,12 @@ Total starred repositories: `595`
 | [tikv/client-go](https://github.com/tikv/client-go) | Go client for TiKV   | Apache License 2.0 | ⭐️220 |
 | [TomWright/dasel](https://github.com/TomWright/dasel) | Select, put and delete data from JSON, TOML, YAML, XML and CSV files with a single tool. Supports conversion between formats and can be used as a Go package.   | MIT License | ⭐️4105 |
 | [travisjeffery/jocko](https://github.com/travisjeffery/jocko) | Kafka implemented in Golang with built-in coordination (No ZK dep, single binary install, Cloud Native)   | MIT License | ⭐️4722 |
-| [tsliwowicz/go-wrk](https://github.com/tsliwowicz/go-wrk) | go-wrk - a HTTP benchmarking tool based in spirit on the excellent wrk tool (https://github.com/wg/wrk)   | Apache License 2.0 | ⭐️661 |
+| [tsliwowicz/go-wrk](https://github.com/tsliwowicz/go-wrk) | go-wrk - a HTTP benchmarking tool based in spirit on the excellent wrk tool (https://github.com/wg/wrk)   | Apache License 2.0 | ⭐️662 |
 | [tylertreat/comcast](https://github.com/tylertreat/comcast) | Simulating shitty network connections so you can build better systems.   | Apache License 2.0 | ⭐️9861 |
 | [untoldone/bloomapi](https://github.com/untoldone/bloomapi) | Create APIs out of public datasources   | MIT License | ⭐️89 |
 | [urfave/cli](https://github.com/urfave/cli) | A simple, fast, and fun package for building command line apps in Go   | MIT License | ⭐️19894 |
 | [VictorNine/bitwarden-go](https://github.com/VictorNine/bitwarden-go) |  A Bitwarden-compatible server written in Golang   | MIT License | ⭐️236 |
-| [vitessio/vitess](https://github.com/vitessio/vitess) | Vitess is a database clustering system for horizontal scaling of MySQL.   | Apache License 2.0 | ⭐️15754 |
+| [vitessio/vitess](https://github.com/vitessio/vitess) | Vitess is a database clustering system for horizontal scaling of MySQL.   | Apache License 2.0 | ⭐️15756 |
 | [vito/booklit](https://github.com/vito/booklit) | a pretty lit content authoring system   | MIT License | ⭐️162 |
 | [wailsapp/wails](https://github.com/wailsapp/wails) | Create beautiful applications using Go   | MIT License | ⭐️14613 |
 | [wallix/awless](https://github.com/wallix/awless) | A Mighty CLI for AWS   | Apache License 2.0 | ⭐️4912 |
@@ -371,8 +368,8 @@ Total starred repositories: `595`
 ## HTML
 | Name  | Description  | License  | Stars  |
 | ----- | ----- | :---: |----: |
-| [gnab/remark](https://github.com/gnab/remark) | A simple, in-browser, markdown-driven slideshow tool.   | MIT License | ⭐️12247 |
-| [go101/go101](https://github.com/go101/go101) | An up-to-date (unofficial) knowledge base for Go programming self learning   | - | ⭐️4953 |
+| [gnab/remark](https://github.com/gnab/remark) | A simple, in-browser, markdown-driven slideshow tool.   | MIT License | ⭐️12248 |
+| [go101/go101](https://github.com/go101/go101) | An up-to-date (unofficial) knowledge base for Go programming self learning   | - | ⭐️4954 |
 | [MicrosoftEdge/MSEdgeExplainers](https://github.com/MicrosoftEdge/MSEdgeExplainers) | Home for explainer documents originated by the Microsoft Edge team   | Creative Commons Attribution 4.0 International | ⭐️1147 |
 | [stephenhutchings/typicons.font](https://github.com/stephenhutchings/typicons.font) | 336 pixel perfect, all-purpose vector icons in a web-font kit   | - | ⭐️1405 |
 | [wardley-maps-community/awesome-wardley-maps](https://github.com/wardley-maps-community/awesome-wardley-maps) | Wardley maps community hub. Useful Wardley mapping resources   | Creative Commons Zero v1.0 Universal | ⭐️533 | 
@@ -408,6 +405,7 @@ Total starred repositories: `595`
 | [arx-deidentifier/arx](https://github.com/arx-deidentifier/arx) | ARX is a comprehensive open source data anonymization tool aiming to provide scalability and usability. It supports various anonymization techniques, methods for analyzing data quality and re-identification risks and it supports well-known privacy models, such as k-anonymity, l-diversity, t-closeness and differential privacy.   | Apache License 2.0 | ⭐️521 |
 | [awsdocs/aws-doc-sdk-examples](https://github.com/awsdocs/aws-doc-sdk-examples) | Welcome to the AWS Code Examples Repository.  This repo contains code examples used in the AWS documentation, AWS SDK Developer Guides, and more. For more information, see the Readme.md file below.   | Apache License 2.0 | ⭐️7242 |
 | [awslabs/smithy](https://github.com/awslabs/smithy) | Smithy is a protocol-agnostic interface definition language and set of tools for generating clients, servers, and documentation for any programming language.   | Apache License 2.0 | ⭐️1268 |
+| [blazegraph/database](https://github.com/blazegraph/database) | Blazegraph High Performance Graph Database   | GNU GPLv2 | ⭐️768 |
 | [btraceio/btrace](https://github.com/btraceio/btrace) | BTrace - a safe, dynamic tracing tool for the Java platform   | - | ⭐️5366 |
 | [camunda/camunda-bpm-platform](https://github.com/camunda/camunda-bpm-platform) | Flexible framework for workflow and decision automation with BPMN and DMN. Integration with Spring, Spring Boot, CDI.   | Apache License 2.0 | ⭐️3187 |
 | [checkstyle/checkstyle](https://github.com/checkstyle/checkstyle) | Checkstyle is a development tool to help programmers write Java code that adheres to a coding standard. By default it supports the Google Java Style Guide and Sun Code Conventions, but is highly configurable. It can be invoked with an ANT task and a command line program.   | GNU LGPLv2.1 | ⭐️7594 |
@@ -421,7 +419,7 @@ Java applications are executed and/or any OS or hardware platform noise
 that may cause the running application to not be continuously runnable.   | - | ⭐️650 |
 | [gocd/gocd](https://github.com/gocd/gocd) | Main repository for GoCD - Continuous Delivery server   | Apache License 2.0 | ⭐️6743 |
 | [hazelcast/hazelcast](https://github.com/hazelcast/hazelcast) | Open-source distributed computation and storage platform. Real-time Stream Processing Unconference. Save Your Spot https://hazelcast.com/lp/unconference/   | - | ⭐️5280 |
-| [iluwatar/java-design-patterns](https://github.com/iluwatar/java-design-patterns) | Design patterns implemented in Java   | - | ⭐️80292 |
+| [iluwatar/java-design-patterns](https://github.com/iluwatar/java-design-patterns) | Design patterns implemented in Java   | - | ⭐️80291 |
 | [jbake-org/jbake](https://github.com/jbake-org/jbake) | Java based open source static site/blog generator for developers & designers.   | MIT License | ⭐️1048 |
 | [jeddict/jeddict](https://github.com/jeddict/jeddict) | Jakarta EE 10 & MicroProfile application generator and modeler   | Apache License 2.0 | ⭐️385 |
 | [jolie/jolie](https://github.com/jolie/jolie) | The Jolie programming language   | GNU LGPLv2.1 | ⭐️449 |
@@ -429,7 +427,7 @@ that may cause the running application to not be continuously runnable.   | - | 
 | [kiegroup/jbpm](https://github.com/kiegroup/jbpm) | a Business Process Management (BPM) Suite   | - | ⭐️1452 |
 | [netty/netty](https://github.com/netty/netty) | Netty project - an event-driven asynchronous network application framework   | Apache License 2.0 | ⭐️30859 |
 | [OpenRefine/OpenRefine](https://github.com/OpenRefine/OpenRefine) | OpenRefine is a free, open source power tool for working with messy data and improving it   | Modified BSD License | ⭐️9365 |
-| [opensearch-project/OpenSearch](https://github.com/opensearch-project/OpenSearch) | 🔎 Open source distributed and RESTful search engine.   | Apache License 2.0 | ⭐️6584 |
+| [opensearch-project/OpenSearch](https://github.com/opensearch-project/OpenSearch) | 🔎 Open source distributed and RESTful search engine.   | Apache License 2.0 | ⭐️6583 |
 | [openzipkin/zipkin](https://github.com/openzipkin/zipkin) | Zipkin is a distributed tracing system   | Apache License 2.0 | ⭐️16059 |
 | [orientechnologies/orientdb](https://github.com/orientechnologies/orientdb) | OrientDB is the most versatile DBMS supporting Graph, Document, Reactive, Full-Text and Geospatial models in one Multi-Model product. OrientDB can run distributed (Multi-Master), supports SQL, ACID Transactions, Full-Text indexing and Reactive Queries.   | Apache License 2.0 | ⭐️4570 |
 | [pingcap/benchmarksql](https://github.com/pingcap/benchmarksql) | mirror of benchmarksql on github   | - | ⭐️52 |
@@ -462,7 +460,7 @@ that may cause the running application to not be continuously runnable.   | - | 
 | [dar5hak/generator-awesome-list](https://github.com/dar5hak/generator-awesome-list) | :sunglasses: Yeoman generator for GitHub awesome lists   | Apache License 2.0 | ⭐️293 |
 | [mandala-ui/mandala](https://github.com/mandala-ui/mandala) | React UI Components built with Functional CSS (*archived*)  | MIT License | ⭐️16 |
 | [mariusandra/insights](https://github.com/mariusandra/insights) | Open Source Self-Hosted Business Intelligence Platform   | MIT License | ⭐️1028 |
-| [mermaid-js/mermaid](https://github.com/mermaid-js/mermaid) | Generation of diagrams like flowcharts or sequence diagrams from text in a similar manner as markdown   | MIT License | ⭐️55468 |
+| [mermaid-js/mermaid](https://github.com/mermaid-js/mermaid) | Generation of diagrams like flowcharts or sequence diagrams from text in a similar manner as markdown   | MIT License | ⭐️55471 |
 | [mermaid-js/mermaid-cli](https://github.com/mermaid-js/mermaid-cli) | Command line tool for the Mermaid library   | MIT License | ⭐️1279 |
 | [mewo2/naming-language](https://github.com/mewo2/naming-language) | A generator for naming languages   | - | ⭐️307 |
 | [MolochVentures/moloch](https://github.com/MolochVentures/moloch) | 👹 Moloch whose mind is pure machinery! Moloch whose blood is running money!   | MIT License | ⭐️643 |
@@ -529,7 +527,7 @@ that may cause the running application to not be continuously runnable.   | - | 
 | [ArchiveBox/ArchiveBox](https://github.com/ArchiveBox/ArchiveBox) | 🗃 Open source self-hosted web archiving. Takes URLs/browser history/bookmarks/Pocket/Pinboard/etc., saves HTML, JS, PDFs, media, and more...   | MIT License | ⭐️15312 |
 | [aws-samples/aws-cudos-framework-deployment](https://github.com/aws-samples/aws-cudos-framework-deployment) | Command Line Interface tool for Cloud Intelligence Dashboards deployment   | MIT No Attribution | ⭐️190 |
 | [aws-solutions/aws-instance-scheduler](https://github.com/aws-solutions/aws-instance-scheduler) | A cross-account and cross-region solution that allows customers to automatically start and stop EC2 and RDS Instances   | Apache License 2.0 | ⭐️424 |
-| [aws/aws-cli](https://github.com/aws/aws-cli) | Universal Command Line Interface for Amazon Web Services   | - | ⭐️13541 |
+| [aws/aws-cli](https://github.com/aws/aws-cli) | Universal Command Line Interface for Amazon Web Services   | - | ⭐️13542 |
 | [aws/aws-graviton-getting-started](https://github.com/aws/aws-graviton-getting-started) | This document is meant to help new users start using the Arm-based AWS Graviton2 and Graviton3 processors which power the 6th and 7th generation of Amazon EC2 instances (C6g[d], M6g[d], R6g[d], T4g, X2gd, C6gn, Im4gn, Is4gen, G5g, C7g).   | - | ⭐️627 |
 | [aws/aws-parallelcluster](https://github.com/aws/aws-parallelcluster) | AWS ParallelCluster is an AWS supported Open Source cluster management tool to deploy and manage HPC clusters in the AWS cloud.   | Apache License 2.0 | ⭐️744 |
 | [aws/aws-sdk-pandas](https://github.com/aws/aws-sdk-pandas) | pandas on AWS - Easy integration with Athena, Glue, Redshift, Timestream, Neptune, OpenSearch, QuickSight, Chime, CloudWatchLogs, DynamoDB, EMR, SecretManager, PostgreSQL, MySQL, SQLServer and S3 (Parquet, CSV, JSON and EXCEL).   | Apache License 2.0 | ⭐️3358 |
@@ -540,8 +538,8 @@ that may cause the running application to not be continuously runnable.   | - | 
 | [awslabs/aws-orbit-workbench](https://github.com/awslabs/aws-orbit-workbench) | A Data Platform built for AWS, powered by Kubernetes.   | Apache License 2.0 | ⭐️123 |
 | [awslabs/aws-shell](https://github.com/awslabs/aws-shell) | An integrated shell for working with the AWS CLI.   | Apache License 2.0 | ⭐️6839 |
 | [awslabs/open-data-registry](https://github.com/awslabs/open-data-registry) | A registry of publicly available datasets on AWS   | Apache License 2.0 | ⭐️1119 |
-| [bloomberg/memray](https://github.com/bloomberg/memray) | Memray is a memory profiler for Python   | Apache License 2.0 | ⭐️10243 |
-| [boto/boto3](https://github.com/boto/boto3) | AWS SDK for Python   | Apache License 2.0 | ⭐️7954 |
+| [bloomberg/memray](https://github.com/bloomberg/memray) | Memray is a memory profiler for Python   | Apache License 2.0 | ⭐️10242 |
+| [boto/boto3](https://github.com/boto/boto3) | AWS SDK for Python   | Apache License 2.0 | ⭐️7957 |
 | [brettkromkamp/contextualise](https://github.com/brettkromkamp/contextualise) | Contextualise is an effective tool particularly suited for organising information-heavy projects and activities consisting of unstructured and widely diverse data and information resources   | MIT License | ⭐️982 |
 | [brettkromkamp/topic-db](https://github.com/brettkromkamp/topic-db) | TopicDB is a topic maps-based semantic graph store (using SQLite for persistence)   | MIT License | ⭐️235 |
 | [cairis-platform/cairis](https://github.com/cairis-platform/cairis) | Computer Aided Integration of Requirements and Information Security - Server   | Apache License 2.0 | ⭐️114 |
@@ -550,7 +548,7 @@ that may cause the running application to not be continuously runnable.   | - | 
 | [coreyhu/Urbanist](https://github.com/coreyhu/Urbanist) | Urbanist is a low-contrast, geometric sans-serif inspired by Modernist design and typography.   | SIL Open Font License 1.1 | ⭐️382 |
 | [cr0hn/dockerscan](https://github.com/cr0hn/dockerscan) | Docker security analysis & hacking tools   | - | ⭐️1288 |
 | [donnemartin/interactive-coding-challenges](https://github.com/donnemartin/interactive-coding-challenges) | 120+ interactive Python coding interview challenges (algorithms and data structures).  Includes Anki flashcards.   | - | ⭐️27048 |
-| [donnemartin/system-design-primer](https://github.com/donnemartin/system-design-primer) | Learn how to design large-scale systems. Prep for the system design interview.  Includes Anki flashcards.   | - | ⭐️214260 |
+| [donnemartin/system-design-primer](https://github.com/donnemartin/system-design-primer) | Learn how to design large-scale systems. Prep for the system design interview.  Includes Anki flashcards.   | - | ⭐️214264 |
 | [floodsung/Deep-Learning-Papers-Reading-Roadmap](https://github.com/floodsung/Deep-Learning-Papers-Reading-Roadmap) | Deep Learning papers reading roadmap for anyone who are eager to learn this amazing tech!   | - | ⭐️34913 |
 | [frappe/erpnext](https://github.com/frappe/erpnext) | Free and Open Source Enterprise Resource Planning (ERP)   | GNU GPLv3 | ⭐️13002 |
 | [GhostManager/Ghostwriter](https://github.com/GhostManager/Ghostwriter) | The SpecterOps project management and reporting engine   | Modified BSD License | ⭐️902 |
@@ -561,7 +559,7 @@ that may cause the running application to not be continuously runnable.   | - | 
 | [linkedin/iris](https://github.com/linkedin/iris) | Iris is a highly configurable and flexible service for paging and messaging.   | BSD 2-Clause "Simplified" License | ⭐️728 |
 | [linkedin/oncall](https://github.com/linkedin/oncall) | Oncall is a calendar tool designed for scheduling and managing on-call shifts. It can be used as source of dynamic ownership info for paging systems like http://iris.claims.   | BSD 2-Clause "Simplified" License | ⭐️946 |
 | [maguowei/starred](https://github.com/maguowei/starred) | creating your own Awesome List by GitHub stars!   | MIT License | ⭐️1229 |
-| [mingrammer/diagrams](https://github.com/mingrammer/diagrams) | :art: Diagram as Code for prototyping cloud system architectures   | MIT License | ⭐️28356 |
+| [mingrammer/diagrams](https://github.com/mingrammer/diagrams) | :art: Diagram as Code for prototyping cloud system architectures   | MIT License | ⭐️28355 |
 | [nccgroup/aws-inventory](https://github.com/nccgroup/aws-inventory) | Discover resources created in an AWS account.   | Apache License 2.0 | ⭐️660 |
 | [netbox-community/netbox](https://github.com/netbox-community/netbox) | The premiere source of truth powering network automation. Open source under Apache 2. Public demo: https://demo.netbox.dev   | Apache License 2.0 | ⭐️12186 |
 | [nschloe/epicycler](https://github.com/nschloe/epicycler) | Create epicycle animations.   | - | ⭐️15 |
@@ -595,7 +593,7 @@ that may cause the running application to not be continuously runnable.   | - | 
 | Name  | Description  | License  | Stars  |
 | ----- | ----- | :---: |----: |
 | [analysis-tools-dev/static-analysis](https://github.com/analysis-tools-dev/static-analysis) | ⚙️ A curated list of static analysis (SAST) tools and linters for all programming languages, config files, build tools, and more. The focus is on tools which improve code quality.   | MIT License | ⭐️11043 |
-| [apache/arrow-datafusion](https://github.com/apache/arrow-datafusion) | Apache Arrow DataFusion SQL Query Engine   | Apache License 2.0 | ⭐️3328 |
+| [apache/arrow-datafusion](https://github.com/apache/arrow-datafusion) | Apache Arrow DataFusion SQL Query Engine   | Apache License 2.0 | ⭐️3329 |
 | [awslabs/aws-lambda-rust-runtime](https://github.com/awslabs/aws-lambda-rust-runtime) | A Rust runtime for AWS Lambda   | Apache License 2.0 | ⭐️2621 |
 | [benschulz/paxakos](https://github.com/benschulz/paxakos) | Rust implementation of Paxos consensus algorithm   | GNU GPLv3 | ⭐️85 |
 | [bootandy/dust](https://github.com/bootandy/dust) | A more intuitive version of du in rust   | Apache License 2.0 | ⭐️5937 |
@@ -603,9 +601,9 @@ that may cause the running application to not be continuously runnable.   | - | 
 | [BurntSushi/quickcheck](https://github.com/BurntSushi/quickcheck) | Automated property based testing for Rust (with shrinking).   | The Unlicense | ⭐️2046 |
 | [BurntSushi/xsv](https://github.com/BurntSushi/xsv) | A fast CSV command line toolkit written in Rust.   | The Unlicense | ⭐️9229 |
 | [cksac/fake-rs](https://github.com/cksac/fake-rs) | A library for generating fake data in Rust.   | Apache License 2.0 | ⭐️592 |
-| [cloudflare/quiche](https://github.com/cloudflare/quiche) | 🥧 Savoury implementation of the QUIC transport protocol and HTTP/3   | BSD 2-Clause "Simplified" License | ⭐️7360 |
+| [cloudflare/quiche](https://github.com/cloudflare/quiche) | 🥧 Savoury implementation of the QUIC transport protocol and HTTP/3   | BSD 2-Clause "Simplified" License | ⭐️7361 |
 | [cortex/ripasso](https://github.com/cortex/ripasso) | A simple password manager written in Rust   | GNU GPLv3 | ⭐️571 |
-| [dalance/procs](https://github.com/dalance/procs) | A modern replacement for ps written in Rust   | MIT License | ⭐️3875 |
+| [dalance/procs](https://github.com/dalance/procs) | A modern replacement for ps written in Rust   | MIT License | ⭐️3876 |
 | [dani-garcia/vaultwarden](https://github.com/dani-garcia/vaultwarden) | Unofficial Bitwarden compatible server written in Rust, formerly known as bitwarden_rs   | GNU AGPLv3 | ⭐️23624 |
 | [darakian/ddh](https://github.com/darakian/ddh) | A fast duplicate file finder   | - | ⭐️394 |
 | [flosse/rust-sun](https://github.com/flosse/rust-sun) | A Rust library for calculating sun positions   | - | ⭐️38 |
@@ -621,7 +619,7 @@ that may cause the running application to not be continuously runnable.   | - | 
 | [mit-pdos/noria](https://github.com/mit-pdos/noria) | Fast web applications through dynamic, partially-stateful dataflow   | Apache License 2.0 | ⭐️4618 |
 | [nats-io/nats.rs](https://github.com/nats-io/nats.rs) | Rust client for NATS, the cloud native messaging system.   | Apache License 2.0 | ⭐️707 |
 | [nushell/nushell](https://github.com/nushell/nushell) | A new type of shell   | MIT License | ⭐️23822 |
-| [ogham/exa](https://github.com/ogham/exa) | A modern replacement for ‘ls’.   | MIT License | ⭐️21094 |
+| [ogham/exa](https://github.com/ogham/exa) | A modern replacement for ‘ls’.   | MIT License | ⭐️21095 |
 | [open-telemetry/opentelemetry-rust](https://github.com/open-telemetry/opentelemetry-rust) | OpenTelemetry API and SDK for Rust   | Apache License 2.0 | ⭐️1009 |
 | [orf/gping](https://github.com/orf/gping) | Ping, but with a graph   | MIT License | ⭐️7237 |
 | [osohq/oso](https://github.com/osohq/oso) | Oso is a batteries-included framework for building authorization in your application.   | Apache License 2.0 | ⭐️2945 |
@@ -637,10 +635,10 @@ that may cause the running application to not be continuously runnable.   | - | 
 | [rust-lang/cargo](https://github.com/rust-lang/cargo) | The Rust package manager   | Apache License 2.0 | ⭐️10013 |
 | [rust-lang/docs.rs](https://github.com/rust-lang/docs.rs) | crates.io documentation generator   | MIT License | ⭐️843 |
 | [rust-lang/mdBook](https://github.com/rust-lang/mdBook) | Create book from markdown files. Like Gitbook but implemented in Rust   | Mozilla Public License 2.0 | ⭐️12811 |
-| [rust-lang/rust](https://github.com/rust-lang/rust) | Empowering everyone to build reliable and efficient software.   | - | ⭐️79001 |
+| [rust-lang/rust](https://github.com/rust-lang/rust) | Empowering everyone to build reliable and efficient software.   | - | ⭐️79003 |
 | [rust-lang/rustfmt](https://github.com/rust-lang/rustfmt) | Format Rust code   | Apache License 2.0 | ⭐️4991 |
 | [rust-lang/rustup](https://github.com/rust-lang/rustup) | The Rust toolchain installer   | Apache License 2.0 | ⭐️5213 |
-| [rust-unofficial/awesome-rust](https://github.com/rust-unofficial/awesome-rust) | A curated list of Rust code and resources.   | Creative Commons Zero v1.0 Universal | ⭐️33232 |
+| [rust-unofficial/awesome-rust](https://github.com/rust-unofficial/awesome-rust) | A curated list of Rust code and resources.   | Creative Commons Zero v1.0 Universal | ⭐️33233 |
 | [saurvs/astro-rust](https://github.com/saurvs/astro-rust) | Astronomical algorithms in Rust   | MIT License | ⭐️218 |
 | [seppo0010/rsedis](https://github.com/seppo0010/rsedis) | Redis re-implemented in Rust.   | BSD 2-Clause "Simplified" License | ⭐️1645 |
 | [sharkdp/bat](https://github.com/sharkdp/bat) | A cat(1) clone with wings.   | Apache License 2.0 | ⭐️40133 |
@@ -654,7 +652,7 @@ that may cause the running application to not be continuously runnable.   | - | 
 | [tikv/raft-rs](https://github.com/tikv/raft-rs) | Raft distributed consensus algorithm implemented in Rust.   | Apache License 2.0 | ⭐️2380 |
 | [tikv/tikv](https://github.com/tikv/tikv) | Distributed transactional key-value database, originally created to complement TiDB   | Apache License 2.0 | ⭐️12811 |
 | [tokio-rs/tokio](https://github.com/tokio-rs/tokio) | A runtime for writing reliable asynchronous applications with Rust. Provides I/O, networking, scheduling, timers, ...   | MIT License | ⭐️19713 |
-| [toml-rs/toml-rs](https://github.com/toml-rs/toml-rs) | A TOML encoding/decoding library for Rust (*archived*)  | Apache License 2.0 | ⭐️1035 |
+| [toml-rs/toml](https://github.com/toml-rs/toml) | Rust TOML Parser   | Apache License 2.0 | ⭐️367 |
 | [uutils/coreutils](https://github.com/uutils/coreutils) | Cross-platform Rust rewrite of the GNU coreutils   | MIT License | ⭐️14251 |
 | [XAMPPRocky/tokei](https://github.com/XAMPPRocky/tokei) | Count your code, quickly.   | - | ⭐️7984 |
 | [yoshihitoh/refmt](https://github.com/yoshihitoh/refmt) | Translate data format into another one. Currently only JSON and YAML are available.   | MIT License | ⭐️25 | 
@@ -693,14 +691,14 @@ that may cause the running application to not be continuously runnable.   | - | 
 | [indestructible-type/Jost](https://github.com/indestructible-type/Jost) | Jost* by indestructible type*   | - | ⭐️610 |
 | [larsenwork/Gidole](https://github.com/larsenwork/Gidole) | Gidole - Open Source Modern DIN   | - | ⭐️1790 |
 | [nats-io/k8s](https://github.com/nats-io/k8s) | NATS on Kubernetes with Helm Charts   | Apache License 2.0 | ⭐️323 |
-| [open-guides/og-aws](https://github.com/open-guides/og-aws) | 📙 Amazon Web Services — a practical guide   | Creative Commons Attribution 4.0 International | ⭐️33471 |
+| [open-guides/og-aws](https://github.com/open-guides/og-aws) | 📙 Amazon Web Services — a practical guide   | Creative Commons Attribution 4.0 International | ⭐️33472 |
 | [oracuk/oisru](https://github.com/oracuk/oisru) | Repository for the Open Information Security Risk Universe   | Creative Commons Zero v1.0 Universal | ⭐️58 |
 | [shellspec/shellmetrics](https://github.com/shellspec/shellmetrics) | Cyclomatic Complexity Analyzer for bash, mksh, zsh and POSIX shells   | MIT License | ⭐️40 |
 | [shellspec/shellspec](https://github.com/shellspec/shellspec) | A full-featured BDD unit testing framework for bash, ksh, zsh, dash and all POSIX shells   | MIT License | ⭐️841 |
 | [source-foundry/Hack](https://github.com/source-foundry/Hack) | A typeface designed for source code   | - | ⭐️15433 |
 | [trailofbits/twa](https://github.com/trailofbits/twa) | A tiny web auditor with strong opinions.   | MIT License | ⭐️564 |
 | [usnistgov/oscal-content](https://github.com/usnistgov/oscal-content) | NIST SP 800-53 content and other OSCAL content examples   | - | ⭐️201 |
-| [VSCodium/vscodium](https://github.com/VSCodium/vscodium) | binary releases of VS Code without MS branding/telemetry/licensing   | MIT License | ⭐️19801 |
+| [VSCodium/vscodium](https://github.com/VSCodium/vscodium) | binary releases of VS Code without MS branding/telemetry/licensing   | MIT License | ⭐️19802 |
 | [zplug/zplug](https://github.com/zplug/zplug) | :hibiscus: A next-generation plugin manager for zsh   | MIT License | ⭐️5340 | 
 
 **[⬆ back to top](#contents)**
@@ -715,7 +713,7 @@ that may cause the running application to not be continuously runnable.   | - | 
 | Name  | Description  | License  | Stars  |
 | ----- | ----- | :---: |----: |
 | [aws-solutions/performance-dashboard-on-aws](https://github.com/aws-solutions/performance-dashboard-on-aws) | A simple cost-effective web application to build and publish dashboards.   | Apache License 2.0 | ⭐️158 |
-| [aws/aws-cdk](https://github.com/aws/aws-cdk) | The AWS Cloud Development Kit is a framework for defining cloud infrastructure in code   | Apache License 2.0 | ⭐️9959 |
+| [aws/aws-cdk](https://github.com/aws/aws-cdk) | The AWS Cloud Development Kit is a framework for defining cloud infrastructure in code   | Apache License 2.0 | ⭐️9960 |
 | [awslabs/aws-solutions-constructs](https://github.com/awslabs/aws-solutions-constructs) | The AWS Solutions Constructs Library is an open-source extension of the AWS Cloud Development Kit (AWS CDK) that provides multi-service, well-architected patterns for quickly defining solutions   | Apache License 2.0 | ⭐️935 |
 | [bluesky-social/atproto](https://github.com/bluesky-social/atproto) | Social networking technology created by Bluesky   | MIT License | ⭐️2591 |
 | [lukevella/rallly](https://github.com/lukevella/rallly) | Rallly is an open-source scheduling and collaboration tool designed to make organizing events and meetings easier.   | GNU AGPLv3 | ⭐️1799 |
@@ -735,22 +733,21 @@ that may cause the running application to not be continuously runnable.   | - | 
 | [atinfo/awesome-test-automation](https://github.com/atinfo/awesome-test-automation) | A curated list of awesome test automation frameworks, tools, libraries, and software for different programming languages. Sponsored by http://sdclabs.com   | - | ⭐️5581 |
 | [awesomedata/awesome-public-datasets](https://github.com/awesomedata/awesome-public-datasets) | A topic-centric list of HQ open datasets.   | MIT License | ⭐️53350 |
 | [bbatsov/clojure-style-guide](https://github.com/bbatsov/clojure-style-guide) | A community coding style guide for the Clojure programming language   | - | ⭐️3931 |
-| [binhnguyennus/awesome-scalability](https://github.com/binhnguyennus/awesome-scalability) | The Patterns of Scalable, Reliable, and Performant Large-Scale Systems   | MIT License | ⭐️44122 |
+| [binhnguyennus/awesome-scalability](https://github.com/binhnguyennus/awesome-scalability) | The Patterns of Scalable, Reliable, and Performant Large-Scale Systems   | MIT License | ⭐️44123 |
 | [cjbarber/ToolsOfTheTrade](https://github.com/cjbarber/ToolsOfTheTrade) | Tools of The Trade, from Hacker News.   | - | ⭐️15909 |
 | [ConsenSys/smart-contract-best-practices](https://github.com/ConsenSys/smart-contract-best-practices) | A guide to smart contract security best practices   | - | ⭐️6585 |
-| [cucumber/common](https://github.com/cucumber/common) | A home for issues that are common to multiple cucumber repositories   | MIT License | ⭐️3356 |
 | [CUTR-at-USF/awesome-transit](https://github.com/CUTR-at-USF/awesome-transit) | Community list of transit APIs, apps, datasets, research, and software :bus::star2::train::star2::steam_locomotive:   | Creative Commons Zero v1.0 Universal | ⭐️977 |
 | [danluu/post-mortems](https://github.com/danluu/post-mortems) | A collection of postmortems. Sorry for the delay in merging PRs!   | - | ⭐️10023 |
 | [dastergon/awesome-sre](https://github.com/dastergon/awesome-sre) | A curated list of Site Reliability and Production Engineering resources.   | Creative Commons Zero v1.0 Universal | ⭐️9820 |
 | [Developer-Y/cs-video-courses](https://github.com/Developer-Y/cs-video-courses) | List of Computer Science courses with video lectures.   | - | ⭐️53416 |
 | [dgryski/awesome-consensus](https://github.com/dgryski/awesome-consensus) | Awesome list for Paxos and friends   | - | ⭐️1856 |
-| [DovAmir/awesome-design-patterns](https://github.com/DovAmir/awesome-design-patterns) | A curated list of software and architecture related design patterns.   | - | ⭐️29517 |
+| [DovAmir/awesome-design-patterns](https://github.com/DovAmir/awesome-design-patterns) | A curated list of software and architecture related design patterns.   | - | ⭐️29518 |
 | [google/material-design-icons](https://github.com/google/material-design-icons) | Material Design icons by Google   | Apache License 2.0 | ⭐️47724 |
 | [heidihoward/distributed-consensus-reading-list](https://github.com/heidihoward/distributed-consensus-reading-list) | A list of papers about distributed consensus.   | - | ⭐️1980 |
 | [hycomsa/hycom-c4](https://github.com/hycomsa/hycom-c4) | The Hycom C4 library for diagrams.net / draw.io application allows you to create architecture diagrams with the C4 model approach very easy and quick.   | - | ⭐️40 |
 | [igorbarinov/awesome-data-engineering](https://github.com/igorbarinov/awesome-data-engineering) | A curated list of data engineering tools for software developers   | - | ⭐️4892 |
 | [joelparkerhenderson/architecture-decision-record](https://github.com/joelparkerhenderson/architecture-decision-record) | Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation   | - | ⭐️8686 |
-| [jwasham/coding-interview-university](https://github.com/jwasham/coding-interview-university) | A complete computer science study plan to become a software engineer.   | Creative Commons Attribution Share Alike 4.0 International | ⭐️251622 |
+| [jwasham/coding-interview-university](https://github.com/jwasham/coding-interview-university) | A complete computer science study plan to become a software engineer.   | Creative Commons Attribution Share Alike 4.0 International | ⭐️251623 |
 | [k88hudson/git-flight-rules](https://github.com/k88hudson/git-flight-rules) | Flight rules for git   | Creative Commons Attribution Share Alike 4.0 International | ⭐️40902 |
 | [kahun/awesome-sysadmin](https://github.com/kahun/awesome-sysadmin) | A curated list of amazingly awesome open source sysadmin resources inspired by Awesome PHP.   | - | ⭐️22805 |
 | [lucasviola/awesome-functional-programming](https://github.com/lucasviola/awesome-functional-programming) | :alien: A curated list of functional programming resources such as blog posts, communities, discussion topics, wikis and more.   | - | ⭐️857 |
@@ -766,7 +763,6 @@ that may cause the running application to not be continuously runnable.   | - | 
 | [toml-lang/toml](https://github.com/toml-lang/toml) | Tom's Obvious, Minimal Language   | MIT License | ⭐️18139 |
 | [uhub/awesome-erlang](https://github.com/uhub/awesome-erlang) | A curated list of awesome Erlang frameworks, libraries and software.   | - | ⭐️298 |
 | [ukncsc/secure-development-and-deployment](https://github.com/ukncsc/secure-development-and-deployment) | NCSC Guidance for secure development and deployment (*archived*)  | - | ⭐️430 |
-| [vlang/awesome-v](https://github.com/vlang/awesome-v) | A curated list of awesome V frameworks, libraries, software and resources.   | Creative Commons Zero v1.0 Universal | ⭐️1550 |
 | [warrant-dev/awesome-authorization](https://github.com/warrant-dev/awesome-authorization) | A curated list of information and resources about authorization.   | Creative Commons Zero v1.0 Universal | ⭐️296 |
 | [xmindltd/nevermind](https://github.com/xmindltd/nevermind) | Brand-new font designed by XMind   | SIL Open Font License 1.1 | ⭐️89 |
 | [ZuzooVn/machine-learning-for-software-engineers](https://github.com/ZuzooVn/machine-learning-for-software-engineers) | A complete daily plan for studying to become a machine learning engineer.   | Creative Commons Attribution Share Alike 4.0 International | ⭐️26659 | 
