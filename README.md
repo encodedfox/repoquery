@@ -94,6 +94,7 @@
   * Zig
   * Nim
   * Golang
+  * Koka
   * Erlang
   * V
 * Scripting Languages
