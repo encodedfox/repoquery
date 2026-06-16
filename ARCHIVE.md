@@ -1,118 +1,61 @@
 # Awesome Starred Repos List
 
 Programmatically generated list of awesome starred repositories. Generate your own with [stargazer](https://github.com/encodedfox/stargazer)!
-Total starred repositories: `54`
+Total starred repositories: `17`
 
 ## Contents
-- [C](#c)
-- [C#](#c)
 - [C++](#c++)
 - [Go](#go)
-- [Haskell](#haskell)
 - [Java](#java)
 - [JavaScript](#javascript)
-- [PHP](#php)
-- [PowerShell](#powershell)
+- [Jupyter Notebook](#jupyter-notebook)
+- [Kotlin](#kotlin)
 - [Python](#python)
-- [Rust](#rust)
 - [Shell](#shell)
-- [TypeScript](#typescript)
 - [Unknown](#unknown)
 
-## C
-- [lucas-santoni/mandala-c-sdl2](https://github.com/lucas-santoni/mandala-c-sdl2) - Using the C language, the SDL2 library and some modulo operations to draw cool mandalas. (⭐️4) *Archived!*
-- [hexchat/hexchat](https://github.com/hexchat/hexchat) - GTK+ IRC client \[*GNU GPLv2*\] (⭐️3228) *Archived!*
-- [indeedeng/fibtest](https://github.com/indeedeng/fibtest) -  \[*Apache License 2.0*\] (⭐️59) *Archived!*
-- [kkos/oniguruma](https://github.com/kkos/oniguruma) - regular expression library (⭐️2484) *Archived!*
-- [Harvey-OS/harvey](https://github.com/Harvey-OS/harvey) - A distributed operating system \[*MIT License*\] (⭐️1448) *Archived!*
-
-
-## C#
-- [Bitwarden](https://github.com/bitwarden/server) - Password Management - Official server implementation \[*GPL-3.0*\] (⭐️0)
-
-
 ## C++
-- [curv3d/curv](https://github.com/curv3d/curv) - a language for making art using mathematics \[*Apache License 2.0*\] (⭐️1153) *Archived!*
+- [Dale-M/dmbcs-trader-desk](https://github.com/Dale-M/dmbcs-trader-desk) - Yet another (fully open source) stock market charting application; C++ on Linux using Alpha Vantage market data back-end. \[*Other*\] (⭐️8)
 
 
 ## Go
-- [briefercloud/layerform](https://github.com/briefercloud/layerform) - Layerform helps engineers create reusable environment stacks using plain .tf files. Ideal for multiple "staging" environments. \[*GNU GPLv3*\] (⭐️1211) *Archived!*
-- [sourcegraph/sourcegraph-public-snapshot](https://github.com/sourcegraph/sourcegraph-public-snapshot) - Code AI platform with Code Search & Cody (⭐️10226) *Archived!*
-- [praetorian-inc/gokart](https://github.com/praetorian-inc/gokart) - A static analysis tool for securing Go code \[*Apache License 2.0*\] (⭐️2173) *Archived!*
-- [golang/mock](https://github.com/golang/mock) - GoMock is a mocking framework for the Go programming language. \[*Apache License 2.0*\] (⭐️9383) *Archived!*
-- [awslabs/yesiscan](https://github.com/awslabs/yesiscan) - Automatic license scanning and reports! \[*Apache License 2.0*\] (⭐️16) *Archived!*
-- [pingcap/dumpling](https://github.com/pingcap/dumpling) - Dumpling is a fast, easy-to-use tool written by Go for dumping data from the database(MySQL, TiDB...) to local/cloud(S3, GCP...) in multifarious formats(SQL, CSV...). \[*Apache License 2.0*\] (⭐️282) *Archived!*
-- [qdm12/goshutdown](https://github.com/qdm12/goshutdown) - Go library to shutdown your goroutines gracefully and in a timely manner \[*MIT License*\] (⭐️12) *Archived!*
-- [rebuy-de/aws-nuke](https://github.com/rebuy-de/aws-nuke) - Nuke a whole AWS account and delete all its resources. \[*MIT License*\] (⭐️5805) *Archived!*
-- [hyperledger/fabric-sdk-go](https://github.com/hyperledger/fabric-sdk-go) -  \[*Apache License 2.0*\] (⭐️913) *Archived!*
-- [lucasepe/g2d](https://github.com/lucasepe/g2d) - Craft beautiful geometric art using code. \[*Mozilla Public License 2.0*\] (⭐️46) *Archived!*
-- [awslabs/goformation](https://github.com/awslabs/goformation) - GoFormation is a Go library for working with CloudFormation templates. \[*Apache License 2.0*\] (⭐️850) *Archived!*
-- [eBay/akutan](https://github.com/eBay/akutan) - A distributed knowledge graph store \[*Apache License 2.0*\] (⭐️1657) *Archived!*
-- [taironas/tinygraphs](https://github.com/taironas/tinygraphs) - avatar generator web service \[*MIT License*\] (⭐️342) *Archived!*
-- [bosun-monitor/bosun](https://github.com/bosun-monitor/bosun) - Time Series Alerting Framework \[*MIT License*\] (⭐️3410) *Archived!*
-- [mozilla/tls-observatory](https://github.com/mozilla/tls-observatory) - An observatory for TLS configurations, X509 certificates, and more. \[*Mozilla Public License 2.0*\] (⭐️541) *Archived!*
-- [mitchellh/gox](https://github.com/mitchellh/gox) - A dead simple, no frills Go cross compile tool \[*Mozilla Public License 2.0*\] (⭐️4589) *Archived!*
-- [aws/aws-sdk-go](https://github.com/aws/aws-sdk-go) - This SDK has reached end-of-support. The AWS SDK for Go v2 is available here: https://github.com/aws/aws-sdk-go-v2 \[*Apache License 2.0*\] (⭐️8713) *Archived!*
-- [Forgejo](https://codeberg.org/forgejo/forgejo) - Codeberg-hosted Git forge - Community-driven software forge \[*MIT License*\] (⭐️0)
-
-
-## Haskell
-- [github/semantic](https://github.com/github/semantic) - Parsing, analyzing, and comparing source code across many languages (⭐️9060) *Archived!*
+- [giagiannis/data-profiler](https://github.com/giagiannis/data-profiler) - Data profiler is an attempt to model the behavior of a given operator for a set of datasets. \[*Apache License 2.0*\] (⭐️3)
+- [AnthonyHewins/osg](https://github.com/AnthonyHewins/osg) - open source =/= free (⭐️1)
 
 
 ## Java
-- [zalando/nakadi](https://github.com/zalando/nakadi) - A distributed event bus that implements a RESTful API abstraction on top of Kafka-like queues \[*MIT License*\] (⭐️969) *Archived!*
-- [camunda/camunda-bpm-platform](https://github.com/camunda/camunda-bpm-platform) - Camunda 7 CE is End of Life (EoL). Please check out Camunda 8 instead (https://github.com/camunda/camunda) or read about Camunda 7 Enterprise End of Life (https://camunda.com/blog/2025/02/camunda-7-enterprise-end-of-life-extension/) – Camunda 7 CE was a flexible framework for workflow and decision automation using BPMN and DMN. \[*Apache License 2.0*\] (⭐️4260) *Archived!*
-- [facebook/buck](https://github.com/facebook/buck) - A fast build system that encourages the creation of small, reusable modules over a variety of platforms and languages. \[*Apache License 2.0*\] (⭐️8553) *Archived!*
-- [spotify/heroic](https://github.com/spotify/heroic) - The Heroic Time Series Database \[*Apache License 2.0*\] (⭐️846) *Archived!*
+- [anjanatiha/Distributed-Big-Data-Application-for-Large-Scale-US-Stock-Market-Data-Analysis](https://github.com/anjanatiha/Distributed-Big-Data-Application-for-Large-Scale-US-Stock-Market-Data-Analysis) - Application for preprocessing, analysis and anomaly detection of US stock market data on multiple clusters using Apache Spark \[*Apache License 2.0*\] (⭐️1)
 
 
 ## JavaScript
-- [mandala-ui/mandala](https://github.com/mandala-ui/mandala) - React UI Components built with Functional CSS \[*MIT License*\] (⭐️17) *Archived!*
-- [Ghost](https://github.com/TryGhost/Ghost) - Content Management System - Modern publishing platform \[*MIT License*\] (⭐️0)
+- [software-2/NoHere](https://github.com/software-2/NoHere) -  \[*MIT License*\] (⭐️2)
 
 
-## PHP
-- [atrocore/atropm](https://github.com/atrocore/atropm) - AtroPM is a simple, but powerful, configurable, open-source Project Management Software, inspired by Github and Gitlab. \[*GNU GPLv3*\] (⭐️15) *Archived!*
-- [atrocore/atrodam](https://github.com/atrocore/atrodam) - AtroDAM is an open-source digital asset management system (DAM) of a new generation. \[*GNU GPLv3*\] (⭐️116) *Archived!*
-- [Matomo](https://github.com/matomo-org/matomo) - Web Analytics Tool - Open-source alternative to Google Analytics \[*GPL-3.0*\] (⭐️0)
-- [Nextcloud](https://github.com/nextcloud/server) - File Sharing and Collaboration Platform \[*AGPL-3.0*\] (⭐️0)
+## Jupyter Notebook
+- [julien-guerin/Finance-Investment](https://github.com/julien-guerin/Finance-Investment) - Data science analysis applied to the world of finance : risk/return portfolio optimisation, Sharpe ratio analysis (⭐️3)
+- [EimisPacheco/Several-Jupyter-Notebooks](https://github.com/EimisPacheco/Several-Jupyter-Notebooks) - Jupyter Notebooks with different purposes: Social Network WebScrapping, ETL, Selenium WebDriver for Web Testing, Automation using Python, Data Wrangling, Data Transformation, Data Cleaning, Stock Market Analysis, APIs, Machine learning Algorithms, etc... (⭐️5)
 
 
-## PowerShell
-- [janikvonrotz/awesome-powershell](https://github.com/janikvonrotz/awesome-powershell) - This repository has been moved to https://codeberg.org/janikvonrotz/awesome-powershell. Please visit the new location for the latest updates. \[*GNU AGPLv3*\] (⭐️5292) *Archived!*
+## Kotlin
+- [timoyo93/common-api-benchmarks](https://github.com/timoyo93/common-api-benchmarks) -  (⭐️9)
 
 
 ## Python
-- [daveshap/ACE_Framework](https://github.com/daveshap/ACE_Framework) - ACE (Autonomous Cognitive Entities) - 100% local and open source autonomous agents \[*MIT License*\] (⭐️1489) *Archived!*
-- [tursodatabase/libsql-client-py](https://github.com/tursodatabase/libsql-client-py) - Python SDK for libSQL \[*MIT License*\] (⭐️79) *Archived!*
-- [awslabs/aws-orbit-workbench](https://github.com/awslabs/aws-orbit-workbench) - A Data Platform built for AWS, powered by Kubernetes. \[*Apache License 2.0*\] (⭐️147) *Archived!*
-- [OWASP/threat-model-cookbook](https://github.com/OWASP/threat-model-cookbook) - This project is about creating and publishing threat model examples. (⭐️428) *Archived!*
-
-
-## Rust
-- [solana-labs/solana-program-library](https://github.com/solana-labs/solana-program-library) - A collection of Solana programs maintained by Solana Labs \[*Apache License 2.0*\] (⭐️4135) *Archived!*
-- [kbknapp/cargo-count](https://github.com/kbknapp/cargo-count) - a cargo subcommand for counting lines of code in Rust projects \[*MIT License*\] (⭐️128) *Archived!*
-- [hyperledger-archives/grid](https://github.com/hyperledger-archives/grid) - Grid has moved to end-of-life status. \[*Apache License 2.0*\] (⭐️205) *Archived!*
-- [hyperledger-archives/ursa](https://github.com/hyperledger-archives/ursa) - Hyperledger Ursa (a shared cryptographic library) has moved to end-of-life status, with the components of Ursa still in use moved to their relevant Hyperledger projects (AnonCreds, Indy, Aries and Iroha). \[*Apache License 2.0*\] (⭐️325) *Archived!*
-- [BurntSushi/xsv](https://github.com/BurntSushi/xsv) - A fast CSV command line toolkit written in Rust. \[*The Unlicense*\] (⭐️10749) *Archived!*
+- [dalalstreet-ai/news-sentiment-python](https://github.com/dalalstreet-ai/news-sentiment-python) - A SDK for Python applications for integrating the News Sentiment for financial apps for more than 7500+ sources worldwide. \[*MIT License*\] (⭐️3)
+- [PavanParchuri/Stock-Market-Prediction-LSTM](https://github.com/PavanParchuri/Stock-Market-Prediction-LSTM) - ⚡ STOCK MARKET PREDICTION is a Deep Learning based web application using LSTM model and that is used to  predict the future stock prices based on 10 years historical data \[*MIT License*\] (⭐️3)
+- [Choochera/Weekly-Winner](https://github.com/Choochera/Weekly-Winner) - Python command-line program that leverages the user's Robinhood account to assist in choosing options to perform the wheel strategy. This is done by utilizing a delta-based risk assessment and listing qualifying weekly options in order of potential profit within price range. (⭐️8)
+- [vein-project-team/vp-data](https://github.com/vein-project-team/vp-data) - Chinese hushen stock market analysis project \[*GNU General Public License v3.0*\] (⭐️6)
+- [Kirity/parallel-deletion-of-s3-bucket](https://github.com/Kirity/parallel-deletion-of-s3-bucket) - Programmatic way to cleanup version enabled S3 bucket  \[*MIT License*\] (⭐️3)
+- [seigenbrode/mlops-sagemaker-jenkins-byo](https://github.com/seigenbrode/mlops-sagemaker-jenkins-byo) -  (⭐️6)
+- [jofrank21/Mandala](https://github.com/jofrank21/Mandala) - Mandala Generator (⭐️3)
 
 
 ## Shell
-- [CircleCI-Archived/CircleCI-Training-Koans](https://github.com/CircleCI-Archived/CircleCI-Training-Koans) - A set of puzzles to be completed to help familiarize yourself with CircleCI (⭐️40) *Archived!*
-
-
-## TypeScript
-- [sourcegraph/cody-public-snapshot](https://github.com/sourcegraph/cody-public-snapshot) - Type less, code more: Cody is an AI code assistant that uses advanced search and codebase context to help you write and fix code. \[*Apache License 2.0*\] (⭐️3792) *Archived!*
-- [awslabs/diagram-maker](https://github.com/awslabs/diagram-maker) - A library to display an interactive editor for any graph-like data. \[*Apache License 2.0*\] (⭐️2420) *Archived!*
-- [aws-solutions/performance-dashboard-on-aws](https://github.com/aws-solutions/performance-dashboard-on-aws) - A simple cost-effective web application to build and publish dashboards. \[*Apache License 2.0*\] (⭐️176) *Archived!*
-- [microsoft/data-protection-mapping-project](https://github.com/microsoft/data-protection-mapping-project) - Open Source Data Protection/Privacy Regulatory Mapping Project \[*MIT License*\] (⭐️188) *Archived!*
-- [NocoBase](https://github.com/nocobase/nocobase) - No-Code/Low-Code Development Platform \[*Apache License 2.0*\] (⭐️0)
+- [ImparaAI/go-figure-kubernetes](https://github.com/ImparaAI/go-figure-kubernetes) - Kubernetes environment for running go figure apps \[*MIT License*\] (⭐️5)
 
 
 ## Unknown
-- [libsql/sqld](https://github.com/libsql/sqld) - LibSQL with extended capabilities like HTTP protocol, replication, and more. (⭐️897) *Archived!*
-- [ukncsc/secure-development-and-deployment](https://github.com/ukncsc/secure-development-and-deployment) - NCSC Guidance for secure development and deployment (⭐️443) *Archived!*
+- [cdaniel/faciliator-pack](https://github.com/cdaniel/faciliator-pack) -  (⭐️7)
 
 
 ---
@@ -120,16 +63,15 @@ Total starred repositories: `54`
 
 ## Repository Statistics
 
-**Total Repositories**: 54
+**Total Repositories**: 17
 
 **By Platform**:
-- GitHub: 53 repositories (98.1%)
-- Codeberg: 1 repositories (1.9%)
+- GitHub: 17 repositories (100.0%)
 
 **By Status**:
-- Active: 54 repositories (100.0%)
+- Active: 17 repositories (100.0%)
 - Archived: 0 repositories (0.0%)
 
-**Last Updated**: 2025-12-11T01:41:07.474727+00:00
+**Last Updated**: 2026-06-16T02:31:23.146085+00:00
 
 *Generated by [encodedfox/stargazer](https://github.com/encodedfox/stargazer) + omnidatum-processor*

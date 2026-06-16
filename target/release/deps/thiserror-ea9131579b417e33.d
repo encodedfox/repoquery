@@ -1,0 +1,14 @@
+/Users/joemelfi/projects/github-stars-datasets/omnidatum/target/release/deps/thiserror-ea9131579b417e33.d: /Users/joemelfi/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/lib.rs /Users/joemelfi/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/aserror.rs /Users/joemelfi/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/display.rs /Users/joemelfi/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/var.rs /Users/joemelfi/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/private.rs /Users/joemelfi/projects/github-stars-datasets/omnidatum/target/release/build/thiserror-7d1e355b3d607e63/out/private.rs
+
+/Users/joemelfi/projects/github-stars-datasets/omnidatum/target/release/deps/libthiserror-ea9131579b417e33.rlib: /Users/joemelfi/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/lib.rs /Users/joemelfi/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/aserror.rs /Users/joemelfi/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/display.rs /Users/joemelfi/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/var.rs /Users/joemelfi/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/private.rs /Users/joemelfi/projects/github-stars-datasets/omnidatum/target/release/build/thiserror-7d1e355b3d607e63/out/private.rs
+
+/Users/joemelfi/projects/github-stars-datasets/omnidatum/target/release/deps/libthiserror-ea9131579b417e33.rmeta: /Users/joemelfi/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/lib.rs /Users/joemelfi/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/aserror.rs /Users/joemelfi/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/display.rs /Users/joemelfi/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/var.rs /Users/joemelfi/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/private.rs /Users/joemelfi/projects/github-stars-datasets/omnidatum/target/release/build/thiserror-7d1e355b3d607e63/out/private.rs
+
+/Users/joemelfi/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/lib.rs:
+/Users/joemelfi/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/aserror.rs:
+/Users/joemelfi/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/display.rs:
+/Users/joemelfi/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/var.rs:
+/Users/joemelfi/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/private.rs:
+/Users/joemelfi/projects/github-stars-datasets/omnidatum/target/release/build/thiserror-7d1e355b3d607e63/out/private.rs:
+
+# env-dep:OUT_DIR=/Users/joemelfi/projects/github-stars-datasets/omnidatum/target/release/build/thiserror-7d1e355b3d607e63/out

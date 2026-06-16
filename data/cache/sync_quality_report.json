@@ -1,13 +1,20 @@
 {
-  "timestamp": "2026-05-04T03:51:06.362594+00:00",
+  "timestamp": "2026-06-16T02:31:23.260211+00:00",
   "repos_synced": 800,
   "data_completeness": {
-    "license_coverage": 91.89526,
+    "license_coverage": 91.77057,
     "description_coverage": 97.63092,
-    "topics_coverage": 75.187035,
+    "topics_coverage": 75.43641,
     "homepage_coverage": 88.40399
   },
   "anomalies": [
+    {
+      "repo_id": "github-com-mozilla-Fira",
+      "anomaly_type": "newly_archived",
+      "message": "Repository was archived since last sync",
+      "old_value": "active",
+      "new_value": "archived"
+    },
     {
       "repo_id": "github-com-minio-minio",
       "anomaly_type": "newly_archived",
@@ -79,6 +86,13 @@
       "new_value": "Open source transactional distributed database. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure without compromising performance."
     },
     {
+      "repo_id": "github-com-cdaniel-doctrine",
+      "anomaly_type": "newly_archived",
+      "message": "Repository was archived since last sync",
+      "old_value": "active",
+      "new_value": "archived"
+    },
+    {
       "repo_id": "github-com-matomo-org-matomo",
       "anomaly_type": "description_change",
       "message": "Description changed significantly (410.9% difference)",
@@ -86,7 +100,7 @@
       "new_value": "Empowering People Ethically 🚀 — Matomo is hiring! Join us → https://matomo.org/jobs Matomo is the leading open-source alternative to Google Analytics, giving you complete control and built-in privacy. Easily collect, visualise, and analyse data from websites & apps. Star us on GitHub ⭐️  – Pull Requests welcome! "
     },
     {
-      "repo_id": "manual-matomo",
+      "repo_id": "github-com-matomo-org-matomo",
       "anomaly_type": "description_change",
       "message": "Description changed significantly (410.9% difference)",
       "old_value": "Web Analytics Tool - Open-source alternative to Google Analytics",
@@ -121,6 +135,13 @@
       "new_value": "archived"
     },
     {
+      "repo_id": "github-com-jplatte-cargo-depgraph",
+      "anomaly_type": "newly_archived",
+      "message": "Repository was archived since last sync",
+      "old_value": "active",
+      "new_value": "archived"
+    },
+    {
       "repo_id": "github-com-slatedocs-slate",
       "anomaly_type": "newly_archived",
       "message": "Repository was archived since last sync",
@@ -133,6 +154,13 @@
       "message": "Description changed significantly (249.0% difference)",
       "old_value": ":hibiscus: A next-generation plugin manager for zsh",
       "new_value": "A next-generation plugin manager for zsh — manage plugins, commands, and themes from GitHub, Bitbucket, oh-my-zsh, prezto, and more with parallel installation and lazy loading."
+    },
+    {
+      "repo_id": "github-com-RooCodeInc-Roo-Code",
+      "anomaly_type": "newly_archived",
+      "message": "Repository was archived since last sync",
+      "old_value": "active",
+      "new_value": "archived"
     },
     {
       "repo_id": "github-com-awslabs-aws-ddk",
@@ -149,7 +177,7 @@
       "new_value": "NocoBase is an open-source AI + no-code platform for building business systems fast. Instead of generating everything from scratch, AI works on top of production-proven infrastructure and a WYSIWYG no-code interface, so you get both speed and reliability."
     },
     {
-      "repo_id": "manual-nocobase",
+      "repo_id": "github-com-nocobase-nocobase",
       "anomaly_type": "description_change",
       "message": "Description changed significantly (589.2% difference)",
       "old_value": "No-Code/Low-Code Development Platform",
