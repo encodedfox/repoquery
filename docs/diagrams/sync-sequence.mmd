@@ -1,0 +1,60 @@
+---
+title: GitHub API Sync Sequence
+---
+sequenceDiagram
+    actor User
+    participant CLI
+    participant Orch as SyncOrchestrator
+    participant Cache as SyncCache
+    participant GitHub as GitHub API
+    participant Storage as repositories.yml
+    
+    User->>CLI: cargo run -- sync
+    CLI->>Orch: Initialize(config)
+    Orch->>Cache: Load cache entries
+    Cache-->>Orch: Existing cached data
+    
+    Orch->>Storage: Load repositories.yml
+    Storage-->>Orch: Current repository list (800+ repos)
+    
+    Orch->>Orch: Start progress bar
+    
+    loop For each repository
+        Orch->>Cache: Check if fresh (TTL < 24h)
+        
+        alt Cache HIT (fresh data)
+            Cache-->>Orch: Use cached, skip API call
+            Orch->>Orch: Increment cached counter
+        else Cache MISS or stale
+            Orch->>GitHub: GET /repos/:owner/:name<br/>(with auth token)
+            
+            alt 200 OK Success
+                GitHub-->>Orch: Repository metadata<br/>(stars, description, license, etc.)
+                Orch->>Orch: merge_sync_data()<br/>(preserve manual fields)
+                Orch->>Cache: Update cache entry<br/>(timestamp, ETag, stars)
+                Orch->>Orch: Increment synced counter
+            else 404 Not Found
+                GitHub-->>Orch: Repository not found
+                Orch->>Orch: Mark as deprecated<br/>Continue with others
+                Orch->>Orch: Increment failed counter
+            else 403 Rate Limit
+                GitHub-->>Orch: Rate limit exceeded
+                Orch->>Orch: Wait for reset<br/>Then retry
+            end
+            
+            Note over Orch,GitHub: Rate limit check<br/>every 100 repos
+        end
+        
+        Orch->>Orch: Update progress bar
+    end
+    
+    Orch->>Storage: Save updated repositories.yml<br/>(atomic write)
+    Orch->>Cache: Persist cache to disk
+    Orch->>Orch: Calculate sync statistics
+    
+    Orch->>CLI: Return SyncResult<br/>(synced, cached, failed, duration)
+    CLI->>User: Display summary:<br/>✅ X synced, ⚠️ Y cached, ❌ Z failed
+
+%% Last updated: 2025-12-11
+%% Shows the complete synchronization flow including caching, error handling, and rate limiting
+%% Note the preservation of manual curation fields during merge_sync_data()

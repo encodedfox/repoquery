@@ -1,0 +1,49 @@
+---
+title: Unidirectional Data Flow (No Circular Dependencies)
+---
+%%{init: {'theme':'base'}}%%
+flowchart LR
+    subgraph External["🔵 External Sources (Read-Only)"]
+        API[GitHub API<br/>Real-time metadata]
+        Sheets[Google Sheets<br/>Curated lists]
+        Jira[Jira Issues<br/>Project tracking]
+    end
+    
+    subgraph Canonical["🟡 Canonical Storage (Single Source of Truth)"]
+        Repos[(repositories.yml<br/>Synced data)]
+        Merged[(merged_data.yml<br/>Combined sources)]
+    end
+    
+    subgraph Generated["🟢 Generated Outputs (Read-Only)"]
+        LIST[LIST.md<br/>Bullet format]
+        TABLE[TABLE.md<br/>Table format]
+        ARCHIVE[ARCHIVE.md<br/>Archived repos]
+    end
+    
+    API ==>|sync| Repos
+    Sheets -.->|optional| Repos
+    Jira -.->|optional| Repos
+    
+    Repos ==>|load + merge| Merged
+    Merged ==>|validate| Merged
+    Merged ==>|generate| LIST
+    Merged ==>|generate| TABLE
+    Merged ==>|generate| ARCHIVE
+    
+    LIST -.x|NO FEEDBACK| Repos
+    TABLE -.x|NO FEEDBACK| Repos
+    ARCHIVE -.x|NO FEEDBACK| Repos
+    
+    style API fill:#2196f3,stroke:#1976d2,stroke-width:3px,color:#fff
+    style Sheets fill:#4caf50,stroke:#388e3c,stroke-width:2px,color:#fff
+    style Jira fill:#4caf50,stroke:#388e3c,stroke-width:2px,color:#fff
+    style Repos fill:#ff9800,stroke:#f57c00,stroke-width:3px,color:#000
+    style Merged fill:#ff9800,stroke:#f57c00,stroke-width:3px,color:#000
+    style LIST fill:#4caf50,stroke:#388e3c,stroke-width:3px,color:#fff
+    style TABLE fill:#4caf50,stroke:#388e3c,stroke-width:3px,color:#fff
+    style ARCHIVE fill:#4caf50,stroke:#388e3c,stroke-width:3px,color:#fff
+
+%% Last updated: 2025-12-11
+%% CRITICAL: This diagram emphasizes NO CIRCULAR DEPENDENCIES
+%% Data flows ONE WAY: External → Canonical → Generated
+%% Generated markdown files are NEVER read as input

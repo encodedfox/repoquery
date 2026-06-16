@@ -1,0 +1,82 @@
+---
+title: OmniDatum Component Architecture
+---
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#e1f5fe','secondaryColor':'#fff3e0','tertiaryColor':'#f3e5f5'}}}%%
+graph TB
+    subgraph CLI["CLI Layer (main.rs)"]
+        Main[main.rs<br/>CLI Entry Point<br/>Clap commands]
+    end
+    
+    subgraph NewSync["🆕 Sync Layer"]
+        SyncOrch[SyncOrchestrator<br/>Coordination logic]
+        GitHubAdapt[GitHubAdapter<br/>octocrab client]
+        CBAdapt[CodebergAdapter<br/>stub for future]
+        GLAdapt[GitLabAdapter<br/>stub for future]
+        SyncCache[SyncCache<br/>ETag + TTL]
+        Progress[ProgressTracker<br/>indicatif bars]
+    end
+    
+    subgraph NewConfig["🆕 Config Layer"]
+        ConfigMgr[ConfigManager<br/>TOML parsing]
+        CredMgr[CredentialManager<br/>env/file/keychain]
+    end
+    
+    subgraph Core["Existing: Core Processing"]
+        Parser[ListParser<br/>Markdown → YAML]
+        Merger[DataMerger<br/>Multi-source]
+        Validator[Validator<br/>8 rules]
+        Generator[MarkdownGenerator<br/>Tera templates]
+    end
+    
+    subgraph Models["Enhanced: Models"]
+        Repo[Repository<br/>Core model]
+        Platform[PlatformInfo<br/>Multi-platform]
+        Canon[CanonicalData<br/>Container]
+        SyncMeta[SyncMetadata<br/>🆕 Sync types]
+    end
+    
+    subgraph CrossRefs["Existing: Cross-References"]
+        Graph[CrossRefGraph<br/>PetGraph]
+        Nav[Navigator<br/>Bidirectional]
+    end
+    
+    Main --> SyncOrch
+    Main --> Parser
+    Main --> Merger
+    Main --> Validator
+    Main --> Generator
+    Main --> ConfigMgr
+    
+    SyncOrch --> GitHubAdapt
+    SyncOrch --> CBAdapt
+    SyncOrch --> GLAdapt
+    SyncOrch --> SyncCache
+    SyncOrch --> Progress
+    
+    GitHubAdapt --> CredMgr
+    ConfigMgr --> CredMgr
+    
+    SyncOrch --> Canon
+    Parser --> Canon
+    Merger --> Canon
+    Validator --> Canon
+    Generator --> Canon
+    
+    Canon --> Repo
+    Canon --> Platform
+    Canon --> SyncMeta
+    
+    Validator --> Graph
+    Generator --> Nav
+    
+    style SyncOrch fill:#e1f5fe,stroke:#0277bd,stroke-width:2px
+    style GitHubAdapt fill:#e1f5fe,stroke:#0277bd,stroke-width:2px
+    style ConfigMgr fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    style CredMgr fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    style Canon fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    style SyncMeta fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
+
+%% Last updated: 2025-12-11
+%% Shows module dependencies and data flow
+%% Legend: Blue=New Sync, Orange=New Config, Purple=Core Models, Green=New Types
+%% Existing modules (Parser, Merger, Generator, Validator, CrossRefs) preserved

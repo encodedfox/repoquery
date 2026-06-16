@@ -1,0 +1,2330 @@
+{
+  "timestamp": "2025-12-11T02:11:04.116502+00:00",
+  "summary": {
+    "errors": 0,
+    "warnings": 186,
+    "info": 24,
+    "total_repos": 839
+  },
+  "issues": [
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: yugabyte/yugabyte-db",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-yugabyte-yugabyte-db"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: drhsqlite/fossil-mirror",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-drhsqlite-fossil-mirror"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: dtrace4linux/linux",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-dtrace4linux-linux"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: RsyncProject/rsync",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-RsyncProject-rsync"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: zsh-users/zsh",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-zsh-users-zsh"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: dspinellis/dgsh",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-dspinellis-dgsh"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: ossec/ossec-hids",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-ossec-ossec-hids"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: wazuh/wazuh",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-wazuh-wazuh"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: void-linux/xbps",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-void-linux-xbps"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: facebook/zstd",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-facebook-zstd"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: redis/redis",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-redis-redis"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: kkos/oniguruma",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-kkos-oniguruma"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: bloomberg/comdb2",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-bloomberg-comdb2"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: radareorg/radare2",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-radareorg-radare2"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: freebsd/pkg",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-freebsd-pkg"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: wg/wrk",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-wg-wrk"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: ravendb/ravendb",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-ravendb-ravendb"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: kurrent-io/KurrentDB",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-kurrent-io-KurrentDB"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: rpm-software-management/rpm",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-rpm-software-management-rpm"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: draios/sysdig",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-draios-sysdig"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: o3de/o3de",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-o3de-o3de"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: pwsafe/pwsafe",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-pwsafe-pwsafe"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: rethinkdb/rethinkdb",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-rethinkdb-rethinkdb"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: upx/upx",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-upx-upx"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: Tw1ddle/geometrize",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-Tw1ddle-geometrize"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: zeek/zeek",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-zeek-zeek"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: osquery/osquery",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-osquery-osquery"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: mozilla/Fira",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-mozilla-Fira"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: ryanoasis/nerd-fonts",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-ryanoasis-nerd-fonts"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: walmartlabs/lacinia",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-walmartlabs-lacinia"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: technomancy/leiningen",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-technomancy-leiningen"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: athensresearch/athens",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-athensresearch-athens"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: jepsen-io/jepsen",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-jepsen-io-jepsen"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: adamtornhill/code-maat",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-adamtornhill-code-maat"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: awslabs/typecart",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-awslabs-typecart"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: julien040/anyquery",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-julien040-anyquery"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: tailwarden/komiser",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-tailwarden-komiser"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: sourcegraph/sourcegraph-public-snapshot",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-sourcegraph-sourcegraph-public-snapshot"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: peterhellberg/karta",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-peterhellberg-karta"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: bettercap/bettercap",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-bettercap-bettercap"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: mmarkdown/mmark",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-mmarkdown-mmark"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: 0x0f0f0f/tripbot9000",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-0x0f0f0f-tripbot9000"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: fyne-io/fyne",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-fyne-io-fyne"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: src-d/hercules",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-src-d-hercules"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: src-d/go-license-detector",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-src-d-go-license-detector"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: alexandrst88/terraform-variables-generator",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-alexandrst88-terraform-variables-generator"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: songgao/colorgo",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-songgao-colorgo"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: sanathp/statusok",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-sanathp-statusok"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: cr0hn/dockerscan",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-cr0hn-dockerscan"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: johnkerl/miller",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-johnkerl-miller"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: yields/phony",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-yields-phony"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: hashicorp/vault",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-hashicorp-vault"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: pelletier/go-toml",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-pelletier-go-toml"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: ddollar/forego",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-ddollar-forego"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: hashicorp/nomad",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-hashicorp-nomad"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: zachlatta/postman",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-zachlatta-postman"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: buger/goreplay",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-buger-goreplay"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: hashicorp/terraform",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-hashicorp-terraform"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: hashicorp/packer",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-hashicorp-packer"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: cockroachdb/cockroach",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-cockroachdb-cockroach"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: yccheok/jstock",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-yccheok-jstock"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: zubkov-andrei/pg_profile",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-zubkov-andrei-pg_profile"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: ConsenSysDiligence/smart-contract-best-practices",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-ConsenSysDiligence-smart-contract-best-practices"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: go101/go101",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-go101-go101"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: stephenhutchings/typicons.font",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-stephenhutchings-typicons-font"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: hasktorch/hasktorch",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-hasktorch-hasktorch"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: brendanhay/amazonka",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-brendanhay-amazonka"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: krispo/awesome-haskell",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-krispo-awesome-haskell"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: jekor/redo",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-jekor-redo"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: github/semantic",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-github-semantic"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: camunda/camunda",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-camunda-camunda"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: pingcap/benchmarksql",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-pingcap-benchmarksql"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: kiegroup/jbpm",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-kiegroup-jbpm"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: schemacrawler/SchemaCrawler",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-schemacrawler-SchemaCrawler"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: pmd/pmd",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-pmd-pmd"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: btraceio/btrace",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-btraceio-btrace"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: iluwatar/java-design-patterns",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-iluwatar-java-design-patterns"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: hazelcast/hazelcast",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-hazelcast-hazelcast"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: automatisch/automatisch",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-automatisch-automatisch"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: OptimalBits/bull",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-OptimalBits-bull"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: polonel/trudesk",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-polonel-trudesk"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: bigskysoftware/htmx",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-bigskysoftware-htmx"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: cidrblock/drawthe.net",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-cidrblock-drawthe-net"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: simalexan/battlecamp",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-simalexan-battlecamp"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: mewo2/naming-language",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-mewo2-naming-language"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: aws-neuron/aws-neuron-samples",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-aws-neuron-aws-neuron-samples"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: sardarosama/Stock-Market-Trend-Prediction-Using-Sentiment-Analysis",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-sardarosama-Stock-Market-Trend-Prediction-Using-Sentiment-Analysis"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: harsh14796/Stock-Market-Analysis-With-Python",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-harsh14796-Stock-Market-Analysis-With-Python"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: dDevTech/Stock-Market-Predictor",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-dDevTech-Stock-Market-Predictor"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: awesome-selfhosted/awesome-selfhosted-data",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-awesome-selfhosted-awesome-selfhosted-data"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: golang-standards/project-layout",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-golang-standards-project-layout"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: adr/madr",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-adr-madr"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: nim-lang/Nim",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-nim-lang-Nim"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: ocaml/opam",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-ocaml-opam"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: ocaml/ocaml",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-ocaml-ocaml"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: pimcore/pimcore",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-pimcore-pimcore"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: yugabyte/yb-voyager",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-yugabyte-yb-voyager"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: pgpartman/pg_partman",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-pgpartman-pg_partman"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: aws-neuron/aws-neuron-sdk",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-aws-neuron-aws-neuron-sdk"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: vishal815/-Stock-market-Prediction-with-Machine-Learning-Django",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-vishal815--Stock-market-Prediction-with-Machine-Learning-Django"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: rohitmore1012/StockStream",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-rohitmore1012-StockStream"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: mohabmes/DeepForecasting",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-mohabmes-DeepForecasting"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: arshpreet/Hedge-Fund-stock-market-analysis",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-arshpreet-Hedge-Fund-stock-market-analysis"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: OpenBB-finance/OpenBB",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-OpenBB-finance-OpenBB"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: odoo/odoo",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-odoo-odoo"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: SCLBD/DeepfakeBench",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-SCLBD-DeepfakeBench"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: Doriandarko/claude-engineer",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-Doriandarko-claude-engineer"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: uber/causalml",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-uber-causalml"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: DataDog/the-monitor",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-DataDog-the-monitor"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: larsenwork/monoid",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-larsenwork-monoid"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: aws/aws-cli",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-aws-aws-cli"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: nschloe/epicycler",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-nschloe-epicycler"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: donnemartin/interactive-coding-challenges",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-donnemartin-interactive-coding-challenges"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: OWASP/threat-model-cookbook",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-OWASP-threat-model-cookbook"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: donnemartin/system-design-primer",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-donnemartin-system-design-primer"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: aws/aws-graviton-getting-started",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-aws-aws-graviton-getting-started"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: floodsung/Deep-Learning-Papers-Reading-Roadmap",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-floodsung-Deep-Learning-Papers-Reading-Roadmap"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: spree/spree",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-spree-spree"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: redmine/redmine",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-redmine-redmine"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: alouche/dns-check",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-alouche-dns-check"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: inspec/inspec",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-inspec-inspec"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: robinvandernoord/uvenv",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-robinvandernoord-uvenv"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: graphql-rust/juniper",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-graphql-rust-juniper"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: pingcap/talent-plan",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-pingcap-talent-plan"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: matthiaskrgr/cargo-cache",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-matthiaskrgr-cargo-cache"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: XAMPPRocky/tokei",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-XAMPPRocky-tokei"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: darakian/ddh",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-darakian-ddh"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: akka/akka-core",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-akka-akka-core"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: Am0rphous/Awesome",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-Am0rphous-Awesome"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: source-foundry/Hack",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-source-foundry-Hack"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: indestructible-type/Jost",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-indestructible-type-Jost"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: larsenwork/Gidole",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-larsenwork-Gidole"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: CircleCI-Archived/CircleCI-Training-Koans",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-CircleCI-Archived-CircleCI-Training-Koans"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: ComplianceAsCode/content",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-ComplianceAsCode-content"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: agenda/agenda",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-agenda-agenda"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: RocketChat/Rocket.Chat",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-RocketChat-Rocket-Chat"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: bluesky-social/atproto",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-bluesky-social-atproto"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: pditommaso/awesome-pipeline",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-pditommaso-awesome-pipeline"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: awesome-foss/awesome-sysadmin",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-awesome-foss-awesome-sysadmin"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: enescingoz/roo-advanced-memory-bank",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-enescingoz-roo-advanced-memory-bank"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: jxzhangjhu/Awesome-LLM-Prompt-Optimization",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-jxzhangjhu-Awesome-LLM-Prompt-Optimization"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: taichengguo/LLM_MultiAgents_Survey_Papers",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-taichengguo-LLM_MultiAgents_Survey_Papers"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: CircleCI-Public/circleci-demo-workflows",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-CircleCI-Public-circleci-demo-workflows"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: langgptai/awesome-claude-prompts",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-langgptai-awesome-claude-prompts"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: hemanth/awesome-pwa",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-hemanth-awesome-pwa"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: macstadium/orka-desktop",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-macstadium-orka-desktop"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: libsql/sqld",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-libsql-sqld"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: uhub/awesome-erlang",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-uhub-awesome-erlang"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: theanalyst/awesome-distributed-systems",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-theanalyst-awesome-distributed-systems"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: heidihoward/distributed-consensus-reading-list",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-heidihoward-distributed-consensus-reading-list"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: dgryski/awesome-consensus",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-dgryski-awesome-consensus"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: Developer-Y/cs-video-courses",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-Developer-Y-cs-video-courses"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: danluu/post-mortems",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-danluu-post-mortems"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: ossu/data-science",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-ossu-data-science"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: joelparkerhenderson/architecture-decision-record",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-joelparkerhenderson-architecture-decision-record"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: hycomsa/hycom-c4",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-hycomsa-hycom-c4"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: pingcap/awesome-database-learning",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-pingcap-awesome-database-learning"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: bbatsov/clojure-style-guide",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-bbatsov-clojure-style-guide"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: flosse/rust-sun",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-flosse-rust-sun"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: akullpp/awesome-java",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-akullpp-awesome-java"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: DovAmir/awesome-design-patterns",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-DovAmir-awesome-design-patterns"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: ukncsc/secure-development-and-deployment",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-ukncsc-secure-development-and-deployment"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: atinfo/awesome-test-automation",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-atinfo-awesome-test-automation"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: cjbarber/ToolsOfTheTrade",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-cjbarber-ToolsOfTheTrade"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: lucasviola/awesome-functional-programming",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-lucasviola-awesome-functional-programming"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: sobolevn/awesome-cryptography",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-sobolevn-awesome-cryptography"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: kahun/awesome-sysadmin",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-kahun-awesome-sysadmin"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: microsoft/api-guidelines",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-microsoft-api-guidelines"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: nuprl/10PL",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-nuprl-10PL"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: usnistgov/oscal-content",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-usnistgov-oscal-content"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: usnistgov/OSCAL",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-usnistgov-OSCAL"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingLicense",
+      "severity": "warning",
+      "message": "Repository missing license: oven-sh/bun",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-oven-sh-bun"
+      },
+      "suggestion": "Add license information or mark as unlicensed",
+      "auto_fixable": false
+    },
+    {
+      "code": "BrokenCrossRef",
+      "severity": "warning",
+      "message": "Web reference links to non-existent repo: gin-gonic/gin",
+      "location": {
+        "file": "web_references.yml",
+        "section": "martinfowler-poeaa-catalog"
+      },
+      "suggestion": "Add repo gin-gonic/gin to starred list or remove from related_repos",
+      "auto_fixable": false
+    },
+    {
+      "code": "BrokenCrossRef",
+      "severity": "warning",
+      "message": "Book links to non-existent repo: k1LoW/ndiag",
+      "location": {
+        "file": "books.yml",
+        "section": "bass-designing-software-architectures"
+      },
+      "suggestion": "Add repo k1LoW/ndiag to starred list or remove from related_repos",
+      "auto_fixable": false
+    },
+    {
+      "code": "BrokenCrossRef",
+      "severity": "warning",
+      "message": "Book links to non-existent repo: k1LoW/ndiag",
+      "location": {
+        "file": "books.yml",
+        "section": "clements-documenting-software-architectures"
+      },
+      "suggestion": "Add repo k1LoW/ndiag to starred list or remove from related_repos",
+      "auto_fixable": false
+    },
+    {
+      "code": "BrokenCrossRef",
+      "severity": "warning",
+      "message": "Book links to non-existent repo: apache/kafka",
+      "location": {
+        "file": "books.yml",
+        "section": "kleppmann-designing-data-intensive-applications"
+      },
+      "suggestion": "Add repo apache/kafka to starred list or remove from related_repos",
+      "auto_fixable": false
+    },
+    {
+      "code": "BrokenCrossRef",
+      "severity": "warning",
+      "message": "Book links to non-existent repo: etcd-io/etcd",
+      "location": {
+        "file": "books.yml",
+        "section": "kleppmann-designing-data-intensive-applications"
+      },
+      "suggestion": "Add repo etcd-io/etcd to starred list or remove from related_repos",
+      "auto_fixable": false
+    },
+    {
+      "code": "BrokenCrossRef",
+      "severity": "warning",
+      "message": "Book links to non-existent repo: gin-gonic/gin",
+      "location": {
+        "file": "books.yml",
+        "section": "donovan-go-programming-language"
+      },
+      "suggestion": "Add repo gin-gonic/gin to starred list or remove from related_repos",
+      "auto_fixable": false
+    },
+    {
+      "code": "BrokenCrossRef",
+      "severity": "warning",
+      "message": "Book links to non-existent repo: goreleaser/goreleaser",
+      "location": {
+        "file": "books.yml",
+        "section": "donovan-go-programming-language"
+      },
+      "suggestion": "Add repo goreleaser/goreleaser to starred list or remove from related_repos",
+      "auto_fixable": false
+    },
+    {
+      "code": "BrokenCrossRef",
+      "severity": "warning",
+      "message": "Book links to non-existent repo: docker/compose",
+      "location": {
+        "file": "books.yml",
+        "section": "donovan-go-programming-language"
+      },
+      "suggestion": "Add repo docker/compose to starred list or remove from related_repos",
+      "auto_fixable": false
+    },
+    {
+      "code": "BrokenCrossRef",
+      "severity": "warning",
+      "message": "Book links to non-existent repo: grafana/grafana",
+      "location": {
+        "file": "books.yml",
+        "section": "google-sre-book"
+      },
+      "suggestion": "Add repo grafana/grafana to starred list or remove from related_repos",
+      "auto_fixable": false
+    },
+    {
+      "code": "PlatformMismatch",
+      "severity": "warning",
+      "message": "Repository mentions migration but only has one platform: technomancy/leiningen",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-technomancy-leiningen"
+      },
+      "suggestion": "Add secondary platform URL or update description",
+      "auto_fixable": false
+    },
+    {
+      "code": "PlatformMismatch",
+      "severity": "warning",
+      "message": "Repository mentions migration but only has one platform: janikvonrotz/awesome-powershell",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-janikvonrotz-awesome-powershell"
+      },
+      "suggestion": "Add secondary platform URL or update description",
+      "auto_fixable": false
+    },
+    {
+      "code": "PlatformMismatch",
+      "severity": "warning",
+      "message": "Repository mentions migration but only has one platform: hyperledger-archives/grid",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-hyperledger-archives-grid"
+      },
+      "suggestion": "Add secondary platform URL or update description",
+      "auto_fixable": false
+    },
+    {
+      "code": "PlatformMismatch",
+      "severity": "warning",
+      "message": "Repository mentions migration but only has one platform: hyperledger-archives/ursa",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-hyperledger-archives-ursa"
+      },
+      "suggestion": "Add secondary platform URL or update description",
+      "auto_fixable": false
+    },
+    {
+      "code": "PlatformMismatch",
+      "severity": "warning",
+      "message": "Repository mentions migration but only has one platform: ziglang/zig",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-ziglang-zig"
+      },
+      "suggestion": "Add secondary platform URL or update description",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingMetadata",
+      "severity": "info",
+      "message": "Repository has empty description: indeedeng/fibtest",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-indeedeng-fibtest"
+      },
+      "suggestion": "Add description from GitHub",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingMetadata",
+      "severity": "info",
+      "message": "Repository has empty description: awslabs/typecart",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-awslabs-typecart"
+      },
+      "suggestion": "Add description from GitHub",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingMetadata",
+      "severity": "info",
+      "message": "Repository has empty description: hyperliquid-dex/node",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-hyperliquid-dex-node"
+      },
+      "suggestion": "Add description from GitHub",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingMetadata",
+      "severity": "info",
+      "message": "Repository has empty description: pingcap/ng-monitoring",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-pingcap-ng-monitoring"
+      },
+      "suggestion": "Add description from GitHub",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingMetadata",
+      "severity": "info",
+      "message": "Repository missing owner: ndiag",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-k1LoW-ndiag"
+      },
+      "suggestion": "Extract owner from full_name",
+      "auto_fixable": true
+    },
+    {
+      "code": "MissingMetadata",
+      "severity": "info",
+      "message": "Repository missing owner: goreleaser",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-goreleaser-goreleaser"
+      },
+      "suggestion": "Extract owner from full_name",
+      "auto_fixable": true
+    },
+    {
+      "code": "MissingMetadata",
+      "severity": "info",
+      "message": "Repository has empty description: hyperledger/fabric-sdk-go",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-hyperledger-fabric-sdk-go"
+      },
+      "suggestion": "Add description from GitHub",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingMetadata",
+      "severity": "info",
+      "message": "Repository missing owner: gin",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-gin-gonic-gin"
+      },
+      "suggestion": "Extract owner from full_name",
+      "auto_fixable": true
+    },
+    {
+      "code": "MissingMetadata",
+      "severity": "info",
+      "message": "Repository has empty description: software-2/NoHere",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-software-2-NoHere"
+      },
+      "suggestion": "Add description from GitHub",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingMetadata",
+      "severity": "info",
+      "message": "Repository has empty description: aws-samples/amazon-nova-samples",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-aws-samples-amazon-nova-samples"
+      },
+      "suggestion": "Add description from GitHub",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingMetadata",
+      "severity": "info",
+      "message": "Repository has empty description: aws-samples/AI21-on-AWS",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-aws-samples-AI21-on-AWS"
+      },
+      "suggestion": "Add description from GitHub",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingMetadata",
+      "severity": "info",
+      "message": "Repository has empty description: timoyo93/common-api-benchmarks",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-timoyo93-common-api-benchmarks"
+      },
+      "suggestion": "Add description from GitHub",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingMetadata",
+      "severity": "info",
+      "message": "Repository has empty description: aws-neuron/neuronx-distributed",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-aws-neuron-neuronx-distributed"
+      },
+      "suggestion": "Add description from GitHub",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingMetadata",
+      "severity": "info",
+      "message": "Repository has empty description: aws-neuron/neuronx-distributed-training",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-aws-neuron-neuronx-distributed-training"
+      },
+      "suggestion": "Add description from GitHub",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingMetadata",
+      "severity": "info",
+      "message": "Repository has empty description: aws-neuron/nki-samples",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-aws-neuron-nki-samples"
+      },
+      "suggestion": "Add description from GitHub",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingMetadata",
+      "severity": "info",
+      "message": "Repository has empty description: aws-neuron/aws-neuron-eks-samples",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-aws-neuron-aws-neuron-eks-samples"
+      },
+      "suggestion": "Add description from GitHub",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingMetadata",
+      "severity": "info",
+      "message": "Repository has empty description: deepseek-ai/DeepSeek-V3",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-deepseek-ai-DeepSeek-V3"
+      },
+      "suggestion": "Add description from GitHub",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingMetadata",
+      "severity": "info",
+      "message": "Repository has empty description: langchain-ai/executive-ai-assistant",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-langchain-ai-executive-ai-assistant"
+      },
+      "suggestion": "Add description from GitHub",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingMetadata",
+      "severity": "info",
+      "message": "Repository has empty description: aws-samples/aws-nuke-account-cleanser-example",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-aws-samples-aws-nuke-account-cleanser-example"
+      },
+      "suggestion": "Add description from GitHub",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingMetadata",
+      "severity": "info",
+      "message": "Repository has empty description: seigenbrode/mlops-sagemaker-jenkins-byo",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-seigenbrode-mlops-sagemaker-jenkins-byo"
+      },
+      "suggestion": "Add description from GitHub",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingMetadata",
+      "severity": "info",
+      "message": "Repository has empty description: aws-samples/amazon-documentdb-samples",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-aws-samples-amazon-documentdb-samples"
+      },
+      "suggestion": "Add description from GitHub",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingMetadata",
+      "severity": "info",
+      "message": "Repository has empty description: awslabs/cdk-serverless-clamscan",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-awslabs-cdk-serverless-clamscan"
+      },
+      "suggestion": "Add description from GitHub",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingMetadata",
+      "severity": "info",
+      "message": "Repository has empty description: cdaniel/faciliator-pack",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-cdaniel-faciliator-pack"
+      },
+      "suggestion": "Add description from GitHub",
+      "auto_fixable": false
+    },
+    {
+      "code": "MissingMetadata",
+      "severity": "info",
+      "message": "Repository has empty description: deepseek-ai/DeepSeek-R1",
+      "location": {
+        "file": "repositories.yml",
+        "section": "github-com-deepseek-ai-DeepSeek-R1"
+      },
+      "suggestion": "Add description from GitHub",
+      "auto_fixable": false
+    }
+  ],
+  "metrics": {
+    "repos_by_platform": {
+      "GitHub": 839
+    },
+    "archived_count": 48,
+    "missing_licenses": 184,
+    "stale_references": 0,
+    "migration_count": 0
+  }
+}

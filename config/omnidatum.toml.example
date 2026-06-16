@@ -1,0 +1,130 @@
+# OmniDatum Configuration Example
+# Copy to ~/.config/omnidatum/config.toml and customize
+
+# Sync Configuration
+[sync]
+# Enable automatic synchronization
+enabled = false
+
+# Sync interval in hours (for scheduled tasks)
+interval_hours = 24
+
+# Number of parallel workers for concurrent syncing (1-10)
+# Higher values = faster sync but more API usage
+parallel_workers = 3
+
+# Cache time-to-live in hours (1-168)
+# How long to consider cached data fresh before re-syncing
+cache_ttl_hours = 24
+
+# Rate limit buffer (0-1000)
+# Stop syncing when this many API requests remain
+# Higher = safer, lower = more repos per sync
+rate_limit_buffer = 500
+
+# Request timeout in seconds
+request_timeout_secs = 30
+
+# Credential Configuration
+[credentials]
+# Credential source: "Env", "File", or "Keychain"
+source = "File"
+
+# File path for file-based credentials
+# Default: ~/.config/omnidatum/credentials
+file_path = "~/.config/omnidatum/credentials"
+
+# Validation Configuration
+[validation]
+# Enabled validation rules (E001-E008)
+rules = [
+    "E001",  # No duplicate repos
+    "E002",  # Missing license
+    "E003",  # Valid URLs
+    "E004",  # Cross-reference integrity
+    "E005",  # Platform migration
+    "E006",  # Missing metadata
+    "E007",  # External data consistency
+    "E008",  # Duplicate repository names
+]
+
+# Generation Configuration
+[generation]
+# Include archived repositories in separate files
+include_archived = true
+
+# Include platform information in outputs
+platform_info = false
+
+# Statistics detail level: "Minimal", "Standard", or "Detailed"
+stats_detail_level = "Standard"
+
+# ===================================================================
+# Common Configuration Scenarios
+# ===================================================================
+
+# --- Development Environment ---
+# Fast iteration with minimal caching
+# [sync]
+# cache_ttl_hours = 1
+# rate_limit_buffer = 100
+# parallel_workers = 1
+
+# --- Production Environment ---
+# Conservative settings for reliability
+# [sync]
+# cache_ttl_hours = 48
+# rate_limit_buffer = 1000
+# parallel_workers = 3
+
+# --- CI/CD Environment ---
+# Force fresh data on each run
+# [sync]
+# cache_ttl_hours = 0  # No caching in CI
+# rate_limit_buffer = 500
+# parallel_workers = 5
+
+# --- High-Volume Syncing ---
+# For large repository collections
+# [sync]
+# parallel_workers = 5
+# cache_ttl_hours = 72
+# rate_limit_buffer = 500
+
+# ===================================================================
+# Security Notes
+# ===================================================================
+
+# Credential Sources:
+# 
+# 1. Environment Variable (least secure for production):
+#    export GITHUB_TOKEN="your_token_here"
+#    source = "Env"
+#
+# 2. File (good for local development):
+#    Store in ~/.config/omnidatum/credentials (0600 permissions)
+#    source = "File"
+#
+# 3. OS Keychain (most secure):
+#    macOS: security add-generic-password -a omnidatum -s github_token -w "token"
+#    Linux: secret-tool store --label="OmniDatum" service omnidatum username github
+#    source = "Keychain"
+
+# ===================================================================
+# Performance Tuning
+# ===================================================================
+
+# For Faster Syncs:
+# - Increase parallel_workers (up to 10)
+# - Increase cache_ttl_hours (reduce API calls)
+# - Use selective sync (--repos flag)
+
+# For API Rate Limit Conservation:
+# - Increase rate_limit_buffer
+# - Increase cache_ttl_hours
+# - Decrease parallel_workers
+
+# For Maximum Freshness:
+# - Decrease cache_ttl_hours
+# - Use --force flag occasionally
+# - Monitor with status command

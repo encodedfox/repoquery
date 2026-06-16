@@ -1,0 +1,183 @@
+schema_version: "1.0"
+last_updated: "2025-12-10T22:40:00+00:00"
+generated_by: "omnidatum-processor/manual"
+total_count: 10
+
+repositories: []
+
+manual_projects:
+  # Projects already in starred lists (cross-referenced)
+  - id: "github-com-k1LoW-ndiag"
+    name: "ndiag"
+    description: "High-level architecture diagramming/documentation tool"
+    platforms:
+      - platform: "github"
+        url: "https://github.com/k1LoW/ndiag"
+        status: "active"
+        is_primary: true
+    metadata:
+      primary_language: "Go"
+      license: "MIT License"
+      stars: 189
+    classification:
+      categories: ["architecture", "documentation", "diagramming"]
+      readme_sections: ["GitHub Projects"]
+    source: "starred"  # Already in starred lists
+    curator_notes: "Highlighted in README for architectural significance"
+
+  - id: "github-com-goreleaser-goreleaser"
+    name: "goreleaser"
+    description: "Release engineering, simplified"
+    platforms:
+      - platform: "github"
+        url: "https://github.com/goreleaser/goreleaser"
+        status: "active"
+        is_primary: true
+    metadata:
+      primary_language: "Go"
+      license: "MIT License"
+      stars: 15333
+    classification:
+      categories: ["release-engineering", "automation", "ci-cd"]
+      readme_sections: ["GitHub Projects"]
+    source: "starred"
+    curator_notes: "Highlighted in README for release automation significance"
+
+  - id: "github-com-gin-gonic-gin"
+    name: "gin"
+    description: "High-performance HTTP web framework for Go"
+    platforms:
+      - platform: "github"
+        url: "https://github.com/gin-gonic/gin"
+        status: "active"
+        is_primary: true
+    metadata:
+      primary_language: "Go"
+      license: "MIT License"
+      stars: 87313
+    classification:
+      categories: ["web-framework", "http", "api"]
+      readme_sections: ["GitHub Projects"]
+    source: "starred"
+    curator_notes: "Highlighted in README as major web framework"
+
+  # Manual additions not in starred lists (need research/verification)
+  - id: "manual-nocobase"
+    name: "NocoBase"
+    description: "No-Code/Low-Code Development Platform"
+    platforms:
+      - platform: "github"
+        url: "https://github.com/nocobase/nocobase"
+        status: "active"
+        is_primary: true
+    metadata:
+      primary_language: "TypeScript"
+      license: "Apache License 2.0"
+      stars: null  # TBD - needs GitHub API lookup
+    classification:
+      categories: ["low-code", "no-code", "development-platform"]
+      readme_sections: ["GitHub Projects"]
+    source: "manual"
+    curator_notes: "Self-hosted alternative to Airtable/AppSmith. Strategic platform for low-code development."
+
+  - id: "manual-matomo"
+    name: "Matomo"
+    description: "Web Analytics Tool - Open-source alternative to Google Analytics"
+    platforms:
+      - platform: "github"
+        url: "https://github.com/matomo-org/matomo"
+        status: "active"
+        is_primary: true
+    metadata:
+      primary_language: "PHP"
+      license: "GPL-3.0"
+      stars: null  # TBD
+    classification:
+      categories: ["analytics", "web-analytics", "self-hosted"]
+      readme_sections: ["GitHub Projects"]
+    source: "manual"
+    curator_notes: "Leading open-source web analytics platform. Privacy-focused alternative to commercial solutions."
+
+  - id: "manual-nextcloud"
+    name: "Nextcloud"
+    description: "File Sharing and Collaboration Platform"
+    platforms:
+      - platform: "github"
+        url: "https://github.com/nextcloud/server"
+        status: "active"
+        is_primary: true
+    metadata:
+      primary_language: "PHP"
+      license: "AGPL-3.0"
+      stars: null  # TBD
+    classification:
+      categories: ["file-sharing", "collaboration", "self-hosted", "cloud"]
+      readme_sections: ["GitHub Projects"]
+    source: "manual"
+    curator_notes: "Enterprise-grade self-hosted file sync and collaboration platform. Dropbox/Google Drive alternative."
+
+  - id: "manual-bitwarden"
+    name: "Bitwarden"
+    description: "Password Management - Official server implementation"
+    platforms:
+      - platform: "github"
+        url: "https://github.com/bitwarden/server"
+        status: "active"
+        is_primary: true
+    metadata:
+      primary_language: "C#"
+      license: "GPL-3.0"
+      stars: null  # TBD
+    classification:
+      categories: ["password-management", "security", "self-hosted"]
+      readme_sections: ["GitHub Projects"]
+    source: "manual"
+    curator_notes: "Official Bitwarden server. See also vaultwarden (Rust impl) in starred lists."
+
+  - id: "manual-ghost"
+    name: "Ghost"
+    description: "Content Management System - Modern publishing platform"
+    platforms:
+      - platform: "github"
+        url: "https://github.com/TryGhost/Ghost"
+        status: "active"
+        is_primary: true
+    metadata:
+      primary_language: "JavaScript"
+      license: "MIT License"
+      stars: null  # TBD
+    classification:
+      categories: ["cms", "publishing", "blogging", "self-hosted"]
+      readme_sections: ["GitHub Projects"]
+    source: "manual"
+    curator_notes: "Professional publishing platform. Focus on simplicity and performance."
+
+  # External platform project
+  - id: "codeberg-org-forgejo-forgejo"
+    name: "Forgejo"
+    description: "Codeberg-hosted Git forge - Community-driven software forge"
+    platforms:
+      - platform: "codeberg"
+        url: "https://codeberg.org/forgejo/forgejo"
+        status: "active"
+        is_primary: true
+    metadata:
+      primary_language: "Go"
+      license: "MIT License"
+      stars: null  # Not applicable for Codeberg
+    classification:
+      categories: ["git-forge", "version-control", "collaboration", "codeberg"]
+      readme_sections: ["GitHub Projects", "External Projects (Codeberg)"]
+    source: "manual"
+    curator_notes: "Example of Codeberg-hosted project. Community fork of Gitea focused on federation."
+
+# Research notes:
+# - NocoBase: Verified at github.com/nocobase/nocobase, active development
+# - Matomo: Verified at github.com/matomo-org/matomo, major project
+# - Nextcloud: Verified at github.com/nextcloud/server, enterprise-grade
+# - Bitwarden: Official server at github.com/bitwarden/server
+# - Ghost: Verified at github.com/TryGhost/Ghost, popular CMS
+# - Forgejo: Codeberg exclusive, fork of Gitea
+#
+# All URLs verified as of 2025-12-10
+# Star counts should be fetched via GitHub API for accuracy

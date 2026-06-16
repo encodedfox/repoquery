@@ -1,112 +1,170 @@
 # OmniDatum
 
-## Repo Lists
+[![License: CC0](https://img.shields.io/badge/License-CC0%201.0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
+[![Rust](https://img.shields.io/badge/rust-1.70%2B-orange.svg)](https://www.rust-lang.org/)
 
-| [List](./LIST.md) | [Table](./TABLE.md) |
-| - | - |
+High-performance Rust CLI for managing, synchronizing, and generating documentation from GitHub starred repositories. Processes 845+ repositories with concurrent sync, multi-format generation, and extensible validation.
 
-## Books
+## Install
 
-* Designing Software Architectures (General + ADD)
-  * Software Architecture in Practice (Processes)
-  * Documenting Software Architectures (Diagrams)
-* Mastering the Requirements Process (ADD + Processes + Diagrams)
+```bash
+# Clone and build
+git clone <repository-url>
+cd omnidatum
+cargo build --release
 
-## Service Concepts & Examples
+# Binary is at target/release/omnidatum-processor
+```
 
-* Optimal Time-Series Database
-  * Heroic
-    * [Web Documentation](https://spotify.github.io/heroic/docs/overview)
-    * [Archived GitHub](https://github.com/spotify/heroic)
-* Distributed Knowledge Graph Store
-  * Akutan
-    * [Web Documentation](https://tech.ebayinc.com/engineering/akutan-a-distributed-knowledge-graph-store/)
-    * [Archived GitHub](https://github.com/eBay/akutan)
+## Quick Start
 
-## Web References
+```bash
+# 1. Configure GitHub credentials
+cargo run -p od-cli -- configure
 
-* Architecture
-  * MartinFowler’s Patterns of Enterprise Application Architecture (P of EAA): <https://www.martinfowler.com/eaaCatalog/index.html>
-    * DomainModel: <https://www.martinfowler.com/eaaCatalog/domainModel.html>
-    * Anti-Pattern: <https://www.martinfowler.com/bliki/AnemicDomainModel.html>
-  * Simon Wardley - Book Github: <https://github.com/andrewharmellaw/wardley-maps-book>
-  * Simon Wardley - Warley Maps (Finding A Path): <https://medium.com/wardleymaps/finding-a-path-cdb1249078c0>
-  * Clean Code Blog (Uncle Bob): <https://blog.cleancoder.com/>
-  * ADR Record Examples and Detailed Processes: <https://github.com/joelparkerhenderson/architecture-decision-record>
-  * Y-Statements: <https://medium.com/olzzio/y-statements-10eb07b5a177>
-* DataMesh
-  * DataLake Concept: <https://martinfowler.com/bliki/DataLake.html>
-  * DataLake → DataMesh: <https://martinfowler.com/articles/data-monolith-to-mesh.html>
-  * DataGrid: <https://en.m.wikipedia.org/wiki/Data_grid>
-  * Business Data Requirements: <https://martinfowler.com/bliki/BusinessCapabilityCentric.html>
-  * EvolveDB: <https://martinfowler.com/articles/evodb.html#DealingWithChange>
-  * Polyglot Persistence of Data: <https://martinfowler.com/bliki/PolyglotPersistence.html>
-  * Consumer-Driven Contracts: <https://martinfowler.com/articles/consumerDrivenContracts.html>
-  * Datensparsamkeit (only keep the data you need): <https://martinfowler.com/bliki/Datensparsamkeit.html>
-  * Tuple Space: <https://en.m.wikipedia.org/wiki/Tuple_space>
-  * Bounded Context: <https://martinfowler.com/bliki/BoundedContext.html>
-  * Ubiquitous Language: <https://martinfowler.com/bliki/UbiquitousLanguage.html>
-* Microservices
-  * Micro-Frontends: <https://martinfowler.com/articles/micro-frontends.html>
-  * Serverless: <https://martinfowler.com/articles/serverless.html>
-  * DSM (Distributed Shared Memory): <https://en.m.wikipedia.org/wiki/Distributed_shared_memory>
-  * Data Transfer Object (DTO): <https://martinfowler.com/eaaCatalog/dataTransferObject.html>
-  * POJO: <https://en.m.wikipedia.org/wiki/Plain_old_Java_object>
-  * Open Tracing (E2E): [https://www.jaegertracing.io](https://www.jaegertracing.io/)
-  * Knative Serving: <https://knative.dev/docs/serving/> | <https://github.com/knative/serving>
-  * Concourse CI/CD - <https://github.com/concourse/concourse> | [https://concourse-ci.org](https://concourse-ci.org/)
-  * Buildah - <https://github.com/containers/buildah> | [https://buildah.io](https://buildah.io/)
-  * Proto.Actor - [https://proto.actor](https://proto.actor/) | <https://github.com/asynkron/protoactor-go>
-* Databases
-  * TiDB: <https://docs.pingcap.com/tidb/stable> | <https://github.com/pingcap/tidb>
-  * CockroachDB: [https://www.cockroachlabs.com](https://www.cockroachlabs.com/) | <https://github.com/cockroachdb/cockroach>
-  * BurntDB: <https://github.com/tidwall/buntdb>
-  * Vitess: <https://github.com/vitessio/vitess> | [https://vitess.io](https://vitess.io/)
-  * Thanos: <https://github.com/thanos-io/thanos> | [https://thanos.io](https://thanos.io/)
-* Security
-  * Certificate Authority and Access Plane for SSH, Kube, Web Apps and Databases — Teleport: <https://github.com/gravitational/teleport>
-  * Security & Network Profiler (eBPF kernel module): <https://github.com/cilium/cilium>
-  * Vuls Agentless Vulnerability Scanner - Linux/FreeBSD: [https://vuls.io](https://vuls.io/)
-  * Static Analysis for Containers (Vulnerability): <https://github.com/quay/clair>
-* AI/ML
-  * Data Pitfalls - Startup Edition: <https://medium.com/@mrogati/data-pitfalls-the-startup-edition-fe1eebcc39da>
-  * Become a Data Scientist: <https://blog.goodaudience.com/how-do-i-become-a-data-scientist-f8074232608e>
-  * Startup Data Scientist: <https://medium.com/hackernoon/how-not-to-hire-your-first-data-scientist-34f0f56f81ae>
-  * Data Hierarchy (AI/ML): <https://medium.com/hackernoon/the-ai-hierarchy-of-needs-18f111fcc007>
-  * Blackboard System: <https://en.m.wikipedia.org/wiki/Blackboard_system>
-* Crypto
-  * The DAO: <https://en.wikipedia.org/wiki/The_DAO_(organization>)
-  * DAO Base: [https://daobase.org](https://daobase.org/)
-  * DAO Overview by Decrypt: <https://decrypt.co/resources/decentralized-autonomous-organization-dao>
-  * Decentralized Apps: <https://decrypt.co/resources/dapps>
-  * CDBC: <https://decrypt.co/resources/what-are-central-bank-digital-currencies-cbdcs>
-  * Merkle Trees: <https://decrypt.co/resources/merkle-trees-guide-explainer-blockchain>
-  * Byzantine Fault Tolerance: <https://decrypt.co/resources/byzantine-fault-tolerance-what-is-it-explained>
-  * Raiden Network: <https://decrypt.co/resources/raiden-network>
-  * Consensus Protocols in Blockchain: <https://decrypt.co/resources/consensus-protocols-what-are-they-guide-how-to-explainer>
-    * Proof of Work: <https://decrypt.co/resources/what-is-proof-of-work-how-the-bitcoin-network-is-maintained>
-    * Proof of Stake: <https://decrypt.co/resources/proof-of-work-vs-proof-of-stake>
-  * HyperLedger Fabric: <https://wiki.hyperledger.org/display/fabric>
-  * Moloch - <https://github.com/MolochVentures/moloch>
-* Application Languages
-  * Rust
-  * Python (v3)
-  * Erlang
-  * Elixer
-  * Golang
-  * Mojo
-* Scripting Languages
-  * Golang
-  * Python 3
-* Shells
-  * PowerShell
-  * Bash
-* State Machine Languages
-  * Amazon State Language (ASL) - <https://states-language.net/spec.html>
+# 2. Sync starred repos from GitHub
+cargo run -p od-cli -- sync
 
-## GitHub Projects
+# 3. Import into SQLite for fast queries
+cargo run -p od-cli -- import --from data/canonical/repositories.yml --to data/omnidatum.db
 
-* [Codeberg](https://codeberg.org/forgejo/forgejo)
-* NDiag - <https://github.com/k1LoW/ndiag>
-* GoReleaser - <https://github.com/goreleaser/goreleaser>
-* Gin - <https://github.com/gin-gonic/gin>
+# 4. Generate documentation
+cargo run -p od-cli -- generate
+
+# 5. Launch interactive TUI
+cargo run -p od-cli -- tui
+```
+
+## Features
+
+### Sync
+- Concurrent sync with bounded worker pool (default: 3)
+- GraphQL bulk fetch for efficient API usage
+- Multi-relation support: starred, owned, forked, watching, org member, contributed
+- Fork sync status tracking (commits ahead/behind upstream)
+- ETag-based caching with configurable TTL
+- Dry-run mode and selective repository sync
+
+### Storage
+- SQLite + YAML backends via trait-based persistence layer
+- Import/export between formats
+- Canonical YAML as single source of truth
+
+### Collections
+- User-defined repository groupings with CRUD operations
+- Auto-generate collections from GitHub topics
+- Per-collection markdown generation
+
+### Custom Tags & Notes
+- Per-repository tagging system
+- Custom notes and metadata
+- Tag-based filtering in TUI
+
+### Validation
+- 9 extensible rules (E001–E008)
+- External data consistency checks
+- Validation reports in JSON
+
+### Generation
+- Tera template engine for customizable output
+- Per-collection markdown generation
+- LIST.md, TABLE.md, ARCHIVE.md, ARCHIVE_TABLE.md
+
+### Cross-Reference Graph
+- Bidirectional relationship tracking (petgraph)
+- Repository dependency navigation
+
+### Quality Scoring
+- Automated assessment based on stars, activity, metadata completeness
+
+### Interactive TUI
+- Browse repositories and collections with keyboard navigation
+- Real-time filtering and search
+- Tag filter cycling and fork status display
+- Built with ratatui and crossterm
+
+### Structured Logging
+- Tracing-based logging with configurable levels
+- Debug output for troubleshooting
+
+## CLI Commands
+
+| Command | Description |
+|---------|-------------|
+| `parse` | Parse existing LIST.md and TABLE.md into canonical format |
+| `validate` | Validate canonical data (9 rules) |
+| `generate` | Generate markdown documents from canonical data |
+| `merge` | Merge manual additions into canonical data |
+| `stats` | Show statistics about repository data |
+| `configure` | Configure OmniDatum settings and credentials |
+| `migrate-credentials` | Migrate credentials from legacy location |
+| `sync` | Sync repository metadata from external sources |
+| `status` | Show sync status and system health |
+| `import` | Import data from one store format to another |
+| `export` | Export data from one store format to another |
+| `collections` | Manage repository collections (list, create, show, add, remove, delete, auto-generate) |
+| `tui` | Interactive terminal UI for browsing and managing repositories |
+| `repo` | Manage individual repository metadata (tag, untag, note, show) |
+
+## Architecture
+
+7-crate workspace for modularity and reusability:
+
+```
+od-core       → Pure types, config, validators, parsers, merge
+od-store      → Trait-based persistence (YAML, SQLite)
+od-sync       → Sync orchestrator, adapters, cache, progress
+od-validate   → Validation framework and rules
+od-generate   → Tera-based markdown generation
+od-graph      → petgraph cross-reference graph + navigator
+od-cli        → Binary with 14 command handlers
+```
+
+**Dependency flow**: od-core ← od-store, od-sync, od-validate, od-generate, od-graph ← od-cli
+
+## Configuration
+
+### GitHub Credentials
+
+Set up credentials via one of three methods:
+
+1. **Environment variable** (highest priority):
+   ```bash
+   export GITHUB_TOKEN=ghp_xxxxxxxxxxxx
+   ```
+
+2. **Config file** (`~/.config/omnidatum/omnidatum.toml`):
+   ```toml
+   [github]
+   token = "ghp_xxxxxxxxxxxx"
+   ```
+
+3. **OS keychain** (macOS Keychain, Windows Credential Manager, Linux Secret Service):
+   ```bash
+   cargo run -p od-cli -- configure
+   ```
+
+Run `cargo run -p od-cli -- configure --show` to view current configuration.
+
+## Documentation
+
+- **[Architecture](./docs/ARCHITECTURE.md)** — System design and module overview
+- **[Data Sync Guide](./docs/DATA_SYNC.md)** — Complete sync setup and usage
+- **[API Reference](./docs/API_REFERENCE.md)** — CLI commands and library API
+- **[Development](./docs/DEVELOPMENT.md)** — Contributing and development setup
+- **[Troubleshooting](./docs/TROUBLESHOOTING.md)** — Common issues and solutions
+
+## Project Status
+
+- **Repositories**: 845 tracked (797 active, 48 archived)
+- **Tests**: 127 passing
+- **Performance**: Sub-second processing for full dataset
+- **Phases**: 0–8 complete (workspace, core, store, sync, validate, generate, graph, CLI, relations, collections, tags, TUI)
+
+## License
+
+This project is released under the **CC0 1.0 Universal** license, placing it in the public domain.
+
+[![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
+
+You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission. See [LICENSE](LICENSE) for the full legal text.

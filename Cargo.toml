@@ -1,0 +1,81 @@
+[workspace]
+members = [
+    "crates/od-core",
+    "crates/od-validate",
+    "crates/od-generate",
+    "crates/od-graph",
+    "crates/od-sync",
+    "crates/od-store",
+    "crates/od-cli",
+]
+resolver = "2"
+
+[workspace.dependencies]
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+serde_yml = "0.0.12"
+
+# Async
+tokio = { version = "1.40", features = ["rt-multi-thread", "macros", "sync", "rt", "time"] }
+async-trait = "0.1"
+
+# GitHub API
+octocrab = "0.40"
+reqwest = { version = "0.12", features = ["json"] }
+
+# Template engine
+tera = "1.20"
+
+# Error handling
+anyhow = "1.0"
+thiserror = "1.0"
+
+# Date/time
+chrono = { version = "0.4", features = ["serde"] }
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Regex
+regex = "1.10"
+
+# Graph
+petgraph = "0.6"
+
+# Config
+toml = "0.8"
+dirs = "5.0"
+
+# Progress bars
+indicatif = "0.17"
+
+# CLI
+clap = { version = "4.5", features = ["derive"] }
+
+# SQLite
+rusqlite = { version = "0.31", features = ["bundled"] }
+
+# TUI
+ratatui = "0.28"
+crossterm = "0.28"
+
+# Dev
+pretty_assertions = "1.4"
+serial_test = "3.1"
+tempfile = "3.10"
+
+# Internal crates
+od-core = { path = "crates/od-core" }
+od-validate = { path = "crates/od-validate" }
+od-generate = { path = "crates/od-generate" }
+od-graph = { path = "crates/od-graph" }
+od-sync = { path = "crates/od-sync" }
+od-store = { path = "crates/od-store" }
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"

@@ -1,0 +1,248 @@
+schema_version: "1.0"
+last_updated: "2025-12-10"
+
+# Books referenced in the repository for deeper learning
+
+books:
+  - id: "bass-designing-software-architectures"
+    title: "Designing Software Architectures"
+    subtitle: "A Practical Approach"
+    authors: ["Len Bass", "Paul Clements", "Rick Kazman"]
+    category: "Architecture"
+    subcategory: "Design Methods"
+    isbn: "978-0134390789"
+    publication_year: 2016
+    edition: "1st"
+    related_books:
+      - id: "bass-software-architecture-practice"
+        relationship: "companion"
+        note: "Focuses on processes and organizational aspects"
+      - id: "clements-documenting-software-architectures"
+        relationship: "companion"
+        note: "Focuses on architecture documentation and diagrams"
+    expansion_topics:
+      - "distributed-systems"
+      - "microservices-architecture"
+      - "data-architecture"
+      - "cloud-native-architecture"
+      - "event-driven-architecture"
+    related_web_references:
+      - "martinfowler-poeaa-catalog"
+      - "adr-examples"
+      - "simon-wardley-book"
+    related_repos:
+      - "k1LoW/ndiag"
+      - "blushft/go-diagrams"
+      - "krzysztofreczek/go-structurizr"
+      - "jfeliu007/goplantuml"
+
+  - id: "bass-software-architecture-practice"
+    title: "Software Architecture in Practice"
+    subtitle: null
+    authors: ["Len Bass", "Paul Clements", "Rick Kazman"]
+    category: "Architecture"
+    subcategory: "Processes"
+    isbn: "978-0136886099"
+    publication_year: 2021
+    edition: "4th"
+    related_books:
+      - id: "bass-designing-software-architectures"
+        relationship: "companion"
+        note: "Companion covering design methods"
+      - id: "clements-documenting-software-architectures"
+        relationship: "companion"
+        note: "Companion covering documentation"
+    expansion_topics:
+      - "quality-attributes"
+      - "architecture-evaluation"
+      - "architecture-patterns"
+    related_web_references:
+      - "martinfowler-poeaa-catalog"
+    related_repos:
+      - "bxcodec/go-clean-arch"
+      - "gsvaldevieso/go-dream-architecture"
+
+  - id: "clements-documenting-software-architectures"
+    title: "Documenting Software Architectures"
+    subtitle: "Views and Beyond"
+    authors: ["Paul Clements", "Felix Bachmann", "Len Bass", "David Garlan", "James Ivers", "Reed Little", "Paulo Merson", "Robert Nord", "Judith Stafford"]
+    category: "Architecture"
+    subcategory: "Documentation"
+    isbn: "978-0321552686"
+    publication_year: 2010
+    edition: "2nd"
+    related_books:
+      - id: "bass-designing-software-architectures"
+        relationship: "companion"
+        note: "Companion covering design methods"
+      - id: "bass-software-architecture-practice"
+        relationship: "companion"
+        note: "Companion covering processes"
+    expansion_topics:
+      - "c4-model"
+      - "uml-diagrams"
+      - "architecture-views"
+      - "documentation-as-code"
+    related_web_references:
+      - "adr-examples"
+      - "simon-wardley-book"
+    related_repos:
+      - "k1LoW/ndiag"
+      - "blushft/go-diagrams"
+      - "mingrammer/diagrams"
+      - "mermaid-js/mermaid"
+      - "krzysztofreczek/go-structurizr"
+
+  - id: "robertson-mastering-requirements-process"
+    title: "Mastering the Requirements Process"
+    subtitle: "Getting Requirements Right"
+    authors: ["Suzanne Robertson", "James Robertson"]
+    category: "Requirements"
+    subcategory: "Requirements Engineering"
+    isbn: "978-0321815743"
+    publication_year: 2012
+    edition: "3rd"
+    related_books:
+      - id: "bass-designing-software-architectures"
+        relationship: "prerequisite"
+        note: "Requirements inform design decisions (ADD method)"
+    expansion_topics:
+      - "user-stories"
+      - "acceptance-criteria"
+      - "requirements-elicitation"
+      - "stakeholder-analysis"
+    related_web_references:
+      - "y-statements"
+      - "martinfowler-business-capability"
+    related_repos:
+      - "cairis-platform/cairis"
+  - id: "kleppmann-designing-data-intensive-applications"
+    title: "Designing Data-Intensive Applications"
+    subtitle: "The Big Ideas Behind Reliable, Scalable, and Maintainable Systems"
+    authors: ["Martin Kleppmann"]
+    category: "Distributed Systems"
+    subcategory: "Data Systems"
+    isbn: "978-1449373320"
+    publication_year: 2017
+    edition: "1st"
+    related_books:
+      - id: "bass-designing-software-architectures"
+        relationship: "companion"
+        note: "Covers system architecture from data perspective"
+    expansion_topics:
+      - "replication"
+      - "partitioning"
+      - "consensus-algorithms"
+      - "batch-processing"
+      - "stream-processing"
+      - "eventual-consistency"
+    related_web_references:
+      - "cap-theorem"
+      - "consensus-algorithms"
+    related_repos:
+      - "pingcap/tidb"
+      - "cockroachdb/cockroach"
+      - "apache/kafka"
+      - "etcd-io/etcd"
+      - "yugabyte/yugabyte-db"
+
+  - id: "donovan-go-programming-language"
+    title: "The Go Programming Language"
+    subtitle: null
+    authors: ["Alan A. A. Donovan", "Brian W. Kernighan"]
+    category: "Programming Languages"
+    subcategory: "Go"
+    isbn: "978-0134190440"
+    publication_year: 2015
+    edition: "1st"
+    related_books: []
+    expansion_topics:
+      - "go-concurrency"
+      - "go-interfaces"
+      - "go-testing"
+      - "go-tools"
+    related_web_references:
+      - "go-proverbs"
+      - "effective-go"
+    related_repos:
+      - "golang/go"
+      - "gin-gonic/gin"
+      - "goreleaser/goreleaser"
+      - "kubernetes/kubernetes"
+      - "docker/compose"
+
+  - id: "google-sre-book"
+    title: "Site Reliability Engineering"
+    subtitle: "How Google Runs Production Systems"
+    authors: ["Betsy Beyer", "Chris Jones", "Jennifer Petoff", "Niall Richard Murphy"]
+    category: "DevOps"
+    subcategory: "Site Reliability Engineering"
+    isbn: "978-1491929124"
+    publication_year: 2016
+    edition: "1st"
+    related_books: []
+    expansion_topics:
+      - "observability"
+      - "incident-response"
+      - "monitoring"
+      - "capacity-planning"
+      - "reliability-engineering"
+    related_web_references:
+      - "monitoring-distributed-systems"
+      - "the-art-of-sre"
+    related_repos:
+      - "prometheus/prometheus"
+      - "grafana/grafana"
+      - "jaegertracing/jaeger"
+      - "open-telemetry/opentelemetry-go"
+
+
+# Expansion opportunities identified:
+# Based on starred repos and web references, consider adding books for:
+#
+# 1. Distributed Systems (20+ related repos)
+#    - "Designing Data-Intensive Applications" by Martin Kleppmann
+#    - "Distributed Systems" by Maarten van Steen and Andrew S. Tanenbaum
+#
+# 2. Data Engineering (15+ related repos)
+#    - "Fundamentals of Data Engineering" by Joe Reis and Matt Housley
+#    - "The Data Warehouse Toolkit" by Ralph Kimball
+#
+# 3. Functional Programming (10+ FP-related repos)
+#    - "Functional Programming in Scala" (Scala repos)
+#    - "Programming in Haskell" by Graham Hutton (Haskell repos)
+#    - "Purely Functional Data Structures" by Chris Okasaki
+#
+# 4. Security & Cryptography (25+ related repos)
+#    - "Security Engineering" by Ross Anderson
+#    - "Applied Cryptography" by Bruce Schneier
+#    - "The Web Application Hacker's Handbook"
+#
+# 5. DevOps & SRE (30+ related repos)
+#    - "Site Reliability Engineering" (Google SRE book)
+#    - "The DevOps Handbook"
+#    - "Continuous Delivery" by Jez Humble
+#
+# 6. Kubernetes & Cloud Native (40+ related repos)
+#    - "Kubernetes in Action"
+#    - "Cloud Native Patterns" by Cornelia Davis
+#
+# 7. Database Internals (20+ database repos)
+#    - "Database Internals" by Alex Petrov
+#    - "Designing Data-Intensive Applications" (covers databases extensively)
+#
+# 8. AI/ML (50+ AI/ML repos - high priority)
+#    - "Designing Machine Learning Systems" by Chip Huyen
+#    - "Building LLMs for Production" (recent topic)
+#    - "Deep Learning" by Goodfellow, Bengio, and Courville
+#    - "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow"
+#
+# 9. Go Programming (largest language category - 276 repos)
+#    - "The Go Programming Language" by Donovan and Kernighan
+#    - "Concurrency in Go" by Katherine Cox-Buday
+#    - "Cloud Native Go" by Matthew Titmus
+#
+# 10. Rust Programming (80+ repos)
+#     - "The Rust Programming Language" (official book)
+#     - "Programming Rust" by Blandy, Orendorff, and Tindall
+#     - "Rust for Rustaceans" by Jon Gjengset

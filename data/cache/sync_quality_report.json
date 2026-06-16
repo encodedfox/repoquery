@@ -1,0 +1,124 @@
+{
+  "timestamp": "2026-06-16T03:37:09.646814+00:00",
+  "repos_synced": 795,
+  "data_completeness": {
+    "license_coverage": 91.70854,
+    "description_coverage": 97.61307,
+    "topics_coverage": 75.376884,
+    "homepage_coverage": 88.442215
+  },
+  "anomalies": [
+    {
+      "repo_id": "github-com-mozilla-Fira",
+      "anomaly_type": "newly_archived",
+      "message": "Repository was archived since last sync",
+      "old_value": "active",
+      "new_value": "archived"
+    },
+    {
+      "repo_id": "github-com-minio-minio",
+      "anomaly_type": "newly_archived",
+      "message": "Repository was archived since last sync",
+      "old_value": "active",
+      "new_value": "archived"
+    },
+    {
+      "repo_id": "github-com-gregoryv-draw",
+      "anomaly_type": "newly_archived",
+      "message": "Repository was archived since last sync",
+      "old_value": "active",
+      "new_value": "archived"
+    },
+    {
+      "repo_id": "github-com-nats-io-stan-go",
+      "anomaly_type": "newly_archived",
+      "message": "Repository was archived since last sync",
+      "old_value": "active",
+      "new_value": "archived"
+    },
+    {
+      "repo_id": "github-com-rancher-dapper",
+      "anomaly_type": "newly_archived",
+      "message": "Repository was archived since last sync",
+      "old_value": "active",
+      "new_value": "archived"
+    },
+    {
+      "repo_id": "github-com-nats-io-latency-tests",
+      "anomaly_type": "newly_archived",
+      "message": "Repository was archived since last sync",
+      "old_value": "active",
+      "new_value": "archived"
+    },
+    {
+      "repo_id": "github-com-blazegraph-database",
+      "anomaly_type": "newly_archived",
+      "message": "Repository was archived since last sync",
+      "old_value": "active",
+      "new_value": "archived"
+    },
+    {
+      "repo_id": "github-com-cdaniel-doctrine",
+      "anomaly_type": "newly_archived",
+      "message": "Repository was archived since last sync",
+      "old_value": "active",
+      "new_value": "archived"
+    },
+    {
+      "repo_id": "github-com-langchain-ai-executive-ai-assistant",
+      "anomaly_type": "newly_archived",
+      "message": "Repository was archived since last sync",
+      "old_value": "active",
+      "new_value": "archived"
+    },
+    {
+      "repo_id": "github-com-amazon-science-RefChecker",
+      "anomaly_type": "newly_archived",
+      "message": "Repository was archived since last sync",
+      "old_value": "active",
+      "new_value": "archived"
+    },
+    {
+      "repo_id": "github-com-AntonOsika-gpt-engineer",
+      "anomaly_type": "newly_archived",
+      "message": "Repository was archived since last sync",
+      "old_value": "active",
+      "new_value": "archived"
+    },
+    {
+      "repo_id": "github-com-systeminit-si",
+      "anomaly_type": "newly_archived",
+      "message": "Repository was archived since last sync",
+      "old_value": "active",
+      "new_value": "archived"
+    },
+    {
+      "repo_id": "github-com-jplatte-cargo-depgraph",
+      "anomaly_type": "newly_archived",
+      "message": "Repository was archived since last sync",
+      "old_value": "active",
+      "new_value": "archived"
+    },
+    {
+      "repo_id": "github-com-slatedocs-slate",
+      "anomaly_type": "newly_archived",
+      "message": "Repository was archived since last sync",
+      "old_value": "active",
+      "new_value": "archived"
+    },
+    {
+      "repo_id": "github-com-RooCodeInc-Roo-Code",
+      "anomaly_type": "newly_archived",
+      "message": "Repository was archived since last sync",
+      "old_value": "active",
+      "new_value": "archived"
+    },
+    {
+      "repo_id": "github-com-awslabs-aws-ddk",
+      "anomaly_type": "newly_archived",
+      "message": "Repository was archived since last sync",
+      "old_value": "active",
+      "new_value": "archived"
+    }
+  ]
+}

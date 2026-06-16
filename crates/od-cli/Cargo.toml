@@ -1,0 +1,33 @@
+[package]
+name = "od-cli"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "omnidatum-processor"
+path = "src/main.rs"
+
+[dependencies]
+od-core = { workspace = true }
+od-store = { workspace = true }
+od-sync = { workspace = true }
+od-validate = { workspace = true }
+od-generate = { workspace = true }
+od-graph = { workspace = true }
+anyhow = { workspace = true }
+clap = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+serde_yml = { workspace = true }
+chrono = { workspace = true }
+ratatui = { workspace = true }
+crossterm = { workspace = true }
+
+[dev-dependencies]
+pretty_assertions = { workspace = true }
+serial_test = { workspace = true }
+tempfile = { workspace = true }
+async-trait = { workspace = true }

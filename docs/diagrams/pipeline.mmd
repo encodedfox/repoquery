@@ -1,0 +1,40 @@
+---
+title: OmniDatum Processing Pipeline
+---
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#e3f2fd','secondaryColor':'#fff3e0','tertiaryColor':'#f3e5f5'}}}%%
+flowchart TD
+    Start([User Command]) --> CheckSync{Sync Enabled?}
+    CheckSync -->|Yes| Sync[Sync from GitHub API<br/>Fetch fresh metadata]
+    CheckSync -->|No/Legacy| Parse[Parse LIST.md<br/>Legacy migration]
+    
+    Sync --> Canon[Update repositories.yml<br/>Canonical storage]
+    Parse --> Canon
+    
+    Canon --> Load[Load Canonical Data]
+    Manual[manual_additions.yml] --> Merge
+    WebRef[web_references.yml] --> Merge
+    Books[books.yml] --> Merge
+    Load --> Merge[Merge Data Sources<br/>PreferManual strategy]
+    
+    Merge --> Validate[Run Validation<br/>E001-E008 rules]
+    Validate --> |Pass| Generate[Generate Documents<br/>Tera templates]
+    Validate --> |Fail| Error([Error Report<br/>validation_report.json])
+    
+    Generate --> List[LIST.md<br/>Active repos]
+    Generate --> Table[TABLE.md<br/>Active repos]
+    Generate --> Archive[ARCHIVE.md<br/>Archived repos]
+    
+    List --> Done([Complete])
+    Table --> Done
+    Archive --> Done
+    
+    style Sync fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+    style Canon fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    style Validate fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    style Generate fill:#e8f5e9,stroke:#388e3c,stroke-width:2px
+    style Error fill:#ffebee,stroke:#c62828,stroke-width:2px
+    style Done fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
+
+%% Last updated: 2025-12-11
+%% Shows the complete processing pipeline from sync to output generation
+%% Key: Blue=Sync, Orange=Storage, Purple=Validation, Green=Generation, Red=Error

@@ -1,0 +1,777 @@
+schema_version: "1.0"
+last_updated: "2025-12-10"
+
+# Web references for learning and documentation
+# Extracted from README.md Web References section
+
+references:
+  # Architecture Section
+  - id: "martinfowler-poeaa-catalog"
+    title: "Patterns of Enterprise Application Architecture (P of EAA)"
+    url: "https://www.martinfowler.com/eaaCatalog/index.html"
+    author: "Martin Fowler"
+    category: "Architecture"
+    subcategory: "Patterns"
+    content_type: "catalog"
+    difficulty: "intermediate"
+    publication_date: "2002"
+    last_verified: "2025-12-10"
+    related_references:
+      - "martinfowler-domain-model"
+      - "martinfowler-anemic-domain"
+    related_repos:
+      - "gin-gonic/gin"
+      - "go-kit/kit"
+      - "bxcodec/go-clean-arch"
+      - "gsvaldevieso/go-dream-architecture"
+    tags: ["design-patterns", "enterprise", "architecture", "foundational"]
+    status: "active"
+
+  - id: "martinfowler-domain-model"
+    title: "Domain Model Pattern"
+    url: "https://www.martinfowler.com/eaaCatalog/domainModel.html"
+    author: "Martin Fowler"
+    category: "Architecture"
+    subcategory: "Patterns"
+    content_type: "article"
+    difficulty: "intermediate"
+    last_verified: "2025-12-10"
+    related_references:
+      - "martinfowler-poeaa-catalog"
+    related_repos:
+      - "bxcodec/go-clean-arch"
+    tags: ["domain-model", "ddd", "patterns"]
+    status: "active"
+
+  - id: "martinfowler-anemic-domain"
+    title: "Anemic Domain Model (Anti-Pattern)"
+    url: "https://www.martinfowler.com/bliki/AnemicDomainModel.html"
+    author: "Martin Fowler"
+    category: "Architecture"
+    subcategory: "Anti-Patterns"
+    content_type: "article"
+    difficulty: "intermediate"
+    last_verified: "2025-12-10"
+    related_references:
+      - "martinfowler-domain-model"
+    tags: ["anti-pattern", "ddd", "domain-model"]
+    status: "active"
+
+  - id: "simon-wardley-book"
+    title: "Wardley Maps Book"
+    url: "https://github.com/andrewharmellaw/wardley-maps-book"
+    author: "Simon Wardley (compiled by Andrew Harmel-Law)"
+    category: "Architecture"
+    subcategory: "Strategy"
+    content_type: "book"
+    difficulty: "intermediate"
+    last_verified: "2025-12-10"
+    related_references:
+      - "simon-wardley-finding-path"
+    related_repos:
+      - "DavidGamba/go-wardley"
+      - "damonsk/onlinewardleymaps"
+    tags: ["wardley-maps", "strategy", "visualization"]
+    status: "active"
+
+  - id: "simon-wardley-finding-path"
+    title: "Wardley Maps - Finding A Path"
+    url: "https://medium.com/wardleymaps/finding-a-path-cdb1249078c0"
+    author: "Simon Wardley"
+    category: "Architecture"
+    subcategory: "Strategy"
+    content_type: "article"
+    difficulty: "introductory"
+    last_verified: "2025-12-10"
+    related_references:
+      - "simon-wardley-book"
+    tags: ["wardley-maps", "strategy"]
+    status: "active"
+
+  - id: "uncle-bob-clean-code-blog"
+    title: "Clean Code Blog"
+    url: "https://blog.cleancoder.com/"
+    author: "Robert C. Martin (Uncle Bob)"
+    category: "Architecture"
+    subcategory: "Clean Code"
+    content_type: "documentation"
+    difficulty: "intermediate"
+    last_verified: "2025-12-10"
+    related_repos:
+      - "bxcodec/go-clean-arch"
+      - "roblaszczak/go-cleanarch"
+    tags: ["clean-code", "software-craftsmanship", "best-practices"]
+    status: "active"
+
+  - id: "adr-examples"
+    title: "Architecture Decision Record (ADR) Examples"
+    url: "https://github.com/joelparkerhenderson/architecture-decision-record"
+    author: "Joel Parker Henderson"
+    category: "Architecture"
+    subcategory: "Documentation"
+    content_type: "documentation"
+    difficulty: "introductory"
+    last_verified: "2025-12-10"
+    related_repos:
+      - "adr/madr"
+      - "marouni/adr"
+    tags: ["adr", "documentation", "decision-making"]
+    status: "active"
+
+  - id: "y-statements"
+    title: "Y-Statements"
+    url: "https://medium.com/olzzio/y-statements-10eb07b5a177"
+    category: "Architecture"
+    subcategory: "Documentation"
+    content_type: "article"
+    difficulty: "introductory"
+    last_verified: "2025-12-10"
+    tags: ["requirements", "user-stories", "documentation"]
+    status: "active"
+
+  # DataMesh Section
+  - id: "martinfowler-datalake"
+    title: "Data Lake Concept"
+    url: "https://martinfowler.com/bliki/DataLake.html"
+    author: "Martin Fowler"
+    category: "DataMesh"
+    subcategory: "Concepts"
+    content_type: "article"
+    difficulty: "introductory"
+    last_verified: "2025-12-10"
+    related_references:
+      - "martinfowler-datamesh"
+    tags: ["data-lake", "data-architecture"]
+    status: "active"
+
+  - id: "martinfowler-datamesh"
+    title: "Data Lake → Data Mesh"
+    url: "https://martinfowler.com/articles/data-monolith-to-mesh.html"
+    author: "Martin Fowler"
+    category: "DataMesh"
+    subcategory: "Concepts"
+    content_type: "article"
+    difficulty: "intermediate"
+    last_verified: "2025-12-10"
+    related_references:
+      - "martinfowler-datalake"
+    tags: ["data-mesh", "data-architecture", "distributed-systems"]
+    status: "active"
+
+  - id: "wiki-datagrid"
+    title: "Data Grid"
+    url: "https://en.m.wikipedia.org/wiki/Data_grid"
+    category: "DataMesh"
+    subcategory: "Concepts"
+    content_type: "documentation"
+    difficulty: "introductory"
+    last_verified: "2025-12-10"
+    tags: ["data-grid", "distributed-data"]
+    status: "active"
+
+  - id: "martinfowler-business-capability"
+    title: "Business Capability Centric"
+    url: "https://martinfowler.com/bliki/BusinessCapabilityCentric.html"
+    author: "Martin Fowler"
+    category: "DataMesh"
+    subcategory: "Requirements"
+    content_type: "article"
+    difficulty: "intermediate"
+    last_verified: "2025-12-10"
+    tags: ["business-capabilities", "requirements", "ddd"]
+    status: "active"
+
+  - id: "martinfowler-evodb"
+    title: "Evolutionary Database Design"
+    url: "https://martinfowler.com/articles/evodb.html#DealingWithChange"
+    author: "Martin Fowler"
+    category: "DataMesh"
+    subcategory: "Database Evolution"
+    content_type: "article"
+    difficulty: "advanced"
+    last_verified: "2025-12-10"
+    related_repos:
+      - "flyway/flyway"
+      - "square/shift"
+    tags: ["database", "migrations", "evolution"]
+    status: "active"
+
+  - id: "martinfowler-polyglot-persistence"
+    title: "Polyglot Persistence"
+    url: "https://martinfowler.com/bliki/PolyglotPersistence.html"
+    author: "Martin Fowler"
+    category: "DataMesh"
+    subcategory: "Data Storage"
+    content_type: "article"
+    difficulty: "intermediate"
+    last_verified: "2025-12-10"
+    tags: ["polyglot", "databases", "architecture"]
+    status: "active"
+
+  - id: "martinfowler-consumer-driven-contracts"
+    title: "Consumer-Driven Contracts"
+    url: "https://martinfowler.com/articles/consumerDrivenContracts.html"
+    author: "Martin Fowler"
+    category: "DataMesh"
+    subcategory: "Integration"
+    content_type: "article"
+    difficulty: "intermediate"
+    last_verified: "2025-12-10"
+    tags: ["contracts", "testing", "microservices"]
+    status: "active"
+
+  - id: "martinfowler-datensparsamkeit"
+    title: "Datensparsamkeit (Data Minimization)"
+    url: "https://martinfowler.com/bliki/Datensparsamkeit.html"
+    author: "Martin Fowler"
+    category: "DataMesh"
+    subcategory: "Privacy"
+    content_type: "article"
+    difficulty: "introductory"
+    last_verified: "2025-12-10"
+    tags: ["privacy", "gdpr", "data-minimization"]
+    status: "active"
+
+  - id: "wiki-tuple-space"
+    title: "Tuple Space"
+    url: "https://en.m.wikipedia.org/wiki/Tuple_space"
+    category: "DataMesh"
+    subcategory: "Concepts"
+    content_type: "documentation"
+    difficulty: "advanced"
+    last_verified: "2025-12-10"
+    tags: ["tuple-space", "distributed-computing"]
+    status: "active"
+
+  - id: "martinfowler-bounded-context"
+    title: "Bounded Context"
+    url: "https://martinfowler.com/bliki/BoundedContext.html"
+    author: "Martin Fowler"
+    category: "DataMesh"
+    subcategory: "DDD"
+    content_type: "article"
+    difficulty: "intermediate"
+    last_verified: "2025-12-10"
+    related_references:
+      - "martinfowler-ubiquitous-language"
+    tags: ["ddd", "bounded-context", "microservices"]
+    status: "active"
+
+  - id: "martinfowler-ubiquitous-language"
+    title: "Ubiquitous Language"
+    url: "https://martinfowler.com/bliki/UbiquitousLanguage.html"
+    author: "Martin Fowler"
+    category: "DataMesh"
+    subcategory: "DDD"
+    content_type: "article"
+    difficulty: "introductory"
+    last_verified: "2025-12-10"
+    related_references:
+      - "martinfowler-bounded-context"
+    tags: ["ddd", "ubiquitous-language"]
+    status: "active"
+
+  # Microservices Section
+  - id: "martinfowler-micro-frontends"
+    title: "Micro-Frontends"
+    url: "https://martinfowler.com/articles/micro-frontends.html"
+    author: "Martin Fowler"
+    category: "Microservices"
+    subcategory: "Frontend"
+    content_type: "article"
+    difficulty: "intermediate"
+    last_verified: "2025-12-10"
+    tags: ["micro-frontends", "frontend", "architecture"]
+    status: "active"
+
+  - id: "martinfowler-serverless"
+    title: "Serverless"
+    url: "https://martinfowler.com/articles/serverless.html"
+    author: "Martin Fowler"
+    category: "Microservices"
+    subcategory: "Serverless"
+    content_type: "article"
+    difficulty: "intermediate"
+    last_verified: "2025-12-10"
+    related_repos:
+      - "aws/aws-lambda-go"
+      - "aws/chalice"
+      - "aws/serverless-application-model"
+    tags: ["serverless", "lambda", "faas"]
+    status: "active"
+
+  - id: "wiki-dsm"
+    title: "Distributed Shared Memory (DSM)"
+    url: "https://en.m.wikipedia.org/wiki/Distributed_shared_memory"
+    category: "Microservices"
+    subcategory: "Distributed Systems"
+    content_type: "documentation"
+    difficulty: "advanced"
+    last_verified: "2025-12-10"
+    tags: ["distributed-systems", "memory", "dsm"]
+    status: "active"
+
+  - id: "martinfowler-dto"
+    title: "Data Transfer Object (DTO)"
+    url: "https://martinfowler.com/eaaCatalog/dataTransferObject.html"
+    author: "Martin Fowler"
+    category: "Microservices"
+    subcategory: "Patterns"
+    content_type: "article"
+    difficulty: "intermediate"
+    last_verified: "2025-12-10"
+    tags: ["dto", "patterns", "data-transfer"]
+    status: "active"
+
+  - id: "wiki-pojo"
+    title: "Plain Old Java Object (POJO)"
+    url: "https://en.m.wikipedia.org/wiki/Plain_old_Java_object"
+    category: "Microservices"
+    subcategory: "Patterns"
+    content_type: "documentation"
+    difficulty: "introductory"
+    last_verified: "2025-12-10"
+    tags: ["pojo", "java", "patterns"]
+    status: "active"
+
+  - id: "jaeger-tracing"
+    title: "Open Tracing (E2E) - Jaeger"
+    url: "https://www.jaegertracing.io"
+    category: "Microservices"
+    subcategory: "Observability"
+    content_type: "documentation"
+    difficulty: "intermediate"
+    last_verified: "2025-12-10"
+    related_repos:
+      - "jaegertracing/jaeger"
+      - "open-telemetry/opentelemetry-go"
+    tags: ["tracing", "observability", "distributed-tracing"]
+    status: "active"
+
+  - id: "knative-serving"
+    title: "Knative Serving"
+    url: "https://knative.dev/docs/serving/"
+    category: "Microservices"
+    subcategory: "Kubernetes"
+    content_type: "documentation"
+    difficulty: "advanced"
+    last_verified: "2025-12-10"
+    related_repos:
+      - "knative/serving"
+    tags: ["knative", "kubernetes", "serverless"]
+    status: "active"
+
+  - id: "concourse-ci"
+    title: "Concourse CI/CD"
+    url: "https://concourse-ci.org"
+    category: "Microservices"
+    subcategory: "CI/CD"
+    content_type: "documentation"
+    difficulty: "intermediate"
+    last_verified: "2025-12-10"
+    related_repos:
+      - "concourse/concourse"
+    tags: ["ci-cd", "automation", "pipelines"]
+    status: "active"
+
+  - id: "buildah"
+    title: "Buildah"
+    url: "https://buildah.io"
+    category: "Microservices"
+    subcategory: "Containers"
+    content_type: "documentation"
+    difficulty: "intermediate"
+    last_verified: "2025-12-10"
+    related_repos:
+      - "containers/buildah"
+    tags: ["containers", "oci", "docker"]
+    status: "active"
+
+  - id: "protoactor"
+    title: "Proto.Actor"
+    url: "https://proto.actor"
+    category: "Microservices"
+    subcategory: "Actor Model"
+    content_type: "documentation"
+    difficulty: "advanced"
+    last_verified: "2025-12-10"
+    related_repos:
+      - "asynkron/protoactor-go"
+    tags: ["actor-model", "concurrency", "distributed-systems"]
+    status: "active"
+
+  # Databases Section
+  - id: "tidb-docs"
+    title: "TiDB Documentation"
+    url: "https://docs.pingcap.com/tidb/stable"
+    category: "Databases"
+    subcategory: "Distributed SQL"
+    content_type: "documentation"
+    difficulty: "intermediate"
+    last_verified: "2025-12-10"
+    related_repos:
+      - "pingcap/tidb"
+      - "pingcap/tidb-tools"
+    tags: ["tidb", "distributed-database", "sql"]
+    status: "active"
+
+  - id: "cockroachdb"
+    title: "CockroachDB"
+    url: "https://www.cockroachlabs.com"
+    category: "Databases"
+    subcategory: "Distributed SQL"
+    content_type: "documentation"
+    difficulty: "intermediate"
+    last_verified: "2025-12-10"
+    related_repos:
+      - "cockroachdb/cockroach"
+    tags: ["cockroachdb", "distributed-database", "sql"]
+    status: "active"
+
+  - id: "buntdb"
+    title: "BuntDB"
+    url: "https://github.com/tidwall/buntdb"
+    category: "Databases"
+    subcategory: "Embedded"
+    content_type: "documentation"
+    difficulty: "introductory"
+    last_verified: "2025-12-10"
+    related_repos:
+      - "tidwall/buntdb"
+    tags: ["embedded-database", "key-value", "go"]
+    status: "active"
+
+  - id: "vitess"
+    title: "Vitess"
+    url: "https://vitess.io"
+    category: "Databases"
+    subcategory: "MySQL Scaling"
+    content_type: "documentation"
+    difficulty: "advanced"
+    last_verified: "2025-12-10"
+    related_repos:
+      - "vitessio/vitess"
+    tags: ["vitess", "mysql", "horizontal-scaling"]
+    status: "active"
+
+  - id: "thanos"
+    title: "Thanos"
+    url: "https://thanos.io"
+    category: "Databases"
+    subcategory: "Metrics/Time-Series"
+    content_type: "documentation"
+    difficulty: "advanced"
+    last_verified: "2025-12-10"
+    related_repos:
+      - "thanos-io/thanos"
+      - "prometheus/prometheus"
+    tags: ["thanos", "prometheus", "time-series", "metrics"]
+    status: "active"
+
+  # Security Section
+  - id: "teleport"
+    title: "Teleport - Certificate Authority and Access Plane"
+    url: "https://github.com/gravitational/teleport"
+    category: "Security"
+    subcategory: "Access Control"
+    content_type: "documentation"
+    difficulty: "advanced"
+    last_verified: "2025-12-10"
+    related_repos:
+      - "gravitational/teleport"
+    tags: ["security", "access-control", "ssh", "kubernetes"]
+    status: "active"
+
+  - id: "cilium"
+    title: "Cilium - eBPF-based Security & Network Profiler"
+    url: "https://github.com/cilium/cilium"
+    category: "Security"
+    subcategory: "Network Security"
+    content_type: "documentation"
+    difficulty: "advanced"
+    last_verified: "2025-12-10"
+    related_repos:
+      - "cilium/cilium"
+    tags: ["security", "ebpf", "networking", "kubernetes"]
+    status: "active"
+
+  - id: "vuls"
+    title: "Vuls - Agentless Vulnerability Scanner"
+    url: "https://vuls.io"
+    category: "Security"
+    subcategory: "Vulnerability Scanning"
+    content_type: "documentation"
+    difficulty: "intermediate"
+    last_verified: "2025-12-10"
+    related_repos:
+      - "future-architect/vuls"
+    tags: ["security", "vulnerability-scanning", "linux"]
+    status: "active"
+
+  - id: "clair"
+    title: "Clair - Container Vulnerability Analysis"
+    url: "https://github.com/quay/clair"
+    category: "Security"
+    subcategory: "Container Security"
+    content_type: "documentation"
+    difficulty: "intermediate"
+    last_verified: "2025-12-10"
+    related_repos:
+      - "quay/clair"
+      - "anchore/grype"
+    tags: ["security", "containers", "vulnerability-scanning"]
+    status: "active"
+
+  # AI/ML Section (NEEDS UPDATE - 2 years old)
+  - id: "aiml-data-pitfalls"
+    title: "Data Pitfalls - Startup Edition"
+    url: "https://medium.com/@mrogati/data-pitfalls-the-startup-edition-fe1eebcc39da"
+    author: "Monica Rogati"
+    category: "AI/ML"
+    subcategory: "Data Engineering"
+    content_type: "article"
+    difficulty: "intermediate"
+    publication_date: "2023"
+    last_verified: "2025-12-10"
+    tags: ["data-science", "startups", "pitfalls"]
+    status: "active"
+
+  - id: "aiml-become-data-scientist"
+    title: "How to Become a Data Scientist"
+    url: "https://blog.goodaudience.com/how-do-i-become-a-data-scientist-f8074232608e"
+    category: "AI/ML"
+    subcategory: "Career"
+    content_type: "article"
+    difficulty: "introductory"
+    publication_date: "2023"
+    last_verified: "2025-12-10"
+    tags: ["data-science", "career", "learning"]
+    status: "active"
+
+  - id: "aiml-hiring-data-scientist"
+    title: "How NOT to Hire Your First Data Scientist"
+    url: "https://medium.com/hackernoon/how-not-to-hire-your-first-data-scientist-34f0f56f81ae"
+    category: "AI/ML"
+    subcategory: "Hiring"
+    content_type: "article"
+    difficulty: "intermediate"
+    publication_date: "2023"
+    last_verified: "2025-12-10"
+    tags: ["data-science", "hiring", "startups"]
+    status: "active"
+
+  - id: "aiml-hierarchy-of-needs"
+    title: "AI Hierarchy of Needs"
+    url: "https://medium.com/hackernoon/the-ai-hierarchy-of-needs-18f111fcc007"
+    category: "AI/ML"
+    subcategory: "Strategy"
+    content_type: "article"
+    difficulty: "intermediate"
+    publication_date: "2023"
+    last_verified: "2025-12-10"
+    tags: ["ai", "ml", "strategy", "data-infrastructure"]
+    status: "active"
+
+  - id: "wiki-blackboard-system"
+    title: "Blackboard System"
+    url: "https://en.m.wikipedia.org/wiki/Blackboard_system"
+    category: "AI/ML"
+    subcategory: "AI Architecture"
+    content_type: "documentation"
+    difficulty: "advanced"
+    last_verified: "2025-12-10"
+    tags: ["ai-architecture", "blackboard", "knowledge-systems"]
+    status: "active"
+
+  # NOTE: AI/ML section needs significant expansion with modern topics:
+  # - Foundation Models / LLMs
+  # - Vector Databases
+  # - RAG (Retrieval Augmented Generation)
+  # - Model Evaluation & Benchmarking
+  # - Fine-tuning techniques
+  # - Multi-Agent Systems
+  # See starred repos for implementations to reference
+
+  # Crypto Section
+  - id: "wiki-the-dao"
+    title: "The DAO Organization"
+    url: "https://en.wikipedia.org/wiki/The_DAO_(organization)"
+    category: "Crypto"
+    subcategory: "DAOs"
+    content_type: "documentation"
+    difficulty: "introductory"
+    last_verified: "2025-12-10"
+    related_repos:
+      - "TheDAO/DAO-1.0"
+      - "blockchainsllc/DAO"
+    tags: ["dao", "ethereum", "smart-contracts"]
+    status: "active"
+
+  - id: "daobase"
+    title: "DAO Base"
+    url: "https://daobase.org"
+    category: "Crypto"
+    subcategory: "DAOs"
+    content_type: "catalog"
+    difficulty: "introductory"
+    last_verified: "2025-12-10"
+    tags: ["dao", "directory"]
+    status: "active"
+
+  - id: "decrypt-dao-overview"
+    title: "DAO Overview by Decrypt"
+    url: "https://decrypt.co/resources/decentralized-autonomous-organization-dao"
+    category: "Crypto"
+    subcategory: "DAOs"
+    content_type: "article"
+    difficulty: "introductory"
+    last_verified: "2025-12-10"
+    tags: ["dao", "decentralization", "governance"]
+    status: "active"
+
+  - id: "decrypt-dapps"
+    title: "Decentralized Apps (dApps)"
+    url: "https://decrypt.co/resources/dapps"
+    category: "Crypto"
+    subcategory: "Applications"
+    content_type: "article"
+    difficulty: "introductory"
+    last_verified: "2025-12-10"
+    tags: ["dapps", "decentralized", "blockchain"]
+    status: "active"
+
+  - id: "decrypt-cbdc"
+    title: "Central Bank Digital Currencies (CBDC)"
+    url: "https://decrypt.co/resources/what-are-central-bank-digital-currencies-cbdcs"
+    category: "Crypto"
+    subcategory: "Digital Currency"
+    content_type: "article"
+    difficulty: "intermediate"
+    last_verified: "2025-12-10"
+    tags: ["cbdc", "digital-currency", "central-banks"]
+    status: "active"
+
+  - id: "decrypt-merkle-trees"
+    title: "Merkle Trees Guide"
+    url: "https://decrypt.co/resources/merkle-trees-guide-explainer-blockchain"
+    category: "Crypto"
+    subcategory: "Cryptography"
+    content_type: "tutorial"
+    difficulty: "intermediate"
+    last_verified: "2025-12-10"
+    tags: ["merkle-trees", "cryptography", "blockchain"]
+    status: "active"
+
+  - id: "decrypt-byzantine-fault-tolerance"
+    title: "Byzantine Fault Tolerance"
+    url: "https://decrypt.co/resources/byzantine-fault-tolerance-what-is-it-explained"
+    category: "Crypto"
+    subcategory: "Consensus"
+    content_type: "article"
+    difficulty: "advanced"
+    last_verified: "2025-12-10"
+    tags: ["bft", "consensus", "distributed-systems"]
+    status: "active"
+
+  - id: "decrypt-raiden-network"
+    title: "Raiden Network"
+    url: "https://decrypt.co/resources/raiden-network"
+    category: "Crypto"
+    subcategory: "Scaling"
+    content_type: "article"
+    difficulty: "advanced"
+    last_verified: "2025-12-10"
+    tags: ["raiden", "layer-2", "ethereum", "scaling"]
+    status: "active"
+
+  - id: "decrypt-consensus-protocols"
+    title: "Consensus Protocols in Blockchain"
+    url: "https://decrypt.co/resources/consensus-protocols-what-are-they-guide-how-to-explainer"
+    category: "Crypto"
+    subcategory: "Consensus"
+    content_type: "tutorial"
+    difficulty: "intermediate"
+    last_verified: "2025-12-10"
+    related_references:
+      - "decrypt-proof-of-work"
+      - "decrypt-proof-of-stake"
+    tags: ["consensus", "blockchain", "protocols"]
+    status: "active"
+
+  - id: "decrypt-proof-of-work"
+    title: "Proof of Work (PoW)"
+    url: "https://decrypt.co/resources/what-is-proof-of-work-how-the-bitcoin-network-is-maintained"
+    category: "Crypto"
+    subcategory: "Consensus"
+    content_type: "article"
+    difficulty: "intermediate"
+    last_verified: "2025-12-10"
+    related_references:
+      - "decrypt-consensus-protocols"
+    tags: ["pow", "bitcoin", "mining", "consensus"]
+    status: "active"
+
+  - id: "decrypt-proof-of-stake"
+    title: "Proof of Stake (PoS)"
+    url: "https://decrypt.co/resources/proof-of-work-vs-proof-of-stake"
+    category: "Crypto"
+    subcategory: "Consensus"
+    content_type: "article"
+    difficulty: "intermediate"
+    last_verified: "2025-12-10"
+    related_references:
+      - "decrypt-consensus-protocols"
+    tags: ["pos", "ethereum", "staking", "consensus"]
+    status: "active"
+
+  - id: "hyperledger-fabric"
+    title: "Hyperledger Fabric"
+    url: "https://wiki.hyperledger.org/display/fabric"
+    category: "Crypto"
+    subcategory: "Enterprise Blockchain"
+    content_type: "documentation"
+    difficulty: "advanced"
+    last_verified: "2025-12-10"
+    related_repos:
+      - "hyperledger/fabric"
+    tags: ["hyperledger", "fabric", "enterprise", "permissioned"]
+    status: "active"
+
+  - id: "moloch-dao"
+    title: "Moloch DAO"
+    url: "https://github.com/MolochVentures/moloch"
+    category: "Crypto"
+    subcategory: "DAOs"
+    content_type: "documentation"
+    difficulty: "advanced"
+    last_verified: "2025-12-10"
+    related_repos:
+      - "MolochVentures/moloch"
+    tags: ["dao", "moloch", "governance", "smart-contracts"]
+    status: "active"
+
+  # State Machine Languages
+  - id: "amazon-states-language"
+    title: "Amazon States Language (ASL)"
+    url: "https://states-language.net/spec.html"
+    category: "Languages"
+    subcategory: "State Machines"
+    content_type: "documentation"
+    difficulty: "intermediate"
+    last_verified: "2025-12-10"
+    related_repos:
+      - "aws/serverless-application-model"
+      - "awslabs/statelint"
+    tags: ["state-machines", "aws", "step-functions", "workflow"]
+    status: "active"
+
+# Categories that need expansion (from analysis):
+# - AI/ML: Foundation Models, Vector DBs, RAG, Fine-tuning, Agents (PRIORITY)
+# - Data Engineering: ETL, Data Quality, Data Catalogs
+# - Distributed Systems: Consensus, Raft, Paxos
+# - Observability: Metrics, Logging, Tracing
+# - Cloud Native: Service Mesh, GitOps, Policy as Code
+
+# Stale content (>18 months, needs review/update):
+# - AI/ML section articles from 2023 (most of section)
+# - Some specific technology references may have newer versions

@@ -1,0 +1,14 @@
+[package]
+name = "od-graph"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+od-core = { workspace = true }
+thiserror = { workspace = true }
+petgraph = { workspace = true }
+serde = { workspace = true }
+tracing = { workspace = true }
+
+[dev-dependencies]
+pretty_assertions = { workspace = true }
