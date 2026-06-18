@@ -26,8 +26,9 @@ tokio = { version = "1.40", features = ["rt-multi-thread", "macros", "sync", "rt
 async-trait = "0.1"
 
 # GitHub API
-octocrab = "0.40"
+octocrab = "0.53"
 reqwest = { version = "0.12", features = ["json"] }
+hyper-rustls = "0.27"
 
 # Template engine
 tera = "1.20"
@@ -38,6 +39,8 @@ thiserror = "1.0"
 
 # Date/time
 chrono = { version = "0.4", features = ["serde"] }
+time = "0.3.47"
+bytes = "1.11"
 
 # Logging
 tracing = "0.1"
@@ -61,6 +64,10 @@ clap = { version = "4.5", features = ["derive"] }
 clap_complete = "4.5"
 clap_mangen = "0.3"
 terminal_size = "0.4"
+
+# TLS (for security updates)
+rustls = "0.23"
+rustls-webpki = "0.103"
 
 # SQLite
 rusqlite = { version = "0.31", features = ["bundled"] }

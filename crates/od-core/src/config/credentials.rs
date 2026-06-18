@@ -9,12 +9,18 @@ use std::path::PathBuf;
 /// Credential manager for secure token storage
 pub struct CredentialManager {
     source: CredentialSource,
+    file_path: Option<PathBuf>,
 }
 
 impl CredentialManager {
     /// Create new credential manager with specified source
     pub fn new(source: CredentialSource) -> Self {
-        Self { source }
+        Self { source, file_path: None }
+    }
+
+    /// Create new credential manager with source and custom file path
+    pub fn with_file_path(source: CredentialSource, file_path: Option<PathBuf>) -> Self {
+        Self { source, file_path }
     }
 
     /// Get GitHub token from configured source
@@ -38,7 +44,7 @@ impl CredentialManager {
 
     /// Read token from file
     fn load_from_file(&self) -> crate::Result<String> {
-        let path = Self::credentials_file_path();
+        let path = self.file_path.clone().unwrap_or_else(Self::credentials_file_path);
 
         // Check file permissions on Unix
         #[cfg(unix)]

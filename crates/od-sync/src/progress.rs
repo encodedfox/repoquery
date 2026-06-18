@@ -27,7 +27,7 @@ impl ProgressTracker {
         bar.set_style(
             ProgressStyle::default_bar()
                 .template("[{elapsed_precise}] {bar:40.cyan/blue} {pos}/{len} {msg}")
-                .unwrap()
+                .expect("Invalid progress bar template")
                 .progress_chars("▓▓░"),
         );
 

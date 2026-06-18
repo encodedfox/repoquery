@@ -117,10 +117,10 @@ impl MarkdownGenerator {
         let mut lang_names: Vec<String> = by_language.keys().cloned().collect();
         lang_names.sort();
 
-        // Build language sections
+         // Build language sections
         let mut language_sections = Vec::new();
         for lang_name in &lang_names {
-            let repos = by_language.get(lang_name).unwrap();
+            let repos = by_language.get(lang_name).expect("key exists from iteration");
 
             let template_repos: Vec<TemplateRepo> = repos
                 .iter()
@@ -222,7 +222,7 @@ impl MarkdownGenerator {
 
         let mut language_sections = Vec::new();
         for lang_name in &lang_names {
-            let lang_repos = by_language.get(lang_name).unwrap();
+            let lang_repos = by_language.get(lang_name).expect("key exists from iteration");
             let template_repos: Vec<TemplateRepo> = lang_repos
                 .iter()
                 .map(|r| {
