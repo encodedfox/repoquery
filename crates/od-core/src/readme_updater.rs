@@ -28,7 +28,7 @@ impl ReadmeUpdater {
                 regex::escape(&marker_start),
                 regex::escape(marker_end)
             ))
-            .unwrap();
+            .expect("Invalid regex pattern for readme markers");
 
             let replacement = format!("{}\n{}\n{}", marker_start, content, marker_end);
             re.replace(readme, replacement.as_str()).to_string()
@@ -44,7 +44,7 @@ impl ReadmeUpdater {
 
 impl Default for ReadmeUpdater {
     fn default() -> Self {
-        Self::new().unwrap()
+        Self::new().expect("Failed to create ReadmeUpdater")
     }
 }
 

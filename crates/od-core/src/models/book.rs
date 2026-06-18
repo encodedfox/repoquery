@@ -82,8 +82,9 @@ impl Book {
             1 => self.authors[0].clone(),
             2 => format!("{} and {}", self.authors[0], self.authors[1]),
             _ => {
-                let last = self.authors.last().unwrap();
-                let others = &self.authors[..self.authors.len() - 1];
+                let last_idx = self.authors.len() - 1;
+                let last = &self.authors[last_idx];
+                let others = &self.authors[..last_idx];
                 format!("{}, and {}", others.join(", "), last)
             }
         }

@@ -65,7 +65,7 @@ pub fn create_repo(full_name: &str, lang: &str, stars: u32, topics: &[&str]) -> 
 
 /// Compute a simulated quality score.
 pub fn compute_quality_score(repo: &Repository) -> u8 {
-    let star_score = match repo.metadata.stars {
+    let star_score: u8 = match repo.metadata.stars {
         0..=10 => 0,
         11..=100 => 10,
         101..=500 => 25,

@@ -1,0 +1,17 @@
+[advisories]
+# RUSTSEC-2023-0071: Marvin Attack on rsa crate - no fixed version available
+# This is a timing side-channel vulnerability in RSA key generation.
+# The crate is unmaintained and no fix is available.
+# We allow this because we don't use the vulnerable functionality directly.
+allow = ["RUSTSEC-2023-0071"]
+
+# The following are warnings (unmaintained/unsound crates) not errors
+# We allow them but they should be addressed in the future
+allow-warnings = [
+    "RUSTSEC-2025-0119", # number_prefix unmaintained
+    "RUSTSEC-2024-0436", # paste unmaintained
+    "RUSTSEC-2025-0134", # rustls-pemfile unmaintained
+    "RUSTSEC-2025-0067", # libyml unsound
+    "RUSTSEC-2026-0002", # lru unsound
+    "RUSTSEC-2025-0068", # serde_yml unsound
+]

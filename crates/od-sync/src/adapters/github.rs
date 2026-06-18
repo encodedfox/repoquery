@@ -22,7 +22,10 @@ impl GitHubAdapter {
     pub async fn new(config: &OmnidatumConfig) -> Result<Self> {
         use od_core::config::CredentialManager;
 
-        let creds = CredentialManager::new(config.credentials.source.clone());
+        let creds = CredentialManager::with_file_path(
+            config.credentials.source.clone(),
+            config.credentials.file_path.clone(),
+        );
         let token = creds.get_github_token().context(
             "Failed to load GitHub credentials. Run 'cargo run -- configure' to set up.",
         )?;
