@@ -1,5 +1,5 @@
 use super::Formatter;
-use od_core::Repository;
+use rq_core::Repository;
 
 pub struct MarkdownFormatter;
 
@@ -29,12 +29,27 @@ impl Formatter for MarkdownFormatter {
         out.push_str(&format!("## {}\n\n", repo.metadata.full_name));
         out.push_str(&format!("- **Owner**: {}\n", repo.metadata.owner));
         out.push_str(&format!("- **Stars**: {}\n", repo.metadata.stars));
-        out.push_str(&format!("- **Language**: {}\n", repo.metadata.primary_language));
-        out.push_str(&format!("- **License**: {}\n", repo.metadata.license_spdx.as_deref().unwrap_or("N/A")));
-        out.push_str(&format!("- **Quality**: {}/100\n", repo.quality_metrics.quality_score));
-        out.push_str(&format!("- **Archived**: {}\n", repo.quality_metrics.archive_status));
+        out.push_str(&format!(
+            "- **Language**: {}\n",
+            repo.metadata.primary_language
+        ));
+        out.push_str(&format!(
+            "- **License**: {}\n",
+            repo.metadata.license_spdx.as_deref().unwrap_or("N/A")
+        ));
+        out.push_str(&format!(
+            "- **Quality**: {}/100\n",
+            repo.quality_metrics.quality_score
+        ));
+        out.push_str(&format!(
+            "- **Archived**: {}\n",
+            repo.quality_metrics.archive_status
+        ));
         if !repo.metadata.topics.is_empty() {
-            out.push_str(&format!("- **Topics**: {}\n", repo.metadata.topics.join(", ")));
+            out.push_str(&format!(
+                "- **Topics**: {}\n",
+                repo.metadata.topics.join(", ")
+            ));
         }
         out.push_str(&format!("\n{}\n", repo.metadata.description));
         out

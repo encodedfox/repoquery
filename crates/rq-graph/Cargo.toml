@@ -1,0 +1,17 @@
+[package]
+name = "rq-graph"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rq-core = { workspace = true }
+thiserror = { workspace = true }
+petgraph = { workspace = true }
+serde = { workspace = true }
+tracing = { workspace = true }
+
+[lints]
+workspace = true
+
+[dev-dependencies]
+pretty_assertions = { workspace = true }

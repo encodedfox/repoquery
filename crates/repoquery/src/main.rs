@@ -1,20 +1,20 @@
-//! OmniDatum Processor - Enhanced documentation processor for GitHub starred repositories
+//! RepoQuery - Enhanced documentation processor for GitHub starred repositories
 
 mod commands;
 mod output;
 
-use clap::{CommandFactory, Parser, Subcommand};
 use anyhow::Result;
+use clap::{CommandFactory, Parser, Subcommand};
 use std::path::PathBuf;
 
 const VERSION_STRING: &str = "v0.1.0
-Report security issues to: https://github.com/encodedfox/omnidatum/security";
+Report security issues to: https://github.com/encodedfox/repoquery/security";
 
 #[derive(Parser)]
 #[command(name = "repoquery")]
 #[command(author = "encodedfox")]
 #[command(version = VERSION_STRING)]
-#[command(about = "Enhanced documentation processor for OmniDatum repository", long_about = None)]
+#[command(about = "Enhanced documentation processor for RepoQuery repository", long_about = None)]
 struct Cli {
     #[command(subcommand)]
     command: Commands,
@@ -61,7 +61,7 @@ enum CollectionAction {
         #[arg(long, default_value = "3")]
         min_repos: usize,
         /// Path to data store
-        #[arg(long, default_value = "data/omnidatum.db")]
+        #[arg(long, default_value = "data/repoquery.db")]
         store: PathBuf,
     },
 }
@@ -70,10 +70,7 @@ enum CollectionAction {
 enum ConfigAction {
     Init,
     Show,
-    Set {
-        key: String,
-        value: String,
-    },
+    Set { key: String, value: String },
 }
 
 #[derive(Subcommand)]
@@ -84,7 +81,7 @@ enum RepoAction {
         repo: String,
         #[arg(long)]
         tag: String,
-        #[arg(long, default_value = "data/omnidatum.db")]
+        #[arg(long, default_value = "data/repoquery.db")]
         store: PathBuf,
     },
     /// Remove a tag from a repository
@@ -93,7 +90,7 @@ enum RepoAction {
         repo: String,
         #[arg(long)]
         tag: String,
-        #[arg(long, default_value = "data/omnidatum.db")]
+        #[arg(long, default_value = "data/repoquery.db")]
         store: PathBuf,
     },
     /// Set a note on a repository
@@ -102,14 +99,14 @@ enum RepoAction {
         repo: String,
         #[arg(long)]
         text: String,
-        #[arg(long, default_value = "data/omnidatum.db")]
+        #[arg(long, default_value = "data/repoquery.db")]
         store: PathBuf,
     },
     /// Show repository details
     Show {
         #[arg(long)]
         repo: String,
-        #[arg(long, default_value = "data/omnidatum.db")]
+        #[arg(long, default_value = "data/repoquery.db")]
         store: PathBuf,
     },
 }
@@ -203,7 +200,7 @@ enum Commands {
         diff: Option<PathBuf>,
     },
 
-    /// Configure OmniDatum settings and credentials
+    /// Configure RepoQuery settings and credentials
     Configure {
         /// Interactive mode (prompt for values)
         #[arg(short, long, default_value = "true")]
@@ -275,13 +272,13 @@ enum Commands {
     Import {
         #[arg(long, default_value = "data/canonical/repositories.yml")]
         from: PathBuf,
-        #[arg(long, default_value = "data/omnidatum.db")]
+        #[arg(long, default_value = "data/repoquery.db")]
         to: PathBuf,
     },
 
     /// Export data from one store format to another (e.g. SQLite → YAML)
     Export {
-        #[arg(long, default_value = "data/omnidatum.db")]
+        #[arg(long, default_value = "data/repoquery.db")]
         from: PathBuf,
         #[arg(long, default_value = "data/canonical/repositories.yml")]
         to: PathBuf,
@@ -296,7 +293,7 @@ enum Commands {
     /// Interactive terminal UI for browsing and managing repositories
     Tui {
         /// Path to data store (SQLite DB or YAML file)
-        #[arg(long, default_value = "data/omnidatum.db")]
+        #[arg(long, default_value = "data/repoquery.db")]
         store: PathBuf,
     },
 
@@ -331,6 +328,41 @@ enum Commands {
     Repo {
         #[command(subcommand)]
         action: RepoAction,
+    },
+
+    /// Graph expansion (seeds, tokens, BFS traversal)
+    Expand {
+        #[command(subcommand)]
+        action: ExpandAction,
+    },
+}
+
+#[derive(Subcommand)]
+enum ExpandAction {
+    /// Manage expansion seeds
+    Seed {
+        #[command(subcommand)]
+        action: commands::expand::SeedAction,
+    },
+    /// Manage FGAT tokens
+    Token {
+        #[command(subcommand)]
+        action: commands::expand::TokenAction,
+    },
+    /// Run BFS graph expansion
+    Run {
+        #[command(flatten)]
+        args: commands::expand::RunArgs,
+    },
+    /// Compute Web of Trust scores from traversal edges
+    Trust {
+        #[command(flatten)]
+        args: commands::expand::TrustArgs,
+    },
+    /// Collect repositories from discovered users
+    Collect {
+        #[command(flatten)]
+        args: commands::expand::CollectArgs,
     },
 }
 
@@ -370,7 +402,17 @@ async fn main() -> Result<()> {
             validate_sync_data,
             platforms,
             collection,
-        } => crate::commands::generate::run(input, include_archived, validate, validate_sync_data, platforms, collection).await,
+        } => {
+            crate::commands::generate::run(
+                input,
+                include_archived,
+                validate,
+                validate_sync_data,
+                platforms,
+                collection,
+            )
+            .await
+        }
 
         Commands::Merge {
             base,
@@ -404,7 +446,19 @@ async fn main() -> Result<()> {
             input,
             relations,
             check_forks,
-        } => crate::commands::sync_cmd::run(repos, force, dry_run, verbose, clear_cache, input, relations, check_forks).await,
+        } => {
+            crate::commands::sync_cmd::run(
+                repos,
+                force,
+                dry_run,
+                verbose,
+                clear_cache,
+                input,
+                relations,
+                check_forks,
+            )
+            .await
+        }
 
         Commands::Status { detailed } => crate::commands::status::run(detailed).await,
 
@@ -433,16 +487,34 @@ async fn main() -> Result<()> {
         Commands::Tui { store } => crate::commands::tui::run(store).await,
 
         Commands::Config { action } => match action {
-            ConfigAction::Init => crate::commands::config::run(crate::commands::config::ConfigCommand::Init).await,
-            ConfigAction::Show => crate::commands::config::run(crate::commands::config::ConfigCommand::Show).await,
-            ConfigAction::Set { key, value } => crate::commands::config::run(crate::commands::config::ConfigCommand::Set { key, value }).await,
+            ConfigAction::Init => {
+                crate::commands::config::run(crate::commands::config::ConfigCommand::Init).await
+            }
+            ConfigAction::Show => {
+                crate::commands::config::run(crate::commands::config::ConfigCommand::Show).await
+            }
+            ConfigAction::Set { key, value } => {
+                crate::commands::config::run(crate::commands::config::ConfigCommand::Set {
+                    key,
+                    value,
+                })
+                .await
+            }
         },
 
         Commands::Activity { action } => match action {
-            commands::activity::ActivityAction::Overview(args) => commands::activity::run_overview(args).await,
-            commands::activity::ActivityAction::Stale(args) => commands::activity::run_stale(args).await,
-            commands::activity::ActivityAction::Active(args) => commands::activity::run_active(args).await,
-            commands::activity::ActivityAction::Trending(args) => commands::activity::run_trending(args).await,
+            commands::activity::ActivityAction::Overview(args) => {
+                commands::activity::run_overview(args).await
+            }
+            commands::activity::ActivityAction::Stale(args) => {
+                commands::activity::run_stale(args).await
+            }
+            commands::activity::ActivityAction::Active(args) => {
+                commands::activity::run_active(args).await
+            }
+            commands::activity::ActivityAction::Trending(args) => {
+                commands::activity::run_trending(args).await
+            }
         },
 
         Commands::Query { action } => match action {
@@ -450,7 +522,9 @@ async fn main() -> Result<()> {
             commands::query::QueryAction::Search(args) => commands::query::search::run(args).await,
             commands::query::QueryAction::Show(args) => commands::query::show::run(args).await,
             commands::query::QueryAction::Topics(args) => commands::query::topics::run(args).await,
-            commands::query::QueryAction::Languages(args) => commands::query::languages::run(args).await,
+            commands::query::QueryAction::Languages(args) => {
+                commands::query::languages::run(args).await
+            }
         },
 
         Commands::Completions { shell } => {
@@ -478,9 +552,15 @@ async fn main() -> Result<()> {
             RepoAction::Note { repo, text, store } => {
                 crate::commands::repo::note(repo, text, store).await
             }
-            RepoAction::Show { repo, store } => {
-                crate::commands::repo::show(repo, store).await
-            }
+            RepoAction::Show { repo, store } => crate::commands::repo::show(repo, store).await,
+        },
+
+        Commands::Expand { action } => match action {
+            ExpandAction::Seed { action } => commands::expand::run_seed(action).await,
+            ExpandAction::Token { action } => commands::expand::run_token(action).await,
+            ExpandAction::Run { args } => commands::expand::run_expand(args).await,
+            ExpandAction::Trust { args } => commands::expand::run_trust(args).await,
+            ExpandAction::Collect { args } => commands::expand::run_collect(args).await,
         },
     }
 }

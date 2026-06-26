@@ -4,7 +4,7 @@ pub mod json;
 pub mod markdown;
 pub mod table;
 
-use od_core::Repository;
+use rq_core::Repository;
 
 pub trait Formatter {
     fn format_list(&self, repos: &[Repository]) -> String;

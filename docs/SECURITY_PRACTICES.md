@@ -55,5 +55,5 @@ Report security issues to the advisory contact shown in `repoquery --version`:
 
 ```
 v0.1.0
-Report security issues to: https://github.com/encodedfox/omnidatum/security
+Report security issues to: https://github.com/encodedfox/repoquery/security
 ```

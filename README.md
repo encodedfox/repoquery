@@ -1,4 +1,4 @@
-# OmniDatum
+# RepoQuery
 
 [![License: CC0](https://img.shields.io/badge/License-CC0%201.0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 [![Rust](https://img.shields.io/badge/rust-1.70%2B-orange.svg)](https://www.rust-lang.org/)
@@ -10,7 +10,7 @@ High-performance Rust CLI for managing, synchronizing, and generating documentat
 ```bash
 # Clone and build
 git clone <repository-url>
-cd omnidatum
+cd repoquery
 cargo build --release
 
 # Binary is at target/release/repoquery
@@ -26,7 +26,7 @@ cargo run -p repoquery -- configure
 cargo run -p repoquery -- sync
 
 # 3. Import into SQLite for fast queries
-cargo run -p repoquery -- import --from data/canonical/repositories.yml --to data/omnidatum.db
+cargo run -p repoquery -- import --from data/canonical/repositories.yml --to data/repoquery.db
 
 # 4. Generate documentation
 cargo run -p repoquery -- generate
@@ -119,7 +119,7 @@ cargo run -p repoquery -- tui
 | `generate` | Generate markdown documents from canonical data |
 | `merge` | Merge manual additions into canonical data |
 | `stats` | Show statistics about repository data |
-| `configure` | Configure OmniDatum settings and credentials |
+| `configure` | Configure RepoQuery settings and credentials |
 | `migrate-credentials` | Migrate credentials from legacy location |
 | `sync` | Sync repository metadata from external sources |
 | `status` | Show sync status and system health |
@@ -161,7 +161,7 @@ Set up credentials via one of three methods:
    export GITHUB_TOKEN=ghp_xxxxxxxxxxxx
    ```
 
-2. **Config file** (`~/.config/omnidatum/omnidatum.toml`):
+2. **Config file** (`~/.config/repoquery/repoquery.toml`):
    ```toml
    [github]
    token = "ghp_xxxxxxxxxxxx"

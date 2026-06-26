@@ -1,11 +1,11 @@
-# OmniDatum Documentation
+# RepoQuery Documentation
 
-Welcome to the OmniDatum documentation. This directory contains comprehensive guides for users and developers.
+Welcome to the RepoQuery documentation. This directory contains comprehensive guides for users and developers.
 
 ## Documentation Philosophy
 
-OmniDatum documentation is organized by audience and purpose:
-- **User Guides**: For end-users setting up and using OmniDatum
+RepoQuery documentation is organized by audience and purpose:
+- **User Guides**: For end-users setting up and using RepoQuery
 - **Developer Guides**: For contributors and developers extending the system
 - **Integration Guides**: For adding new data sources
 - **Reference**: Technical specifications and API documentation
@@ -71,7 +71,7 @@ OmniDatum documentation is organized by audience and purpose:
 
 ## Integration Guides
 
-Comprehensive guides for extending OmniDatum with new data sources:
+Comprehensive guides for extending RepoQuery with new data sources:
 
 - **[INTEGRATION_GUIDE_INDEX.md](INTEGRATION_GUIDE_INDEX.md)** - Overview and integration template
   - DataSourceAdapter trait reference
@@ -209,4 +209,4 @@ docs/
 
 **Last Updated**: 2025-12-11  
 **Version**: 0.1.0  
-**Documentation maintained by**: OmniDatum contributors
+**Documentation maintained by**: RepoQuery contributors

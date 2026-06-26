@@ -4,7 +4,7 @@
 
 This guide shows how to scan local Git repositories to extract metadata and add them as data sources. This is useful for discovering and cataloging repositories in a monorepo, multi-repo setup, or local development environment.
 
-**Use Case:** Automatically discover all Git repositories in a directory tree, extract metadata from commits, README files, and `.git/config`, then sync into OmniDatum.
+**Use Case:** Automatically discover all Git repositories in a directory tree, extract metadata from commits, README files, and `.git/config`, then sync into RepoQuery.
 
 ---
 
@@ -83,7 +83,7 @@ Create [`src/sync/adapters/git_local.rs`](../src/sync/adapters/git_local.rs):
 //! extracting metadata from commits, README, and manifest files.
 
 use super::DataSourceAdapter;
-use crate::config::OmnidatumConfig;
+use crate::config::RepoqueryConfig;
 use crate::models::{
     Platform, PlatformInfo, PlatformStatus, QualityMetrics, Repository,
     RepositoryClassification, RepositoryMetadata, RepositorySource,
@@ -136,7 +136,7 @@ impl GitLocalAdapter {
     ///
     /// # Returns
     /// Configured adapter ready to scan local repositories
-    pub fn new(_config: &OmnidatumConfig, scan_config: GitScannerConfig) -> Result<Self> {
+    pub fn new(_config: &RepoqueryConfig, scan_config: GitScannerConfig) -> Result<Self> {
         // Verify scan root exists
         if !scan_config.scan_root.exists() {
             return Err(anyhow::anyhow!(
@@ -625,7 +625,7 @@ impl SyncOrchestrator {
 
 ### Application Config
 
-`~/.config/omnidatum/config.toml`:
+`~/.config/repoquery/config.toml`:
 
 ```toml
 [sync.git_local]
@@ -773,7 +773,7 @@ mod tests {
             min_commits: 0,
         };
         
-        let adapter = GitLocalAdapter::new(&OmnidatumConfig::default(), config).unwrap();
+        let adapter = GitLocalAdapter::new(&RepoqueryConfig::default(), config).unwrap();
         let language = adapter.detect_language(repo_path);
         
         assert_eq!(language, "Rust");
@@ -782,7 +782,7 @@ mod tests {
     #[test]
     fn test_extract_repo_name_github() {
         let config = create_test_config();
-        let adapter = GitLocalAdapter::new(&OmnidatumConfig::default(), config).unwrap();
+        let adapter = GitLocalAdapter::new(&RepoqueryConfig::default(), config).unwrap();
         
         let name = adapter.extract_repo_name(
             "https://github.com/rust-lang/rust.git",
@@ -804,7 +804,7 @@ mod tests {
         ).unwrap();
         
         let config = create_test_config();
-        let adapter = GitLocalAdapter::new(&OmnidatumConfig::default(), config).unwrap();
+        let adapter = GitLocalAdapter::new(&RepoqueryConfig::default(), config).unwrap();
         let description = adapter.read_readme_description(repo_path);
         
         assert_eq!(description, "This is the description.");
@@ -847,7 +847,7 @@ async fn test_git_local_scan() {
         min_commits: 0,
     };
     
-    let adapter = GitLocalAdapter::new(&OmnidatumConfig::default(), config).unwrap();
+    let adapter = GitLocalAdapter::new(&RepoqueryConfig::default(), config).unwrap();
     let repos = adapter.scan_all().await.unwrap();
     
     assert_eq!(repos.len(), 1);
@@ -1076,7 +1076,7 @@ cargo run -- stats --enhanced-json | jq -r '.repositories[] | [.metadata.name, .
 **Setup:**
 ```bash
 # Configure
-cat >> ~/.config/omnidatum/config.toml << EOF
+cat >> ~/.config/repoquery/config.toml << EOF
 [sync.git_local]
 enabled = true
 scan_root = "/home/dev/company-monorepo"

@@ -2,7 +2,7 @@
 
 ## Overview
 
-OmniDatum uses an extensible **DataSourceAdapter** pattern that makes it easy to integrate new external data sources. This document indexes all available integration guides and provides a quick-start template.
+RepoQuery uses an extensible **DataSourceAdapter** pattern that makes it easy to integrate new external data sources. This document indexes all available integration guides and provides a quick-start template.
 
 ---
 
@@ -69,7 +69,7 @@ use async_trait::async_trait;
 
 /// Trait for data source adapters
 ///
-/// Implement this trait to add a new external data source to OmniDatum.
+/// Implement this trait to add a new external data source to RepoQuery.
 /// The trait uses async methods to support I/O-bound operations.
 #[async_trait]
 pub trait DataSourceAdapter: Send + Sync {
@@ -142,7 +142,7 @@ Use this template to create a new adapter:
 //! [SOURCE_NAME] data source adapter
 
 use super::DataSourceAdapter;
-use crate::config::OmnidatumConfig;
+use crate::config::RepoqueryConfig;
 use crate::models::{Platform, PlatformInfo, PlatformStatus, Repository, /* ... */};
 use anyhow::Result;
 use async_trait::async_trait;
@@ -163,7 +163,7 @@ pub struct MySourceAdapter {
 
 impl MySourceAdapter {
     /// Create new adapter
-    pub async fn new(omnidatum_config: &OmnidatumConfig, source_config: MySourceConfig) -> Result<Self> {
+    pub async fn new(repoquery_config: &RepoqueryConfig, source_config: MySourceConfig) -> Result<Self> {
         // 1. Load credentials
         // 2. Create HTTP client or connection
         // 3. Verify authentication
@@ -796,4 +796,4 @@ src/sync/adapters/
 
 ---
 
-This index provides everything needed to integrate any external data source with OmniDatum's sync system.
+This index provides everything needed to integrate any external data source with RepoQuery's sync system.

@@ -1,10 +1,10 @@
-# OmniDatum
+# RepoQuery
 
 A high-performance Rust CLI tool for managing and synchronizing GitHub starred repository documentation across multiple formats.
 
 ## Overview
 
-OmniDatum transforms scattered GitHub repository data into organized, validated, and synchronized documentation formats. It processes 800+ repositories in under 300ms, providing automated validation, cross-reference tracking, and multi-format output generation.
+RepoQuery transforms scattered GitHub repository data into organized, validated, and synchronized documentation formats. It processes 800+ repositories in under 300ms, providing automated validation, cross-reference tracking, and multi-format output generation.
 
 **Technology Stack:** Rust 2021, Clap CLI, Tera Templates, PetGraph, YAML/JSON processing
 
@@ -34,9 +34,9 @@ rustc --version && cargo --version
 
 ## Architecture Diagram
 
-![Processing Pipeline](../generated-diagrams/omnidatum_pipeline.png)
+![Processing Pipeline](../generated-diagrams/repoquery_pipeline.png)
 
-![Component Architecture](../generated-diagrams/omnidatum_components.png)
+![Component Architecture](../generated-diagrams/repoquery_components.png)
 
 ## Project Components
 
@@ -60,9 +60,9 @@ cargo run -- stats     # Display analytics
 
 ### Quick Start
 ```bash
-git clone <repository-url> && cd omnidatum
+git clone <repository-url> && cd repoquery
 cargo build --release
-./target/release/omnidatum-processor generate
+./target/release/repoquery generate
 ```
 
 ### Enhancements

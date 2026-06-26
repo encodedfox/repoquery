@@ -1,11 +1,12 @@
 [workspace]
 members = [
-    "crates/od-core",
-    "crates/od-validate",
-    "crates/od-generate",
-    "crates/od-graph",
-    "crates/od-sync",
-    "crates/od-store",
+    "crates/rq-core",
+    "crates/rq-expander",
+    "crates/rq-validate",
+    "crates/rq-generate",
+    "crates/rq-graph",
+    "crates/rq-sync",
+    "crates/rq-store",
     "crates/repoquery",
 ]
 resolver = "2"
@@ -86,12 +87,13 @@ predicates = "3.1"
 criterion = { version = "0.5", features = ["html_reports"] }
 
 # Internal crates
-od-core = { path = "crates/od-core" }
-od-validate = { path = "crates/od-validate" }
-od-generate = { path = "crates/od-generate" }
-od-graph = { path = "crates/od-graph" }
-od-sync = { path = "crates/od-sync" }
-od-store = { path = "crates/od-store" }
+rq-core = { path = "crates/rq-core" }
+rq-expander = { path = "crates/rq-expander" }
+rq-validate = { path = "crates/rq-validate" }
+rq-generate = { path = "crates/rq-generate" }
+rq-graph = { path = "crates/rq-graph" }
+rq-sync = { path = "crates/rq-sync" }
+rq-store = { path = "crates/rq-store" }
 
 [profile.release]
 lto = true

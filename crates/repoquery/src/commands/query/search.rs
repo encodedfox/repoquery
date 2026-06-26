@@ -1,6 +1,6 @@
 use anyhow::Result;
 use clap::Args;
-use od_store::RepoFilter;
+use rq_store::RepoFilter;
 use std::path::PathBuf;
 
 use crate::output::OutputFormat;
@@ -10,7 +10,7 @@ pub struct SearchArgs {
     /// Search query
     pub query: String,
     /// Path to data store
-    #[arg(long, default_value = "data/omnidatum.db")]
+    #[arg(long, default_value = "data/repoquery.db")]
     pub store: PathBuf,
     /// Maximum results
     #[arg(long)]
@@ -24,15 +24,15 @@ pub struct SearchArgs {
 }
 
 pub async fn run(args: SearchArgs) -> Result<()> {
-    let store = od_store::open_store(&args.store)?;
+    let store = rq_store::open_store(&args.store)?;
     let fmt = OutputFormat::from_str(&args.format);
 
     let sort_field = match args.sort.to_lowercase().as_str() {
-        "name" => od_store::SortField::Name,
-        "updated" => od_store::SortField::Updated,
-        "created" => od_store::SortField::Created,
-        "quality" => od_store::SortField::Quality,
-        _ => od_store::SortField::Stars,
+        "name" => rq_store::SortField::Name,
+        "updated" => rq_store::SortField::Updated,
+        "created" => rq_store::SortField::Created,
+        "quality" => rq_store::SortField::Quality,
+        _ => rq_store::SortField::Stars,
     };
 
     let filter = RepoFilter {

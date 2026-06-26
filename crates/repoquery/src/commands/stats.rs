@@ -1,5 +1,5 @@
 use anyhow::Result;
-use od_core::{CanonicalData, Repository};
+use rq_core::{CanonicalData, Repository};
 use std::path::PathBuf;
 
 pub async fn run(input: PathBuf, enhanced_json: bool, diff: Option<PathBuf>) -> Result<()> {

@@ -22,7 +22,7 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-echo -e "${BLUE}🎨 OmniDatum Diagram Generator${NC}"
+echo -e "${BLUE}🎨 RepoQuery Diagram Generator${NC}"
 echo "================================"
 
 # Check for mermaid-cli

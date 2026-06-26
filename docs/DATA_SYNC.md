@@ -1,10 +1,10 @@
 # Data Synchronization Guide
 
-Complete guide to setting up and using OmniDatum's external data synchronization features.
+Complete guide to setting up and using RepoQuery's external data synchronization features.
 
 ## Overview
 
-OmniDatum's sync system automatically fetches repository metadata from external sources like GitHub API, keeping your documentation up-to-date without manual editing. This eliminates the need to manually maintain star counts, descriptions, and other repository metadata.
+RepoQuery's sync system automatically fetches repository metadata from external sources like GitHub API, keeping your documentation up-to-date without manual editing. This eliminates the need to manually maintain star counts, descriptions, and other repository metadata.
 
 ### Benefits
 
@@ -34,7 +34,7 @@ External API    →    Sync    →    Canonical Data    →    Generated Docs
 
 ### Required
 - **Rust**: 1.70+ installed via rustup
-- **OmniDatum**: Built from source (`cargo build --release`)
+- **RepoQuery**: Built from source (`cargo build --release`)
 - **GitHub Account**: For API access
 
 ### GitHub Personal Access Token
@@ -42,7 +42,7 @@ External API    →    Sync    →    Canonical Data    →    Generated Docs
 You need a GitHub Personal Access Token with `public_repo` scope:
 
 1. Visit: https://github.com/settings/tokens/new
-2. Token description: "OmniDatum Sync"
+2. Token description: "RepoQuery Sync"
 3. Select scopes: **`public_repo`** (read-only access to public repos)
 4. Generate token and copy it (you won't see it again!)
 
@@ -60,7 +60,7 @@ cargo run -- configure --interactive
 
 This will:
 1. Prompt for your GitHub token
-2. Store it securely in `~/.config/omnidatum/credentials` (0600 permissions on Unix)
+2. Store it securely in `~/.config/repoquery/credentials` (0600 permissions on Unix)
 3. Create default configuration
 
 ### Option 2: Environment Variable
@@ -85,13 +85,13 @@ cargo run -- configure --github-token "your_token_here"
 
 ```bash
 # macOS
-security add-generic-password -a omnidatum -s github_token -w "your_token_here"
+security add-generic-password -a repoquery -s github_token -w "your_token_here"
 
 # Linux
-secret-tool store --label="OmniDatum GitHub Token" service omnidatum username github
+secret-tool store --label="RepoQuery GitHub Token" service repoquery username github
 
-# Configure OmniDatum to use keychain
-# Edit ~/.config/omnidatum/config.toml:
+# Configure RepoQuery to use keychain
+# Edit ~/.config/repoquery/config.toml:
 [credentials]
 source = "Keychain"
 ```
@@ -125,8 +125,8 @@ cargo run -- migrate-credentials --from ../stargazer/.github/.token --delete-sou
 
 ### Config File Location
 
-- **Linux/macOS**: `~/.config/omnidatum/config.toml`
-- **Windows**: `%APPDATA%\omnidatum\config.toml`
+- **Linux/macOS**: `~/.config/repoquery/config.toml`
+- **Windows**: `%APPDATA%\repoquery\config.toml`
 
 ### Default Configuration
 
@@ -141,7 +141,7 @@ request_timeout_secs = 30     # API request timeout
 
 [credentials]
 source = "File"               # Options: Env, File, Keychain
-file_path = "~/.config/omnidatum/credentials"
+file_path = "~/.config/repoquery/credentials"
 
 [validation]
 rules = ["E001", "E002", "E003", "E004", "E005", "E006", "E007", "E008"]
@@ -244,7 +244,7 @@ cargo run -- status --detailed
 
 Output:
 ```
-📊 OmniDatum Status
+📊 RepoQuery Status
 
 Sync Status:
   Last sync: 2025-12-11 12:30:00 UTC (2 hours ago)
@@ -272,36 +272,36 @@ Credentials:
 crontab -e
 
 # Add line for daily sync at 2 AM
-0 2 * * * cd /path/to/omnidatum && /path/to/omnidatum-processor sync
+0 2 * * * cd /path/to/repoquery && /path/to/repoquery sync
 
 # Or with logging
-0 2 * * * cd /path/to/omnidatum && /path/to/omnidatum-processor sync >> /var/log/omnidatum-sync.log 2>&1
+0 2 * * * cd /path/to/repoquery && /path/to/repoquery sync >> /var/log/repoquery-sync.log 2>&1
 ```
 
 ### Linux: systemd Timer
 
-Create `/etc/systemd/system/omnidatum-sync.service`:
+Create `/etc/systemd/system/repoquery-sync.service`:
 ```ini
 [Unit]
-Description=OmniDatum Repository Sync
+Description=RepoQuery Repository Sync
 After=network.target
 
 [Service]
 Type=oneshot
 User=your-user
-WorkingDirectory=/path/to/omnidatum
-ExecStart=/path/to/omnidatum-processor sync
+WorkingDirectory=/path/to/repoquery
+ExecStart=/path/to/repoquery sync
 Environment="GITHUB_TOKEN=your_token"
 
 [Install]
 WantedBy=multi-user.target
 ```
 
-Create `/etc/systemd/system/omnidatum-sync.timer`:
+Create `/etc/systemd/system/repoquery-sync.timer`:
 ```ini
 [Unit]
-Description=Daily OmniDatum Sync
-Requires=omnidatum-sync.service
+Description=Daily RepoQuery Sync
+Requires=repoquery-sync.service
 
 [Timer]
 OnCalendar=daily
@@ -314,19 +314,19 @@ WantedBy=timers.target
 
 Enable and start:
 ```bash
-sudo systemctl enable omnidatum-sync.timer
-sudo systemctl start omnidatum-sync.timer
-sudo systemctl status omnidatum-sync.timer
+sudo systemctl enable repoquery-sync.timer
+sudo systemctl start repoquery-sync.timer
+sudo systemctl status repoquery-sync.timer
 ```
 
 ### Windows: Task Scheduler
 
 ```powershell
 # Create scheduled task
-$action = New-ScheduledTaskAction -Execute "C:\path\to\omnidatum-processor.exe" -Argument "sync" -WorkingDirectory "C:\path\to\omnidatum"
+$action = New-ScheduledTaskAction -Execute "C:\path\to\repoquery.exe" -Argument "sync" -WorkingDirectory "C:\path\to\repoquery"
 $trigger = New-ScheduledTaskTrigger -Daily -At 2am
 $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable
-Register-ScheduledTask -Action $action -Trigger $trigger -Settings $settings -TaskName "OmniDatum Sync" -Description "Daily repository metadata sync"
+Register-ScheduledTask -Action $action -Trigger $trigger -Settings $settings -TaskName "RepoQuery Sync" -Description "Daily repository metadata sync"
 ```
 
 ## Troubleshooting
@@ -363,7 +363,7 @@ cargo run -- status --detailed
 # 2. Wait for rate limit reset (shown in error message)
 
 # 3. Increase rate limit buffer in config
-# Edit ~/.config/omnidatum/config.toml:
+# Edit ~/.config/repoquery/config.toml:
 [sync]
 rate_limit_buffer = 1000  # Larger buffer, syncs fewer repos per run
 
@@ -375,7 +375,7 @@ cache_ttl_hours = 48  # Cache for 2 days instead of 1
 **GitHub Rate Limits**:
 - **Authenticated**: 5,000 requests/hour
 - **Unauthenticated**: 60 requests/hour
-- **Buffer**: OmniDatum stops at 500 remaining by default
+- **Buffer**: RepoQuery stops at 500 remaining by default
 
 ### Network Errors
 
@@ -644,7 +644,7 @@ jobs:
       
       - name: Sync repositories
         env:
-          GITHUB_TOKEN: ${{ secrets.OMNIDATUM_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.REPOQUERY_GITHUB_TOKEN }}
         run: cargo run --release -- sync
       
       - name: Validate
@@ -843,5 +843,5 @@ Include:
 ---
 
 **Last Updated**: 2025-12-11  
-**Applies to**: OmniDatum v0.1.0+  
+**Applies to**: RepoQuery v0.1.0+  
 **Related**: [ARCHITECTURE.md](ARCHITECTURE.md), [API_REFERENCE.md](API_REFERENCE.md), [TROUBLESHOOTING.md](TROUBLESHOOTING.md)

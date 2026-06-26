@@ -1,8 +1,8 @@
 //! Mock GitHub adapter for testing sync functionality
 
 use async_trait::async_trait;
-use omnidatum_processor::sync::DataSourceAdapter;
-use omnidatum_processor::Repository;
+use rq_sync::DataSourceAdapter;
+use rq_core::Repository;
 use std::collections::HashMap;
 use std::sync::{Arc, Mutex};
 
@@ -77,7 +77,7 @@ impl DataSourceAdapter for MockGitHubAdapter {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use omnidatum_processor::models::{
+    use rq_core::{
         Platform, PlatformInfo, PlatformStatus, QualityMetrics, RepositoryClassification,
         RepositoryMetadata, RepositorySource,
     };
@@ -136,6 +136,9 @@ mod tests {
             custom_tags: vec![],
             fork_ahead: None,
             fork_behind: None,
+            domain: None,
+            unified_owner_id: None,
+            discovered_via: None,
         }
     }
 

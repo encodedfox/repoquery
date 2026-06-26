@@ -1,6 +1,6 @@
 use anyhow::Result;
-use od_core::{CanonicalData, OmnidatumConfig, Platform, Relation};
-use od_sync::{GitHubAdapter, SyncOrchestrator};
+use rq_core::{CanonicalData, Platform, Relation, RepoqueryConfig};
+use rq_sync::{GitHubAdapter, SyncOrchestrator};
 use std::path::PathBuf;
 
 fn parse_relations(s: &str) -> Result<Vec<Relation>> {
@@ -35,7 +35,7 @@ pub async fn run(
         tracing::debug!("Verbose mode enabled");
     }
 
-    let mut config = OmnidatumConfig::load()?;
+    let mut config = RepoqueryConfig::load()?;
 
     if force {
         config.sync.cache_ttl_hours = 0;
@@ -131,7 +131,7 @@ pub async fn run(
         }
 
         println!("\n🔍 Checking GitHub API rate limits...");
-        let check_config = OmnidatumConfig::load()?;
+        let check_config = RepoqueryConfig::load()?;
         match GitHubAdapter::new(&check_config).await {
             Ok(adapter) => match adapter.check_rate_limit().await {
                 Ok(()) => println!("  ✅ Rate limit OK"),
@@ -146,10 +146,7 @@ pub async fn run(
 
     println!("\n🚀 Starting sync...");
     let result = if let Some(repo_list) = repos {
-        let repos: Vec<String> = repo_list
-            .split(',')
-            .map(|s| s.trim().to_string())
-            .collect();
+        let repos: Vec<String> = repo_list.split(',').map(|s| s.trim().to_string()).collect();
         orchestrator.sync_specific(repos, &input).await?
     } else if let Some(rel_str) = relations {
         let rels = parse_relations(&rel_str)?;
@@ -183,7 +180,7 @@ pub async fn run(
 
     if check_forks {
         println!("\n🔀 Checking fork status...");
-        let config = OmnidatumConfig::load()?;
+        let config = RepoqueryConfig::load()?;
         let adapter = GitHubAdapter::new(&config).await?;
         let graphql = adapter.graphql();
         let data = CanonicalData::from_yaml_file(&input)?;
@@ -196,9 +193,15 @@ pub async fn run(
         let mut updated = 0usize;
         for repo in &forks {
             if let Some(parent) = &repo.fork_parent {
-                match graphql.check_fork_status(&repo.metadata.full_name, parent).await {
+                match graphql
+                    .check_fork_status(&repo.metadata.full_name, parent)
+                    .await
+                {
                     Ok((ahead, behind)) => {
-                        println!("  {} → ahead:{} behind:{}", repo.metadata.full_name, ahead, behind);
+                        println!(
+                            "  {} → ahead:{} behind:{}",
+                            repo.metadata.full_name, ahead, behind
+                        );
                         updated += 1;
                         let _ = (ahead, behind); // stored in-memory only; persist via store if needed
                     }

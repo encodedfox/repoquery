@@ -1,11 +1,11 @@
 use anyhow::Result;
-use od_core::{CredentialManager, OmnidatumConfig};
+use rq_core::{CredentialManager, RepoqueryConfig};
 
 pub async fn run(interactive: bool, github_token: Option<String>, show: bool) -> Result<()> {
     println!("Configuration");
 
     if show {
-        let config = OmnidatumConfig::load()?;
+        let config = RepoqueryConfig::load()?;
         println!("\nCurrent Configuration:");
         println!("\n[sync]");
         println!("  enabled = {}", config.sync.enabled);
@@ -13,7 +13,10 @@ pub async fn run(interactive: bool, github_token: Option<String>, show: bool) ->
         println!("  parallel_workers = {}", config.sync.parallel_workers);
         println!("  cache_ttl_hours = {}", config.sync.cache_ttl_hours);
         println!("  rate_limit_buffer = {}", config.sync.rate_limit_buffer);
-        println!("  request_timeout_secs = {}", config.sync.request_timeout_secs);
+        println!(
+            "  request_timeout_secs = {}",
+            config.sync.request_timeout_secs
+        );
 
         println!("\n[credentials]");
         println!("  source = {:?}", config.credentials.source);
@@ -25,16 +28,25 @@ pub async fn run(interactive: bool, github_token: Option<String>, show: bool) ->
         println!("  rules enabled: {}", config.validation.rules.len());
 
         println!("\n[generation]");
-        println!("  include_archived = {}", config.generation.include_archived);
+        println!(
+            "  include_archived = {}",
+            config.generation.include_archived
+        );
         println!("  platform_info = {}", config.generation.platform_info);
-        println!("  stats_detail_level = {:?}", config.generation.stats_detail_level);
+        println!(
+            "  stats_detail_level = {:?}",
+            config.generation.stats_detail_level
+        );
 
-        println!("\nConfig location: {:?}", OmnidatumConfig::config_path());
+        println!("\nConfig location: {:?}", RepoqueryConfig::config_path());
 
         let cred_mgr = CredentialManager::new(config.credentials.source);
         match cred_mgr.get_github_token() {
             Ok(token) => {
-                println!("GitHub token: {} (configured)", CredentialManager::redact(&token));
+                println!(
+                    "GitHub token: {} (configured)",
+                    CredentialManager::redact(&token)
+                );
             }
             Err(_) => {
                 println!("GitHub token: not configured");
@@ -70,7 +82,7 @@ pub async fn run(interactive: bool, github_token: Option<String>, show: bool) ->
         println!("   Proceeding anyway, but this may not be a valid GitHub token.");
     }
 
-    let config = OmnidatumConfig::load()?;
+    let config = RepoqueryConfig::load()?;
     let cred_mgr = CredentialManager::new(config.credentials.source.clone());
     cred_mgr.store_token(&token)?;
 
@@ -112,7 +124,10 @@ async fn validate_token_scopes(token: &str) -> Result<()> {
             println!("   GitHub token validated (no scopes reported by API)");
         }
     } else {
-        println!("   Warning: GitHub API returned status {} for token validation", status);
+        println!(
+            "   Warning: GitHub API returned status {} for token validation",
+            status
+        );
         println!("   The token may not have the required permissions.");
     }
 

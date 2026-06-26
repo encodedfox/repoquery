@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to the OmniDatum repository documentation will be documented in this file.
+All notable changes to the RepoQuery repository documentation will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Archive status detection
 - **Secure Credential Management**: Multi-source token storage
   - Environment variable support (GITHUB_TOKEN, GH_TOKEN)
-  - Secure file storage (~/.config/omnidatum/credentials with 0600 permissions)
+  - Secure file storage (~/.config/repoquery/credentials with 0600 permissions)
   - OS keychain integration (macOS Keychain, Linux secret-tool)
   - Token redaction in logs and error messages
 - **Smart Caching System**: ETag-based cache with configurable TTL
@@ -102,7 +102,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Generated documents (LIST.md, TABLE.md) are read-only
   - Parse command now legacy migration path only
 - **Configuration System**: TOML-based configuration
-  - ~/.config/omnidatum/config.toml
+  - ~/.config/repoquery/config.toml
   - Configurable sync, validation, and generation settings
   - Validation of parameter ranges
 
@@ -171,7 +171,7 @@ See [docs/DATA_SYNC.md](docs/DATA_SYNC.md) for:
 
 ### Summary: v2 Migration Complete
 
-All phases of the OmniDatum v2 migration are now complete. The system has evolved from a monolithic Rust CLI into a modular 7-crate workspace with comprehensive external data sync, validation, generation, and cross-reference tracking. The architecture is production-ready with 123 passing tests, sub-second processing, and full backward compatibility.
+All phases of the RepoQuery v2 migration are now complete. The system has evolved from a monolithic Rust CLI into a modular 7-crate workspace with comprehensive external data sync, validation, generation, and cross-reference tracking. The architecture is production-ready with 123 passing tests, sub-second processing, and full backward compatibility.
 
 **Phases Completed**:
 - Phase 0: Architecture refactoring (command extraction, explicit exports)
@@ -227,7 +227,7 @@ All phases of the OmniDatum v2 migration are now complete. The system has evolve
 
 ### Added - Interactive Terminal UI
 
-- **New `tui` Command**: `omnidatum-processor tui --store <path>` launches interactive terminal UI
+- **New `tui` Command**: `repoquery tui --store <path>` launches interactive terminal UI
 - **5 Views**:
   - RepoList: Filterable table with j/k navigation and / search
   - RepoDetail: Full repository metadata display
@@ -354,7 +354,7 @@ All phases of the OmniDatum v2 migration are now complete. The system has evolve
   - `add <collection> <repo>` — Add repository to collection
   - `remove <collection> <repo>` — Remove repository from collection
   - `delete <name>` — Delete collection
-- **SQLite Backend**: Collections persisted to data/omnidatum.db
+- **SQLite Backend**: Collections persisted to data/repoquery.db
 - **--relations Flag on Sync**: Comma-separated relation types (starred,owned,forked,watching)
 
 ### Changed - Store Layer (Phase 3)
@@ -425,7 +425,7 @@ All phases of the OmniDatum v2 migration are now complete. The system has evolve
   - `crates/od-graph/` — petgraph cross-reference graph + navigator
   - `crates/od-cli/` — Binary crate with main.rs + 9 command handlers
 - **Root Cargo.toml**: Now workspace manifest with [workspace.dependencies] for shared versions
-- **Binary Name**: Unchanged (omnidatum-processor)
+- **Binary Name**: Unchanged (repoquery)
 - **Removed**: Old src/ directory (all code migrated to crates/)
 - **Test Suite**: 95 tests passing (up from 68)
 
@@ -475,7 +475,7 @@ All phases of the OmniDatum v2 migration are now complete. The system has evolve
 ## [1.0.0-baseline] - 2024-12-10
 
 ### Added
-- Rust-based omnidatum-processor for enhanced data processing
+- Rust-based repoquery for enhanced data processing
 - Canonical data models for repositories, manual projects, web references, and books
 - Validation engine with 7 core validation rules
 - Cross-reference graph system for bidirectional linking

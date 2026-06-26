@@ -1,6 +1,6 @@
-# Contributing to OmniDatum Processor
+# Contributing to RepoQuery Processor
 
-Thank you for your interest in contributing to the OmniDatum Processor! This document provides guidelines and information for contributors.
+Thank you for your interest in contributing to the RepoQuery Processor! This document provides guidelines and information for contributors.
 
 ## Table of Contents
 
@@ -25,7 +25,7 @@ Thank you for your interest in contributing to the OmniDatum Processor! This doc
 
 ```bash
 git clone <repository-url>
-cd omnidatum
+cd repoquery
 cargo build
 cargo test
 ```
@@ -445,7 +445,7 @@ Contributors will be:
 - Credited in commit messages
 - Acknowledged in release notes
 
-Thank you for contributing to OmniDatum Processor!
+Thank you for contributing to RepoQuery Processor!
 
 ---
 

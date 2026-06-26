@@ -155,7 +155,7 @@ repoquery import [options]
 | Option | Default | Description |
 |--------|---------|-------------|
 | `--from` | `data/canonical/repositories.yml` | Source path |
-| `--to` | `data/omnidatum.db` | Destination path |
+| `--to` | `data/repoquery.db` | Destination path |
 
 ---
 
@@ -167,7 +167,7 @@ repoquery export [options]
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `--from` | `data/omnidatum.db` | Source path |
+| `--from` | `data/repoquery.db` | Source path |
 | `--to` | `data/canonical/repositories.yml` | Destination path |
 
 ---
@@ -223,7 +223,7 @@ Keyboard-driven TUI for browsing and managing repositories. Built with ratatui a
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `--store` | `data/omnidatum.db` | Path to data store |
+| `--store` | `data/repoquery.db` | Path to data store |
 
 ---
 
@@ -259,7 +259,7 @@ repoquery activity overview [options]
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `--store` | `data/omnidatum.db` | Path to data store |
+| `--store` | `data/repoquery.db` | Path to data store |
 | `--active-months` | `3` | Active threshold in months |
 | `--stale-months` | `12` | Stale threshold in months |
 | `--chart` | — | Show histogram chart |
@@ -272,7 +272,7 @@ repoquery activity stale [options]
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `--store` | `data/omnidatum.db` | Path to data store |
+| `--store` | `data/repoquery.db` | Path to data store |
 | `--stale-threshold` | `12` | Stale threshold in months |
 | `--format` | `table` | Output format |
 
@@ -283,7 +283,7 @@ repoquery activity active [options]
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `--store` | `data/omnidatum.db` | Path to data store |
+| `--store` | `data/repoquery.db` | Path to data store |
 | `--active-threshold` | `3` | Active threshold in months |
 | `--format` | `table` | Output format |
 
@@ -294,7 +294,7 @@ repoquery activity trending [options]
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `--store` | `data/omnidatum.db` | Path to data store |
+| `--store` | `data/repoquery.db` | Path to data store |
 | `--since` | `90` | Number of days to consider |
 | `--limit` | `20` | Maximum results |
 
@@ -311,7 +311,7 @@ repoquery query list [options]
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `--store` | `data/omnidatum.db` | Path to data store |
+| `--store` | `data/repoquery.db` | Path to data store |
 | `--language` | — | Filter by primary language |
 | `--min-stars` | — | Minimum star count |
 | `--max-stars` | — | Maximum star count |
@@ -331,7 +331,7 @@ repoquery query search <query> [options]
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `--store` | `data/omnidatum.db` | Path to data store |
+| `--store` | `data/repoquery.db` | Path to data store |
 | `--limit` | — | Maximum results |
 | `--sort` | `stars` | Sort field |
 | `--format` | `table` | Output format |
@@ -343,7 +343,7 @@ repoquery query show <owner/repo> [options]
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `--store` | `data/omnidatum.db` | Path to data store |
+| `--store` | `data/repoquery.db` | Path to data store |
 | `--format` | `table` | Output format (table, json, md) |
 
 ##### `topics` — List all topics with repo counts
@@ -353,7 +353,7 @@ repoquery query topics [options]
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `--store` | `data/omnidatum.db` | Path to data store |
+| `--store` | `data/repoquery.db` | Path to data store |
 | `--min-repos` | `1` | Minimum repos with a topic |
 | `--limit` | — | Maximum topics to show |
 
@@ -364,7 +364,7 @@ repoquery query languages [options]
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `--store` | `data/omnidatum.db` | Path to data store |
+| `--store` | `data/repoquery.db` | Path to data store |
 | `--min-repos` | `1` | Minimum repos with a language |
 | `--limit` | — | Maximum languages to show |
 

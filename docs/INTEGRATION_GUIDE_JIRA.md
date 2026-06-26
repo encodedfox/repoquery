@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide shows how to integrate Jira as an external data source for OmniDatum. This is useful for tracking repositories mentioned in Jira issues, epics, or project metadata.
+This guide shows how to integrate Jira as an external data source for RepoQuery. This is useful for tracking repositories mentioned in Jira issues, epics, or project metadata.
 
 **Use Case:** Sync repository information from Jira custom fields, issue descriptions, or project metadata where teams track their technology stack and dependencies.
 
@@ -88,7 +88,7 @@ Create [`src/sync/adapters/jira.rs`](../src/sync/adapters/jira.rs):
 //! are tracked in custom fields, labels, or issue descriptions.
 
 use super::DataSourceAdapter;
-use crate::config::OmnidatumConfig;
+use crate::config::RepoqueryConfig;
 use crate::models::{
     Platform, PlatformInfo, PlatformStatus, QualityMetrics, Repository,
     RepositoryClassification, RepositoryMetadata, RepositorySource,
@@ -143,13 +143,13 @@ impl JiraAdapter {
     /// Create new Jira adapter
     ///
     /// # Arguments
-    /// * `omnidatum_config` - Application configuration
+    /// * `repoquery_config` - Application configuration
     /// * `jira_config` - Jira-specific configuration
     ///
     /// # Returns
     /// Authenticated Jira adapter ready to fetch data
     pub async fn new(
-        omnidatum_config: &OmnidatumConfig,
+        repoquery_config: &RepoqueryConfig,
         jira_config: JiraConfig,
     ) -> Result<Self> {
         // Create HTTP client with auth
@@ -166,7 +166,7 @@ impl JiraAdapter {
         let client = Client::builder()
             .default_headers(headers)
             .timeout(std::time::Duration::from_secs(
-                omnidatum_config.sync.request_timeout_secs,
+                repoquery_config.sync.request_timeout_secs,
             ))
             .build()?;
 
@@ -535,7 +535,7 @@ impl CredentialManager {
     fn jira_credentials_file_path() -> PathBuf {
         dirs::config_dir()
             .unwrap_or_else(|| PathBuf::from("."))
-            .join("omnidatum")
+            .join("repoquery")
             .join("jira-credentials")
     }
 
@@ -548,7 +548,7 @@ impl CredentialManager {
     #[cfg(target_os = "macos")]
     fn from_keychain_jira(&self) -> Result<String> {
         let output = std::process::Command::new("security")
-            .args(&["find-generic-password", "-a", "omnidatum", "-s", "jira-token", "-w"])
+            .args(&["find-generic-password", "-a", "repoquery", "-s", "jira-token", "-w"])
             .output()?;
         
         if output.status.success() {
@@ -638,7 +638,7 @@ impl SyncOrchestrator {
 
 ### Application Config
 
-`~/.config/omnidatum/config.toml`:
+`~/.config/repoquery/config.toml`:
 
 ```toml
 [sync.jira]
@@ -659,8 +659,8 @@ export JIRA_API_TOKEN=your_api_token_here
 export JIRA_EMAIL=your.email@company.com
 
 # Or store in file
-echo "your_api_token" > ~/.config/omnidatum/jira-credentials
-chmod 600 ~/.config/omnidatum/jira-credentials
+echo "your_api_token" > ~/.config/repoquery/jira-credentials
+chmod 600 ~/.config/repoquery/jira-credentials
 ```
 
 ---

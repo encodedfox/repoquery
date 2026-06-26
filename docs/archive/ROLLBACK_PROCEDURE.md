@@ -1,6 +1,6 @@
 # Rollback Procedure
 
-This document describes how to rollback to previous versions of the OmniDatum documentation if needed.
+This document describes how to rollback to previous versions of the RepoQuery documentation if needed.
 
 ## Version Control Setup
 
@@ -33,7 +33,7 @@ git add .
 git commit -m "Initial commit - v1.0.0-baseline"
 
 # Tag baseline
-git tag -a v1.0.0-baseline -m "OmniDatum baseline with Rust processor"
+git tag -a v1.0.0-baseline -m "RepoQuery baseline with Rust processor"
 ```
 
 ## Baseline Backup
@@ -348,7 +348,7 @@ If all local files are lost but you have:
 2. **Remote Git Repository**:
    ```bash
    git clone <remote-url>
-   cd omnidatum
+   cd repoquery
    cargo build
    ```
 

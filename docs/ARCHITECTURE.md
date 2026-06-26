@@ -2,7 +2,7 @@
 
 ## Overview
 
-OmniDatum (binary: `repoquery`) is a Rust CLI for managing GitHub starred repositories. It follows a layered architecture with strict dependency ordering.
+RepoQuery (binary: `repoquery`) is a Rust CLI for managing GitHub starred repositories. It follows a layered architecture with strict dependency ordering.
 
 ```
 ┌──────────────────────────────────────────────────┐

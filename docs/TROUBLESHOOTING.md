@@ -1,6 +1,6 @@
 # Troubleshooting Guide
 
-Common issues and solutions for OmniDatum.
+Common issues and solutions for RepoQuery.
 
 ## Quick Diagnostics
 
@@ -24,7 +24,7 @@ RUST_LOG=debug cargo run -- sync --verbose
 
 #### Compilation Errors
 
-**Problem**: `error: could not compile omnidatum-processor`
+**Problem**: `error: could not compile repoquery`
 
 **Solutions**:
 ```bash
@@ -79,7 +79,7 @@ cargo run -- configure --interactive
 # Ensure: public_repo scope enabled
 
 # 5. Try different credential source
-# Edit ~/.config/omnidatum/config.toml
+# Edit ~/.config/repoquery/config.toml
 [credentials]
 source = "Env"  # Try environment variable
 
@@ -97,7 +97,7 @@ cargo run -- sync
 cargo run -- status --detailed  # Shows reset time
 
 # 2. Increase buffer to sync less per run
-# Edit ~/.config/omnidatum/config.toml
+# Edit ~/.config/repoquery/config.toml
 [sync]
 rate_limit_buffer = 1000  # Stop earlier
 
@@ -124,7 +124,7 @@ cargo run -- sync --repos "critical/repos,only"
 ping api.github.com
 
 # 2. Increase timeout
-# Edit ~/.config/omnidatum/config.toml
+# Edit ~/.config/repoquery/config.toml
 [sync]
 request_timeout_secs = 60  # Default: 30
 
@@ -382,7 +382,7 @@ cargo run -- configure --interactive
 cargo run -- configure --show
 
 # 3. Manually create config directory
-mkdir -p ~/.config/omnidatum
+mkdir -p ~/.config/repoquery
 
 # 4. Use environment variables instead
 export GITHUB_TOKEN="your_token"
@@ -402,7 +402,7 @@ cargo run -- sync
 # - rate_limit_buffer: 0-1000
 
 # Edit config
-$EDITOR ~/.config/omnidatum/config.toml
+$EDITOR ~/.config/repoquery/config.toml
 
 # Verify
 cargo run -- configure --show
@@ -415,10 +415,10 @@ cargo run -- configure --show
 **Solutions**:
 ```bash
 # Fix permissions (Unix)
-chmod 600 ~/.config/omnidatum/credentials
+chmod 600 ~/.config/repoquery/credentials
 
 # Verify
-ls -la ~/.config/omnidatum/credentials
+ls -la ~/.config/repoquery/credentials
 # Should show: -rw------- (600)
 
 # On Windows, use file properties to restrict access
@@ -556,29 +556,29 @@ cargo run -- generate --no-stats
 
 ```bash
 # Set log level
-export RUST_LOG=omnidatum_processor=debug
+export RUST_LOG=repoquery=debug
 
 # Module-specific logging
-export RUST_LOG=omnidatum_processor::sync=trace
+export RUST_LOG=repoquery::sync=trace
 
 # Log to file
 cargo run -- sync 2>&1 | tee sync.log
 
 # With timestamps
-RUST_LOG=omnidatum_processor=debug cargo run -- sync 2>&1 | ts
+RUST_LOG=repoquery=debug cargo run -- sync 2>&1 | ts
 ```
 
 ### Debugging Specific Components
 
 ```bash
 # Sync operations
-RUST_LOG=omnidatum_processor::sync=debug cargo run -- sync --verbose
+RUST_LOG=repoquery::sync=debug cargo run -- sync --verbose
 
 # Validation
-RUST_LOG=omnidatum_processor::validators=debug cargo run -- validate
+RUST_LOG=repoquery::validators=debug cargo run -- validate
 
 # Template generation
-RUST_LOG=omnidatum_processor::generators=debug cargo run -- generate
+RUST_LOG=repoquery::generators=debug cargo run -- generate
 ```
 
 ## Data Recovery
@@ -635,7 +635,7 @@ Gather this information:
 - **Documentation**: Check [README.md](../README.md), [DATA_SYNC.md](DATA_SYNC.md), [API_REFERENCE.md](API_REFERENCE.md)
 - **Issues**: Search existing issues on GitHub
 - **Discussions**: Ask in GitHub Discussions
-- **Stack Overflow**: Tag with `omnidatum` and `rust`
+- **Stack Overflow**: Tag with `repoquery` and `rust`
 
 ### Filing Bug Reports
 
@@ -644,7 +644,7 @@ Include:
 ## Environment
 - OS: [e.g., macOS 14.0, Ubuntu 22.04]
 - Rust version: [output of `rustc --version`]
-- OmniDatum version: [output of `cargo run -- --version`]
+- RepoQuery version: [output of `cargo run -- --version`]
 
 ## Command
 ```bash
@@ -684,7 +684,7 @@ cargo test -- --test-threads=1
 rm -rf data/cache/
 
 # 2. Reset config
-rm -rf ~/.config/omnidatum/
+rm -rf ~/.config/repoquery/
 
 # 3. Restore data from Git
 git checkout data/canonical/
@@ -725,10 +725,10 @@ cargo run -- sync
 security unlock-keychain
 
 # Store token
-security add-generic-password -a omnidatum -s github_token -w "token"
+security add-generic-password -a repoquery -s github_token -w "token"
 
 # Retrieve token
-security find-generic-password -a omnidatum -s github_token -w
+security find-generic-password -a repoquery -s github_token -w
 ```
 
 ### Linux
@@ -740,10 +740,10 @@ sudo apt install libsecret-tools  # Debian/Ubuntu
 sudo dnf install libsecret        # Fedora
 
 # Store token
-secret-tool store --label="OmniDatum GitHub Token" service omnidatum username github
+secret-tool store --label="RepoQuery GitHub Token" service repoquery username github
 
 # Retrieve token
-secret-tool lookup service omnidatum username github
+secret-tool lookup service repoquery username github
 ```
 
 ### Windows
@@ -751,7 +751,7 @@ secret-tool lookup service omnidatum username github
 **Credential Manager**:
 ```powershell
 # Store in Windows Credential Manager
-cmdkey /generic:omnidatum_github /user:token /pass:your_token_here
+cmdkey /generic:repoquery_github /user:token /pass:your_token_here
 
 # Or use file-based storage
 cargo run -- configure --interactive
@@ -777,7 +777,7 @@ cargo flamegraph -- generate
 
 # Memory profiling
 cargo build --release
-heaptrack ./target/release/omnidatum-processor generate
+heaptrack ./target/release/repoquery generate
 ```
 
 ### Network Debugging
@@ -797,7 +797,7 @@ sudo tcpdump -i any host api.github.com
 
 If you've tried the solutions above and still have issues:
 
-1. **Search existing issues**: https://github.com/owner/omnidatum/issues
+1. **Search existing issues**: https://github.com/owner/repoquery/issues
 2. **Open new issue**: Include all diagnostic information
 3. **Ask in discussions**: For general questions
 4. **Check documentation**: May have been recently updated
@@ -805,5 +805,5 @@ If you've tried the solutions above and still have issues:
 ---
 
 **Last Updated**: 2025-12-11  
-**Covers**: OmniDatum v0.1.0+  
+**Covers**: RepoQuery v0.1.0+  
 **Related**: [DATA_SYNC.md](DATA_SYNC.md), [DEVELOPMENT.md](DEVELOPMENT.md), [API_REFERENCE.md](API_REFERENCE.md)

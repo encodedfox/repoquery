@@ -1,6 +1,6 @@
 # Development Guide
 
-Complete guide for developers contributing to OmniDatum.
+Complete guide for developers contributing to RepoQuery.
 
 ## Development Environment Setup
 
@@ -15,7 +15,7 @@ Complete guide for developers contributing to OmniDatum.
 ```bash
 # Clone repository
 git clone <repository-url>
-cd omnidatum
+cd repoquery
 
 # Install Rust (if not already installed)
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -70,7 +70,7 @@ cargo run -- sync --dry-run
 cargo build --release
 
 # Run release binary
-./target/release/omnidatum-processor --help
+./target/release/repoquery --help
 ```
 
 ### Build Profiles
@@ -248,7 +248,7 @@ src/
 1. **Fork and Clone**
 ```bash
 git clone <your-fork-url>
-cd omnidatum
+cd repoquery
 git remote add upstream <original-repo-url>
 ```
 
@@ -338,15 +338,15 @@ test(integration): add rate limit handling test
 
 ```bash
 # Debug level
-export RUST_LOG=omnidatum_processor=debug
+export RUST_LOG=repoquery=debug
 cargo run -- sync
 
 # Trace level (very verbose)
-export RUST_LOG=omnidatum_processor=trace
+export RUST_LOG=repoquery=trace
 cargo run -- validate
 
 # Module-specific
-export RUST_LOG=omnidatum_processor::sync=debug
+export RUST_LOG=repoquery::sync=debug
 ```
 
 ### Debugging Tools
@@ -360,7 +360,7 @@ cargo run -- generate
 export RUST_BACKTRACE=full
 
 # GDB debugging
-rust-gdb target/debug/omnidatum-processor
+rust-gdb target/debug/repoquery
 ```
 
 ### Common Debug Tasks
@@ -377,7 +377,7 @@ cargo test test_external_data_consistency -- --nocapture
 
 # Profile performance
 cargo build --release
-time ./target/release/omnidatum-processor generate
+time ./target/release/repoquery generate
 ```
 
 ## Curation Guidelines
@@ -489,11 +489,11 @@ Contributors are recognized through:
 cargo build --release --profile=profiling
 
 # Profile with perf (Linux)
-perf record ./target/release/omnidatum-processor generate
+perf record ./target/release/repoquery generate
 perf report
 
 # Profile with Instruments (macOS)
-instruments -t Time\ Profiler ./target/release/omnidatum-processor generate
+instruments -t Time\ Profiler ./target/release/repoquery generate
 ```
 
 ### Benchmarking

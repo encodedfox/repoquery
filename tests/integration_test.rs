@@ -1,4 +1,4 @@
-//! Integration tests for OmniDatum Processor
+//! Integration tests for RepoQuery
 //!
 //! Tests end-to-end functionality including:
 //! - Data loading and parsing
@@ -9,15 +9,18 @@
 
 mod mock_adapter;
 
-use omnidatum_processor::{
+use rq_core::{
     Book, CanonicalData, ContentType, DataMerger, DifficultyLevel, ManualProject,
-    ManualProjectClassification, ManualProjectMetadata, MarkdownGenerator, MergeStrategy,
-    MissingLicenseRule, NoDuplicateReposRule, Platform, PlatformInfo, PlatformMigrationRule,
-    PlatformStatus, QualityMetrics, ReadmeCrossReferenceRule, ReferenceStatus, Repository,
-    RepositoryClassification, RepositoryMetadata, RepositorySource, Severity, ValidUrlsRule,
-    Validator, WebReference,
+    ManualProjectClassification, ManualProjectMetadata, MergeStrategy,
+    Platform, PlatformInfo, PlatformStatus, QualityMetrics, ReferenceStatus, Repository,
+    RepositoryClassification, RepositoryMetadata, RepositorySource, WebReference,
 };
-use omnidatum_processor::sync::DataSourceAdapter;
+use rq_generate::MarkdownGenerator;
+use rq_validate::{
+    MissingLicenseRule, NoDuplicateReposRule, PlatformMigrationRule, ReadmeCrossReferenceRule,
+    Severity, ValidUrlsRule, Validator,
+};
+use rq_sync::DataSourceAdapter;
 use tempfile::TempDir;
 
 /// Helper function to create test canonical data with a small sample
@@ -79,6 +82,9 @@ fn create_test_data() -> CanonicalData {
             custom_tags: vec![],
             fork_ahead: None,
             fork_behind: None,
+            domain: None,
+            unified_owner_id: None,
+            discovered_via: None,
         },
         Repository {
             id: "test-repo-2".to_string(),
@@ -132,6 +138,9 @@ fn create_test_data() -> CanonicalData {
             custom_tags: vec![],
             fork_ahead: None,
             fork_behind: None,
+            domain: None,
+            unified_owner_id: None,
+            discovered_via: None,
         },
         // Add an archived repository for testing
         Repository {
@@ -186,6 +195,9 @@ fn create_test_data() -> CanonicalData {
             custom_tags: vec![],
             fork_ahead: None,
             fork_behind: None,
+            domain: None,
+            unified_owner_id: None,
+            discovered_via: None,
         },
     ];
 
@@ -359,6 +371,9 @@ fn test_validation_error_detection() {
         custom_tags: vec![],
         fork_ahead: None,
         fork_behind: None,
+            domain: None,
+            unified_owner_id: None,
+            discovered_via: None,
     });
 
     // Add repository with invalid URL format
@@ -414,6 +429,9 @@ fn test_validation_error_detection() {
         custom_tags: vec![],
         fork_ahead: None,
         fork_behind: None,
+            domain: None,
+            unified_owner_id: None,
+            discovered_via: None,
     });
 
     data.total_count = data.repositories.len();
@@ -505,7 +523,7 @@ fn test_cross_reference_accuracy() {
     });
 
     // Build cross-reference graph
-    use omnidatum_processor::CrossRefGraph;
+    use rq_graph::CrossRefGraph;
     let graph = CrossRefGraph::build(&data).expect("Failed to build cross-reference graph");
 
     // Test bidirectional links
@@ -634,10 +652,10 @@ fn test_validation_on_clean_data() {
 /// Test configuration loading and validation
 #[test]
 fn test_config_loading_and_defaults() {
-    use omnidatum_processor::OmnidatumConfig;
+    use rq_core::RepoqueryConfig;
     
     // Test default configuration is valid
-    let config = OmnidatumConfig::default();
+    let config = RepoqueryConfig::default();
     assert!(config.validate().is_ok());
     
     // Verify default values
@@ -653,10 +671,10 @@ fn test_config_loading_and_defaults() {
 /// Test configuration validation with invalid values
 #[test]
 fn test_config_validation() {
-    use omnidatum_processor::OmnidatumConfig;
+    use rq_core::RepoqueryConfig;
     
     // Test parallel_workers out of range
-    let mut config = OmnidatumConfig::default();
+    let mut config = RepoqueryConfig::default();
     config.sync.parallel_workers = 0;
     assert!(config.validate().is_err());
     
@@ -664,7 +682,7 @@ fn test_config_validation() {
     assert!(config.validate().is_err());
     
     // Test cache_ttl_hours out of range
-    config = OmnidatumConfig::default();
+    config = RepoqueryConfig::default();
     config.sync.cache_ttl_hours = 0;
     assert!(config.validate().is_err());
     
@@ -672,7 +690,7 @@ fn test_config_validation() {
     assert!(config.validate().is_err());
     
     // Test rate_limit_buffer out of range
-    config = OmnidatumConfig::default();
+    config = RepoqueryConfig::default();
     config.sync.rate_limit_buffer = 1001;
     assert!(config.validate().is_err());
     
@@ -682,7 +700,7 @@ fn test_config_validation() {
 /// Test credential manager token redaction
 #[test]
 fn test_credential_redaction() {
-    use omnidatum_processor::CredentialManager;
+    use rq_core::CredentialManager;
     
     let token = "ghp_1234567890abcdefghijklmnop";
     let redacted = CredentialManager::redact(token);
@@ -765,6 +783,9 @@ async fn test_sync_workflow() {
             custom_tags: vec![],
             fork_ahead: None,
             fork_behind: None,
+            domain: None,
+            unified_owner_id: None,
+            discovered_via: None,
         },
         Repository {
             id: "test-facebook-react".to_string(),
@@ -818,6 +839,9 @@ async fn test_sync_workflow() {
             custom_tags: vec![],
             fork_ahead: None,
             fork_behind: None,
+            domain: None,
+            unified_owner_id: None,
+            discovered_via: None,
         },
         Repository {
             id: "test-non-github-repo".to_string(),
@@ -871,6 +895,9 @@ async fn test_sync_workflow() {
             custom_tags: vec![],
             fork_ahead: None,
             fork_behind: None,
+            domain: None,
+            unified_owner_id: None,
+            discovered_via: None,
         },
     ];
     
@@ -952,11 +979,12 @@ async fn test_sync_rate_limit_handling() {
 /// Test 33: Credential failures
 #[tokio::test]
 async fn test_sync_authentication_failure() {
-    use omnidatum_processor::{CredentialManager, OmnidatumConfig, GitHubAdapter};
+    use rq_core::{CredentialManager, RepoqueryConfig};
+    use rq_sync::GitHubAdapter;
     
     // Create config with file-based credentials (will fail if file doesn't exist)
-    let mut config = OmnidatumConfig::default();
-    config.credentials.source = omnidatum_processor::CredentialSource::File;
+    let mut config = RepoqueryConfig::default();
+    config.credentials.source = rq_core::CredentialSource::File;
     config.credentials.file_path = Some("/nonexistent/path/to/credentials".into());
     
     // Attempt to create GitHub adapter (should fail due to missing credentials)

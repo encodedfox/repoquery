@@ -1,6 +1,6 @@
 schema_version: '1.0'
 last_updated: '2026-06-17T16:49:49.232895+00:00'
-generated_by: omnidatum-processor/list-parser
+generated_by: repoquery/list-parser
 total_count: 1237
 repositories:
 - id: github-com-blade-lang-blade

@@ -1,7 +1,7 @@
 //! Repository metadata management commands.
 
 use anyhow::{bail, Result};
-use od_store::{open_store, RepoStore};
+use rq_store::{open_store, RepoStore};
 use std::path::{Path, PathBuf};
 
 fn open_at(path: &Path) -> Result<Box<dyn RepoStore>> {

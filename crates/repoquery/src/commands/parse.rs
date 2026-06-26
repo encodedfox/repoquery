@@ -1,5 +1,5 @@
 use anyhow::Result;
-use od_core::{CanonicalData, ListParser};
+use rq_core::{CanonicalData, ListParser};
 use std::path::PathBuf;
 
 pub async fn run(list: PathBuf, output: PathBuf) -> Result<()> {
@@ -17,7 +17,7 @@ pub async fn run(list: PathBuf, output: PathBuf) -> Result<()> {
     let mut canonical = CanonicalData::new();
     canonical.repositories = repos;
     canonical.total_count = canonical.repositories.len();
-    canonical.generated_by = "omnidatum-processor/list-parser".to_string();
+    canonical.generated_by = "repoquery/list-parser".to_string();
     canonical.calculate_statistics();
 
     if let Some(parent) = output.parent() {

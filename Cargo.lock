@@ -1920,106 +1920,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "od-core"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "chrono",
- "criterion",
- "dirs",
- "pretty_assertions",
- "regex",
- "serde",
- "serde_json",
- "serde_yml",
- "serial_test",
- "tempfile",
- "thiserror 1.0.69",
- "toml",
- "tracing",
-]
-
-[[package]]
-name = "od-generate"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "chrono",
- "od-core",
- "pretty_assertions",
- "serde",
- "tera",
- "thiserror 1.0.69",
- "tracing",
-]
-
-[[package]]
-name = "od-graph"
-version = "0.1.0"
-dependencies = [
- "od-core",
- "petgraph",
- "pretty_assertions",
- "serde",
- "thiserror 1.0.69",
- "tracing",
-]
-
-[[package]]
-name = "od-store"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "chrono",
- "mockito",
- "od-core",
- "rusqlite",
- "serde",
- "serde_json",
- "serde_yml",
- "tempfile",
- "thiserror 1.0.69",
- "tracing",
-]
-
-[[package]]
-name = "od-sync"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "async-trait",
- "chrono",
- "indicatif",
- "mockito",
- "octocrab",
- "od-core",
- "pretty_assertions",
- "reqwest",
- "serde",
- "serde_json",
- "serde_yml",
- "tempfile",
- "thiserror 1.0.69",
- "tokio",
- "tracing",
-]
-
-[[package]]
-name = "od-validate"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "chrono",
- "od-core",
- "pretty_assertions",
- "regex",
- "serde",
- "serde_json",
- "thiserror 1.0.69",
- "tracing",
-]
-
-[[package]]
 name = "once_cell"
 version = "1.21.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2615,16 +2515,17 @@ dependencies = [
  "clap_complete",
  "clap_mangen",
  "crossterm",
- "od-core",
- "od-generate",
- "od-graph",
- "od-store",
- "od-sync",
- "od-validate",
  "predicates",
  "pretty_assertions",
  "ratatui",
  "reqwest",
+ "rq-core",
+ "rq-expander",
+ "rq-generate",
+ "rq-graph",
+ "rq-store",
+ "rq-sync",
+ "rq-validate",
  "serde",
  "serde_json",
  "serde_yml",
@@ -2706,6 +2607,122 @@ name = "roff"
 version = "1.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "323c417e1d9665a65b263ec744ba09030cfb277e9daa0b018a4ab62e57bc8189"
+
+[[package]]
+name = "rq-core"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "chrono",
+ "criterion",
+ "dirs",
+ "pretty_assertions",
+ "regex",
+ "serde",
+ "serde_json",
+ "serde_yml",
+ "serial_test",
+ "tempfile",
+ "thiserror 1.0.69",
+ "toml",
+ "tracing",
+]
+
+[[package]]
+name = "rq-expander"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "async-trait",
+ "chrono",
+ "octocrab",
+ "rq-core",
+ "rq-store",
+ "serde_json",
+ "tempfile",
+ "tokio",
+ "tracing",
+]
+
+[[package]]
+name = "rq-generate"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "chrono",
+ "pretty_assertions",
+ "rq-core",
+ "serde",
+ "tera",
+ "thiserror 1.0.69",
+ "tracing",
+]
+
+[[package]]
+name = "rq-graph"
+version = "0.1.0"
+dependencies = [
+ "petgraph",
+ "pretty_assertions",
+ "rq-core",
+ "serde",
+ "thiserror 1.0.69",
+ "tracing",
+]
+
+[[package]]
+name = "rq-store"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "chrono",
+ "mockito",
+ "rq-core",
+ "rusqlite",
+ "serde",
+ "serde_json",
+ "serde_yml",
+ "tempfile",
+ "thiserror 1.0.69",
+ "tracing",
+]
+
+[[package]]
+name = "rq-sync"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "async-trait",
+ "chrono",
+ "indicatif",
+ "mockito",
+ "octocrab",
+ "pretty_assertions",
+ "reqwest",
+ "rq-core",
+ "serde",
+ "serde_json",
+ "serde_yml",
+ "tempfile",
+ "thiserror 1.0.69",
+ "tokio",
+ "tracing",
+]
+
+[[package]]
+name = "rq-validate"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "chrono",
+ "pretty_assertions",
+ "regex",
+ "rq-core",
+ "serde",
+ "serde_json",
+ "thiserror 1.0.69",
+ "tracing",
+]
 
 [[package]]
 name = "rsa"

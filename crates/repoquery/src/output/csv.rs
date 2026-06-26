@@ -1,5 +1,5 @@
 use super::Formatter;
-use od_core::Repository;
+use rq_core::Repository;
 
 pub struct CsvFormatter;
 

@@ -1,6 +1,6 @@
-# OmniDatum Update Runbook
+# RepoQuery Update Runbook
 
-This runbook documents the complete workflow for updating the OmniDatum repository documentation, including starred repositories, manual additions, web references, and books.
+This runbook documents the complete workflow for updating the RepoQuery repository documentation, including starred repositories, manual additions, web references, and books.
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@ This runbook documents the complete workflow for updating the OmniDatum reposito
 
 ## Overview
 
-The OmniDatum repository uses a Rust-based processor to maintain synchronized documentation across multiple formats:
+The RepoQuery repository uses a Rust-based processor to maintain synchronized documentation across multiple formats:
 
 - **LIST.md** - Bullet list format of active repositories
 - **TABLE.md** - Table format of active repositories  

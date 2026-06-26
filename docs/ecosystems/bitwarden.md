@@ -98,4 +98,4 @@ Password management implementations compatible with the Bitwarden protocol.
 ---
 
 *Last Updated: 2025-12-10*  
-*Part of OmniDatum Repository - [Back to Main](../../README.md)*
+*Part of RepoQuery Repository - [Back to Main](../../README.md)*

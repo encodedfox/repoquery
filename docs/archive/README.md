@@ -1,6 +1,6 @@
 # Archived Documentation
 
-This directory contains historical documentation files from various stages of the OmniDatum project development. These documents are preserved for reference but are no longer actively maintained.
+This directory contains historical documentation files from various stages of the RepoQuery project development. These documents are preserved for reference but are no longer actively maintained.
 
 ## Contents
 

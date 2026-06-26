@@ -1,10 +1,10 @@
 use clap::Subcommand;
 
+pub mod languages;
 pub mod list;
 pub mod search;
 pub mod show;
 pub mod topics;
-pub mod languages;
 
 #[derive(Subcommand)]
 pub enum QueryAction {

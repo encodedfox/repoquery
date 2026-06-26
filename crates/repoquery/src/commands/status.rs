@@ -1,11 +1,11 @@
 use anyhow::Result;
-use od_core::{CredentialManager, OmnidatumConfig, SyncQualityReport};
-use od_sync::SyncCache;
+use rq_core::{CredentialManager, RepoqueryConfig, SyncQualityReport};
+use rq_sync::SyncCache;
 
 pub async fn run(detailed: bool) -> Result<()> {
-    println!("📊 OmniDatum Status\n");
+    println!("📊 RepoQuery Status\n");
 
-    let config = OmnidatumConfig::load()?;
+    let config = RepoqueryConfig::load()?;
 
     let cache = SyncCache::load()?;
     let stats = cache.stats();
@@ -29,8 +29,7 @@ pub async fn run(detailed: bool) -> Result<()> {
         println!("  Run 'cargo run -- sync' to fetch repository metadata");
     }
 
-    let quality_report_path =
-        std::path::PathBuf::from("data/cache/sync_quality_report.json");
+    let quality_report_path = std::path::PathBuf::from("data/cache/sync_quality_report.json");
     if quality_report_path.exists() {
         if let Ok(content) = std::fs::read_to_string(&quality_report_path) {
             if let Ok(report) = serde_json::from_str::<SyncQualityReport>(&content) {

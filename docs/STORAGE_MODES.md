@@ -46,7 +46,7 @@ In `~/.config/repoquery/config.toml`:
 [storage]
 mode = "yaml"        # yaml | sqlite | dual
 yaml_path = "data/canonical/repositories.yml"
-sqlite_path = "data/omnidatum.db"
+sqlite_path = "data/repoquery.db"
 ```
 
 Environment variable override: `REPOQUERY_STORAGE_MODE=sqlite`
@@ -57,8 +57,8 @@ Convert between formats at any time:
 
 ```bash
 # YAML → SQLite
-repoquery import --from data/canonical/repositories.yml --to data/omnidatum.db
+repoquery import --from data/canonical/repositories.yml --to data/repoquery.db
 
 # SQLite → YAML
-repoquery export --from data/omnidatum.db --to data/canonical/repositories.yml
+repoquery export --from data/repoquery.db --to data/canonical/repositories.yml
 ```

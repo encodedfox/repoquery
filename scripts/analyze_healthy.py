@@ -5,7 +5,7 @@ import sqlite3
 from collections import Counter, defaultdict
 from datetime import datetime, timedelta
 
-DB_PATH = "data/omnidatum.db"
+DB_PATH = "data/repoquery.db"
 NOW = datetime.now()
 
 # Activity thresholds (same as Rust code)

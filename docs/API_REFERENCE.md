@@ -2,10 +2,10 @@
 
 ## CLI Interface
 
-OmniDatum provides a comprehensive command-line interface built with Clap 4.5. All commands follow the pattern:
+RepoQuery provides a comprehensive command-line interface built with Clap 4.5. All commands follow the pattern:
 
 ```bash
-omnidatum-processor <COMMAND> [OPTIONS]
+repoquery <COMMAND> [OPTIONS]
 ```
 
 ### Global Options
@@ -24,7 +24,7 @@ Fetches repository metadata from external sources like GitHub API.
 
 **Usage:**
 ```bash
-omnidatum-processor sync [OPTIONS]
+repoquery sync [OPTIONS]
 ```
 
 **Options:**
@@ -76,11 +76,11 @@ cargo run -- sync --clear-cache
 
 ### `configure` - Setup Configuration
 
-Configures OmniDatum settings and credentials.
+Configures RepoQuery settings and credentials.
 
 **Usage:**
 ```bash
-omnidatum-processor configure [OPTIONS]
+repoquery configure [OPTIONS]
 ```
 
 **Options:**
@@ -104,7 +104,7 @@ cargo run -- configure --show
 
 **Output (--show):**
 ```
-⚙️  OmniDatum Configuration
+⚙️  RepoQuery Configuration
 
 📋 Current Configuration:
 
@@ -117,10 +117,10 @@ cargo run -- configure --show
 
 [credentials]
   source = File
-  file_path = "~/.config/omnidatum/credentials"
+  file_path = "~/.config/repoquery/credentials"
 
 🔑 GitHub token: ghp_***REDACTED*** (configured)
-📁 Config location: "~/.config/omnidatum/config.toml"
+📁 Config location: "~/.config/repoquery/config.toml"
 ```
 
 ### `status` - System Health Check
@@ -129,7 +129,7 @@ Shows sync status and system health information.
 
 **Usage:**
 ```bash
-omnidatum-processor status [OPTIONS]
+repoquery status [OPTIONS]
 ```
 
 **Options:**
@@ -148,7 +148,7 @@ cargo run -- status --detailed
 
 **Output:**
 ```
-📊 OmniDatum Status
+📊 RepoQuery Status
 
 Sync Status:
   Last sync: 2025-12-11 12:30:00 UTC (2 hours ago)
@@ -174,7 +174,7 @@ Migrates credentials from legacy location to secure storage.
 
 **Usage:**
 ```bash
-omnidatum-processor migrate-credentials [OPTIONS]
+repoquery migrate-credentials [OPTIONS]
 ```
 
 **Options:**
@@ -218,7 +218,7 @@ Parses existing LIST.md and TABLE.md files into canonical YAML format.
 
 **Usage:**
 ```bash
-omnidatum-processor parse [OPTIONS]
+repoquery parse [OPTIONS]
 ```
 
 **Options:**
@@ -270,7 +270,7 @@ Validates canonical data against built-in and custom rules.
 
 **Usage:**
 ```bash
-omnidatum-processor validate [OPTIONS]
+repoquery validate [OPTIONS]
 ```
 
 **Options:**
@@ -343,7 +343,7 @@ Generates markdown documentation from canonical data using Tera templates.
 
 **Usage:**
 ```bash
-omnidatum-processor generate [OPTIONS]
+repoquery generate [OPTIONS]
 ```
 
 **Options:**
@@ -384,7 +384,7 @@ Merges multiple data sources into unified canonical format.
 
 **Usage:**
 ```bash
-omnidatum-processor merge [OPTIONS]
+repoquery merge [OPTIONS]
 ```
 
 **Options:**
@@ -424,7 +424,7 @@ Shows comprehensive statistics about the repository dataset.
 
 **Usage:**
 ```bash
-omnidatum-processor stats [OPTIONS]
+repoquery stats [OPTIONS]
 ```
 
 **Options:**
@@ -477,12 +477,12 @@ Quality Metrics:
 
 ## Library API
 
-For programmatic usage, OmniDatum exposes a Rust library API.
+For programmatic usage, RepoQuery exposes a Rust library API.
 
 ### Core Types
 
 ```rust
-use omnidatum_processor::{CanonicalData, Repository, ValidationResult};
+use repoquery::{CanonicalData, Repository, ValidationResult};
 
 // Load canonical data
 let data = CanonicalData::from_file("data/canonical/merged_data.yml")?;
@@ -496,7 +496,7 @@ for repo in &data.repositories {
 ### Validation API
 
 ```rust
-use omnidatum_processor::{Validator, ValidationRule};
+use repoquery::{Validator, ValidationRule};
 
 // Create validator with built-in rules
 let mut validator = Validator::new();
@@ -513,7 +513,7 @@ println!("Errors: {}, Warnings: {}", report.error_count(), report.warning_count(
 ### Generation API
 
 ```rust
-use omnidatum_processor::MarkdownGenerator;
+use repoquery::MarkdownGenerator;
 
 // Create generator
 let generator = MarkdownGenerator::new("data/templates")?;
@@ -530,7 +530,7 @@ std::fs::write("TABLE.md", table_content)?;
 ### Cross-Reference API
 
 ```rust
-use omnidatum_processor::{CrossReferenceGraph, NodeType};
+use repoquery::{CrossReferenceGraph, NodeType};
 
 // Build cross-reference graph
 let graph = CrossReferenceGraph::from_canonical(&data)?;
@@ -580,21 +580,21 @@ Error: ValidationError: Repository validation failed
 
 ```bash
 # Logging level
-export RUST_LOG=omnidatum_processor=debug
+export RUST_LOG=repoquery=debug
 
 # Backtrace on panic
 export RUST_BACKTRACE=1
 
 # Template directory override
-export OMNIDATUM_TEMPLATES_DIR=/custom/templates
+export REPOQUERY_TEMPLATES_DIR=/custom/templates
 
 # Cache directory override  
-export OMNIDATUM_CACHE_DIR=/custom/cache
+export REPOQUERY_CACHE_DIR=/custom/cache
 ```
 
 ### Configuration File (Planned)
 
-Future versions will support `omnidatum.toml`:
+Future versions will support `repoquery.toml`:
 
 ```toml
 [validation]

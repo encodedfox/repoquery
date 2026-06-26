@@ -1,6 +1,6 @@
 use anyhow::{Context, Result};
 use clap::Args;
-use od_store::RepoFilter;
+use rq_store::RepoFilter;
 use std::path::PathBuf;
 
 use crate::output::OutputFormat;
@@ -10,7 +10,7 @@ pub struct ShowArgs {
     /// Repository full name (owner/name)
     pub repo: String,
     /// Path to data store
-    #[arg(long, default_value = "data/omnidatum.db")]
+    #[arg(long, default_value = "data/repoquery.db")]
     pub store: PathBuf,
     /// Output format (table, json, md)
     #[arg(long, default_value = "table")]
@@ -18,7 +18,7 @@ pub struct ShowArgs {
 }
 
 pub async fn run(args: ShowArgs) -> Result<()> {
-    let store = od_store::open_store(&args.store)?;
+    let store = rq_store::open_store(&args.store)?;
     let fmt = OutputFormat::from_str(&args.format);
 
     let filter = RepoFilter {

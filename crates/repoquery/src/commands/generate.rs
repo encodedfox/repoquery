@@ -1,7 +1,7 @@
 use anyhow::Result;
-use od_core::CanonicalData;
-use od_generate::MarkdownGenerator;
-use od_validate::{
+use rq_core::CanonicalData;
+use rq_generate::MarkdownGenerator;
+use rq_validate::{
     DuplicateRepositoryNameRule, ExternalDataConsistencyRule, NoDuplicateReposRule, Severity,
     ValidUrlsRule, Validator,
 };
@@ -61,7 +61,10 @@ pub async fn run(
                 .filter(|i| matches!(i.severity, Severity::Error))
                 .take(5)
             {
-                println!("  [{}] {}: {}", issue.code, issue.location.file, issue.message);
+                println!(
+                    "  [{}] {}: {}",
+                    issue.code, issue.location.file, issue.message
+                );
             }
             println!("\n💡 Run 'cargo run -- validate --check-external-consistency' for details");
             println!("   Or use '--validate-sync-data=false' to skip this check");

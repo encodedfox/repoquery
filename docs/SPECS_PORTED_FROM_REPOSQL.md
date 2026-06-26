@@ -1,10 +1,10 @@
-# RepoQuery Specs Ported from RepoSQL → OmniDatum
+# RepoQuery Specs Ported from RepoSQL → RepoQuery
 
 > Binary renamed to `repoquery`. Repository will be renamed later.
 
 ## Executive Summary
 
-The `reposql/` project contained detailed specifications (requirements, research, design, security review) for a GitHub starred-repository CLI tool but was **0% implemented** (skeleton code only). The `omnidatum/` project is a fully implemented, production-ready system that already exceeds reposql's planned features in most areas. This document captures reposql's **specifications and design decisions that should be ported** into omnidatum as improvements and new features.
+The `reposql/` project contained detailed specifications (requirements, research, design, security review) for a GitHub starred-repository CLI tool but was **0% implemented** (skeleton code only). The `repoquery/` project is a fully implemented, production-ready system that already exceeds reposql's planned features in most areas. This document captures reposql's **specifications and design decisions that should be ported** into repoquery as improvements and new features.
 
 ---
 
@@ -21,7 +21,7 @@ The `reposql/` project contained detailed specifications (requirements, research
 
 ## Files Removed
 
-- `stars/` — basic Python fetch script (superseded by omnidatum sync)
+- `stars/` — basic Python fetch script (superseded by repoquery sync)
 
 ---
 
@@ -173,7 +173,7 @@ Ported from reposql `design.md` testing section and `implementation.md` task lis
 
 | # | Task | Files | Est. |
 |---|------|-------|------|
-| 6.1 | Merge reposql `concept.md` research into omnidatum README | `README.md` | 2h |
+| 6.1 | Merge reposql `concept.md` research into repoquery README | `README.md` | 2h |
 | 6.2 | Create `CLI_COMMAND_REFERENCE.md` with full command tree | `docs/CLI_COMMAND_REFERENCE.md` | 2h |
 | 6.3 | Create `ARCHITECTURE.md` based on reposql layered-architecture diagrams | `docs/ARCHITECTURE.md` | 3h |
 | 6.4 | Create `STORAGE_MODES.md` explaining YAML vs SQLite vs dual | `docs/STORAGE_MODES.md` | 1h |
@@ -185,9 +185,9 @@ Ported from reposql `design.md` testing section and `implementation.md` task lis
 
 ---
 
-## Cross-Reference: RepoSQL Features → OmniDatum Status
+## Cross-Reference: RepoSQL Features → RepoQuery Status
 
-| RepoSQL Requirement | OmniDatum Status | Action |
+| RepoSQL Requirement | RepoQuery Status | Action |
 |---------------------|------------------|--------|
 | GitHub REST API with ETag caching | GraphQL bulk fetch + SQLite ETag cache (better) | ✅ Documented in ARCHITECTURE.md |
 | Full + incremental sync with 304 handling | GraphQL page-based sync with cache | ✅ Tested (sync_integration.rs) |

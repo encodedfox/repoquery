@@ -1,5 +1,5 @@
 use anyhow::Result;
-use od_core::{Book, CanonicalData, DataMerger, MergeStrategy, WebReference};
+use rq_core::{Book, CanonicalData, DataMerger, MergeStrategy, WebReference};
 use std::path::PathBuf;
 
 pub async fn run(base: PathBuf, manual: PathBuf, output: PathBuf) -> Result<()> {

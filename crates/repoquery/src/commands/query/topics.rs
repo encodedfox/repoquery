@@ -6,7 +6,7 @@ use std::path::PathBuf;
 #[derive(Args)]
 pub struct TopicsArgs {
     /// Path to data store
-    #[arg(long, default_value = "data/omnidatum.db")]
+    #[arg(long, default_value = "data/repoquery.db")]
     pub store: PathBuf,
     /// Minimum repos with a topic to include
     #[arg(long, default_value = "1")]
@@ -17,7 +17,7 @@ pub struct TopicsArgs {
 }
 
 pub async fn run(args: TopicsArgs) -> Result<()> {
-    let store = od_store::open_store(&args.store)?;
+    let store = rq_store::open_store(&args.store)?;
     let repos = store.list_repos(&Default::default())?;
 
     let mut topic_counts: BTreeMap<String, usize> = BTreeMap::new();

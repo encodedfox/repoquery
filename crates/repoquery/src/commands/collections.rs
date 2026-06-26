@@ -1,10 +1,10 @@
 use anyhow::{bail, Result};
-use od_core::Collection;
-use od_store::{open_store, RepoFilter, RepoStore};
+use rq_core::Collection;
+use rq_store::{open_store, RepoFilter, RepoStore};
 use std::path::{Path, PathBuf};
 
 fn store() -> Result<Box<dyn RepoStore>> {
-    let path = Path::new("data/omnidatum.db");
+    let path = Path::new("data/repoquery.db");
     if let Some(parent) = path.parent() {
         std::fs::create_dir_all(parent)?;
     }

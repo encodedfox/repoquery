@@ -1,8 +1,8 @@
 //! Interactive TUI for browsing repositories.
 
 use crossterm::event::{self, Event, KeyCode, KeyEvent};
-use od_core::{Collection, Relation, Repository};
 use ratatui::{prelude::*, widgets::*};
+use rq_core::{Collection, Relation, Repository};
 use std::path::PathBuf;
 
 // ── App state ─────────────────────────────────────────────────────────────────
@@ -186,7 +186,9 @@ impl App {
     }
 
     fn selected_repo(&self) -> Option<&Repository> {
-        self.filtered.get(self.selected).and_then(|&i| self.repos.get(i))
+        self.filtered
+            .get(self.selected)
+            .and_then(|&i| self.repos.get(i))
     }
 }
 
@@ -272,7 +274,7 @@ fn draw(f: &mut Frame, app: &App) {
 }
 
 fn draw_header(f: &mut Frame, app: &App, area: Rect) {
-    let mut title = format!(" OmniDatum — {} repositories", app.filtered.len());
+    let mut title = format!(" RepoQuery — {} repositories", app.filtered.len());
     if let Some(lang) = &app.filter_language {
         title.push_str(&format!(" [lang: {lang}]"));
     }
@@ -489,20 +491,29 @@ fn draw_collection_detail(f: &mut Frame, app: &App, area: Rect) {
         .map(|id| ListItem::new(id.as_str()))
         .collect();
 
-    let list = List::new(items)
-        .block(Block::bordered().title(format!(" {} ({} repos) ", col.name, col.repo_ids.len())));
+    let list = List::new(items).block(Block::bordered().title(format!(
+        " {} ({} repos) ",
+        col.name,
+        col.repo_ids.len()
+    )));
     f.render_widget(list, area);
 }
 
 fn draw_stats(f: &mut Frame, app: &App, area: Rect) {
     let total = app.repos.len();
-    let archived = app.repos.iter().filter(|r| r.quality_metrics.archive_status).count();
+    let archived = app
+        .repos
+        .iter()
+        .filter(|r| r.quality_metrics.archive_status)
+        .count();
     let active = total - archived;
 
     // Language counts
     let mut lang_counts: std::collections::HashMap<&str, usize> = std::collections::HashMap::new();
     for r in &app.repos {
-        *lang_counts.entry(r.classification.language_category.as_str()).or_default() += 1;
+        *lang_counts
+            .entry(r.classification.language_category.as_str())
+            .or_default() += 1;
     }
     let mut lang_vec: Vec<(&str, usize)> = lang_counts.into_iter().collect();
     lang_vec.sort_by(|a, b| b.1.cmp(&a.1));
@@ -517,7 +528,11 @@ fn draw_stats(f: &mut Frame, app: &App, area: Rect) {
 
     // Average quality
     let avg_quality = if total > 0 {
-        app.repos.iter().map(|r| r.quality_metrics.quality_score as usize).sum::<usize>() / total
+        app.repos
+            .iter()
+            .map(|r| r.quality_metrics.quality_score as usize)
+            .sum::<usize>()
+            / total
     } else {
         0
     };
@@ -537,7 +552,10 @@ fn draw_stats(f: &mut Frame, app: &App, area: Rect) {
     }
 
     lines.push(Line::from(""));
-    lines.push(Line::from(vec![Span::styled("By Relation", Style::default().bold())]));
+    lines.push(Line::from(vec![Span::styled(
+        "By Relation",
+        Style::default().bold(),
+    )]));
     let mut rel_vec: Vec<(String, usize)> = rel_counts.into_iter().collect();
     rel_vec.sort_by(|a, b| b.1.cmp(&a.1));
     for (rel, count) in &rel_vec {
@@ -551,7 +569,7 @@ fn draw_stats(f: &mut Frame, app: &App, area: Rect) {
 // ── Entry point ───────────────────────────────────────────────────────────────
 
 pub async fn run(store_path: PathBuf) -> anyhow::Result<()> {
-    let store = od_store::open_store(&store_path)?;
+    let store = rq_store::open_store(&store_path)?;
     let data = store.load_all()?;
     let collections = store.list_collections()?;
 
@@ -573,10 +591,7 @@ pub async fn run(store_path: PathBuf) -> anyhow::Result<()> {
     let result = run_loop(&mut terminal, &mut app);
 
     crossterm::terminal::disable_raw_mode()?;
-    crossterm::execute!(
-        std::io::stdout(),
-        crossterm::terminal::LeaveAlternateScreen
-    )?;
+    crossterm::execute!(std::io::stdout(), crossterm::terminal::LeaveAlternateScreen)?;
 
     result
 }

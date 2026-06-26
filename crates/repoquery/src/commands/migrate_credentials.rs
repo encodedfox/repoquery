@@ -1,5 +1,5 @@
 use anyhow::Result;
-use od_core::{CredentialManager, OmnidatumConfig};
+use rq_core::{CredentialManager, RepoqueryConfig};
 use std::path::PathBuf;
 
 pub async fn run(from: PathBuf, delete_source: bool) -> Result<()> {
@@ -31,7 +31,7 @@ pub async fn run(from: PathBuf, delete_source: bool) -> Result<()> {
         println!("⚠️  Warning: Token doesn't match expected GitHub format");
     }
 
-    let config = OmnidatumConfig::load()?;
+    let config = RepoqueryConfig::load()?;
     let cred_mgr = CredentialManager::new(config.credentials.source.clone());
     cred_mgr.store_token(token)?;
 

@@ -1,4 +1,4 @@
-# OmniDatum Repository Baseline Summary
+# RepoQuery Repository Baseline Summary
 
 **Purpose**: Contextual baseline for requesting external guidance and recommendations  
 **Date**: 2025-12-10  
@@ -6,7 +6,7 @@
 
 ## Repository Scope & Purpose
 
-OmniDatum is a curated knowledge base focused on software architecture, distributed systems, data engineering, and modern development practices. The repository maintains 845 systematically organized projects across multiple hosting platforms, with emphasis on open-source solutions, architectural patterns, and emerging technologies.
+RepoQuery is a curated knowledge base focused on software architecture, distributed systems, data engineering, and modern development practices. The repository maintains 845 systematically organized projects across multiple hosting platforms, with emphasis on open-source solutions, architectural patterns, and emerging technologies.
 
 ### Primary Focus Areas
 

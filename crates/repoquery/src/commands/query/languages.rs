@@ -6,7 +6,7 @@ use std::path::PathBuf;
 #[derive(Args)]
 pub struct LanguagesArgs {
     /// Path to data store
-    #[arg(long, default_value = "data/omnidatum.db")]
+    #[arg(long, default_value = "data/repoquery.db")]
     pub store: PathBuf,
     /// Minimum repos with a language to include
     #[arg(long, default_value = "1")]
@@ -17,7 +17,7 @@ pub struct LanguagesArgs {
 }
 
 pub async fn run(args: LanguagesArgs) -> Result<()> {
-    let store = od_store::open_store(&args.store)?;
+    let store = rq_store::open_store(&args.store)?;
     let repos = store.list_repos(&Default::default())?;
 
     let mut lang_counts: BTreeMap<String, usize> = BTreeMap::new();

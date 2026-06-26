@@ -8,12 +8,13 @@ name = "repoquery"
 path = "src/main.rs"
 
 [dependencies]
-od-core = { workspace = true }
-od-store = { workspace = true }
-od-sync = { workspace = true }
-od-validate = { workspace = true }
-od-generate = { workspace = true }
-od-graph = { workspace = true }
+rq-core = { workspace = true }
+rq-expander = { workspace = true }
+rq-store = { workspace = true }
+rq-sync = { workspace = true }
+rq-validate = { workspace = true }
+rq-generate = { workspace = true }
+rq-graph = { workspace = true }
 anyhow = { workspace = true }
 clap = { workspace = true }
 reqwest = { workspace = true }

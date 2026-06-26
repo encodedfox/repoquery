@@ -27,12 +27,22 @@ pub fn bar_chart(data: &[(&str, u64)], header: &str) -> String {
     for (label, value) in data {
         let bar_len = if max_val > 0 {
             let raw = (*value as f64 / max_val as f64) * bar_max as f64;
-            if raw < 1.0 { 1 } else { raw as usize }
+            if raw < 1.0 {
+                1
+            } else {
+                raw as usize
+            }
         } else {
             1
         };
         let bar: String = std::iter::repeat('█').take(bar_len).collect();
-        out.push_str(&format!("{:<width$} {:>8} {}\n", label, value, bar, width = max_label));
+        out.push_str(&format!(
+            "{:<width$} {:>8} {}\n",
+            label,
+            value,
+            bar,
+            width = max_label
+        ));
     }
 
     out

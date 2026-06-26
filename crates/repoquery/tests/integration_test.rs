@@ -1,4 +1,4 @@
-//! Integration tests for OmniDatum Processor
+//! Integration tests for RepoQuery
 //!
 //! Tests end-to-end functionality including:
 //! - Data loading and parsing
@@ -9,16 +9,16 @@
 
 mod mock_adapter;
 
-use od_core::{
+use rq_core::{
     Book, CanonicalData, ContentType, DataMerger, DifficultyLevel, ManualProject,
-    ManualProjectClassification, ManualProjectMetadata, MergeStrategy,
-    Platform, PlatformInfo, PlatformStatus, QualityMetrics, ReferenceStatus, Repository,
-    RepositoryClassification, RepositoryMetadata, RepositorySource, WebReference,
+    ManualProjectClassification, ManualProjectMetadata, MergeStrategy, Platform, PlatformInfo,
+    PlatformStatus, QualityMetrics, ReferenceStatus, Repository, RepositoryClassification,
+    RepositoryMetadata, RepositorySource, WebReference,
 };
-use od_generate::MarkdownGenerator;
-use od_graph::CrossRefGraph;
-use od_sync::adapters::DataSourceAdapter;
-use od_validate::{
+use rq_generate::MarkdownGenerator;
+use rq_graph::CrossRefGraph;
+use rq_sync::adapters::DataSourceAdapter;
+use rq_validate::{
     MissingLicenseRule, NoDuplicateReposRule, PlatformMigrationRule, ReadmeCrossReferenceRule,
     Severity, ValidUrlsRule, Validator,
 };
@@ -78,11 +78,14 @@ fn create_test_data() -> CanonicalData {
             manually_curated: false,
             curator_notes: None,
             relations: vec![],
-                    fork_parent: None,
+            fork_parent: None,
             fork_parent_url: None,
             custom_tags: vec![],
             fork_ahead: None,
             fork_behind: None,
+            domain: None,
+            unified_owner_id: None,
+            discovered_via: None,
         },
         Repository {
             id: "test-repo-2".to_string(),
@@ -131,11 +134,14 @@ fn create_test_data() -> CanonicalData {
             manually_curated: false,
             curator_notes: None,
             relations: vec![],
-                    fork_parent: None,
+            fork_parent: None,
             fork_parent_url: None,
             custom_tags: vec![],
             fork_ahead: None,
             fork_behind: None,
+            domain: None,
+            unified_owner_id: None,
+            discovered_via: None,
         },
         // Add an archived repository for testing
         Repository {
@@ -185,11 +191,14 @@ fn create_test_data() -> CanonicalData {
             manually_curated: false,
             curator_notes: None,
             relations: vec![],
-                    fork_parent: None,
+            fork_parent: None,
             fork_parent_url: None,
             custom_tags: vec![],
             fork_ahead: None,
             fork_behind: None,
+            domain: None,
+            unified_owner_id: None,
+            discovered_via: None,
         },
     ];
 
@@ -358,11 +367,14 @@ fn test_validation_error_detection() {
         manually_curated: false,
         curator_notes: None,
         relations: vec![],
-            fork_parent: None,
+        fork_parent: None,
         fork_parent_url: None,
         custom_tags: vec![],
         fork_ahead: None,
         fork_behind: None,
+        domain: None,
+        unified_owner_id: None,
+        discovered_via: None,
     });
 
     // Add repository with invalid URL format
@@ -413,11 +425,14 @@ fn test_validation_error_detection() {
         manually_curated: false,
         curator_notes: None,
         relations: vec![],
-            fork_parent: None,
+        fork_parent: None,
         fork_parent_url: None,
         custom_tags: vec![],
         fork_ahead: None,
         fork_behind: None,
+        domain: None,
+        unified_owner_id: None,
+        discovered_via: None,
     });
 
     data.total_count = data.repositories.len();
@@ -509,7 +524,7 @@ fn test_cross_reference_accuracy() {
     });
 
     // Build cross-reference graph
-    // CrossRefGraph already imported via od_graph::CrossRefGraph above
+    // CrossRefGraph already imported via rq_graph::CrossRefGraph above
     let graph = CrossRefGraph::build(&data).expect("Failed to build cross-reference graph");
 
     // Test bidirectional links
@@ -638,82 +653,81 @@ fn test_validation_on_clean_data() {
 /// Test configuration loading and validation
 #[test]
 fn test_config_loading_and_defaults() {
-    use od_core::OmnidatumConfig;
-    
+    use rq_core::RepoqueryConfig;
+
     // Test default configuration is valid
-    let config = OmnidatumConfig::default();
+    let config = RepoqueryConfig::default();
     assert!(config.validate().is_ok());
-    
+
     // Verify default values
     assert!(!config.sync.enabled);
     assert_eq!(config.sync.interval_hours, 24);
     assert_eq!(config.sync.parallel_workers, 3);
     assert_eq!(config.sync.cache_ttl_hours, 24);
     assert_eq!(config.sync.rate_limit_buffer, 500);
-    
+
     println!("✅ Configuration loading and defaults test passed");
 }
 
 /// Test configuration validation with invalid values
 #[test]
 fn test_config_validation() {
-    use od_core::OmnidatumConfig;
-    
+    use rq_core::RepoqueryConfig;
+
     // Test parallel_workers out of range
-    let mut config = OmnidatumConfig::default();
+    let mut config = RepoqueryConfig::default();
     config.sync.parallel_workers = 0;
     assert!(config.validate().is_err());
-    
+
     config.sync.parallel_workers = 11;
     assert!(config.validate().is_err());
-    
+
     // Test cache_ttl_hours out of range
-    config = OmnidatumConfig::default();
+    config = RepoqueryConfig::default();
     config.sync.cache_ttl_hours = 0;
     assert!(config.validate().is_err());
-    
+
     config.sync.cache_ttl_hours = 200;
     assert!(config.validate().is_err());
-    
+
     // Test rate_limit_buffer out of range
-    config = OmnidatumConfig::default();
+    config = RepoqueryConfig::default();
     config.sync.rate_limit_buffer = 1001;
     assert!(config.validate().is_err());
-    
+
     println!("✅ Configuration validation test passed");
 }
 
 /// Test credential manager token redaction
 #[test]
 fn test_credential_redaction() {
-    use od_core::CredentialManager;
-    
+    use rq_core::CredentialManager;
+
     let token = "ghp_1234567890abcdefghijklmnop";
     let redacted = CredentialManager::redact(token);
-    
+
     // Verify token is redacted
     assert!(redacted.contains("***REDACTED***"));
     assert!(!redacted.contains("567890"));
     assert!(redacted.starts_with("ghp_"));
-    
+
     // Short token should be fully redacted
     let short = "abc";
     let short_redacted = CredentialManager::redact(short);
     assert_eq!(short_redacted, "***REDACTED***");
-    
+
     println!("✅ Credential redaction test passed");
 }
-
 
 /// Test 31: Full sync workflow with mock adapter
 #[tokio::test]
 async fn test_sync_workflow() {
     use mock_adapter::MockGitHubAdapter;
-    
+
     // Create temp directory for test data
     let temp_dir = TempDir::new().expect("Failed to create temp dir");
     let canonical_path = temp_dir.path().join("repositories.yml");
-    
+
     // Create test canonical data with 3 repos
     let mut data = CanonicalData::new();
     data.repositories = vec![
@@ -764,11 +778,14 @@ async fn test_sync_workflow() {
             manually_curated: true, // Manual curation flag
             curator_notes: Some("Important compiler project".to_string()), // Manual notes
             relations: vec![],
-                    fork_parent: None,
+            fork_parent: None,
             fork_parent_url: None,
             custom_tags: vec![],
             fork_ahead: None,
             fork_behind: None,
+            domain: None,
+            unified_owner_id: None,
+            discovered_via: None,
         },
         Repository {
             id: "test-facebook-react".to_string(),
@@ -817,11 +834,14 @@ async fn test_sync_workflow() {
             manually_curated: false,
             curator_notes: None,
             relations: vec![],
-                    fork_parent: None,
+            fork_parent: None,
             fork_parent_url: None,
             custom_tags: vec![],
             fork_ahead: None,
             fork_behind: None,
+            domain: None,
+            unified_owner_id: None,
+            discovered_via: None,
         },
         Repository {
             id: "test-non-github-repo".to_string(),
@@ -870,61 +890,72 @@ async fn test_sync_workflow() {
             manually_curated: false,
             curator_notes: None,
             relations: vec![],
-                    fork_parent: None,
+            fork_parent: None,
             fork_parent_url: None,
             custom_tags: vec![],
             fork_ahead: None,
             fork_behind: None,
+            domain: None,
+            unified_owner_id: None,
+            discovered_via: None,
         },
     ];
-    
+
     data.total_count = data.repositories.len();
     data.calculate_statistics();
-    
+
     // Save to temp file
-    data.to_yaml_file(&canonical_path).expect("Failed to save test data");
-    
+    data.to_yaml_file(&canonical_path)
+        .expect("Failed to save test data");
+
     // Create mock adapter with canned responses
     let mut mock_adapter = MockGitHubAdapter::new();
-    
+
     // Add response for rust-lang/rust with updated metadata
     let mut rust_repo = data.repositories[0].clone();
-    rust_repo.metadata.description = "A language empowering everyone to build reliable and efficient software.".to_string();
+    rust_repo.metadata.description =
+        "A language empowering everyone to build reliable and efficient software.".to_string();
     rust_repo.metadata.stars = 95000; // Updated stars
     rust_repo.metadata.topics = vec!["compiler".to_string(), "rust".to_string()];
     mock_adapter.add_response("rust-lang/rust", rust_repo);
-    
+
     // Add response for facebook/react with updated metadata
     let mut react_repo = data.repositories[1].clone();
     react_repo.metadata.description = "The library for web and native user interfaces.".to_string();
     react_repo.metadata.stars = 230000; // Updated stars
     mock_adapter.add_response("facebook/react", react_repo);
-    
+
     // Note: We can't actually inject the mock adapter into SyncOrchestrator
     // since it creates a real GitHubAdapter internally. This test would need
     // refactoring of SyncOrchestrator to accept an adapter parameter.
     // For now, we verify the mock adapter works correctly.
-    
+
     // Verify mock adapter works
     let rust_result = mock_adapter.fetch_repository("rust-lang/rust").await;
     assert!(rust_result.is_ok());
     let rust_fetched = rust_result.unwrap();
     assert_eq!(rust_fetched.metadata.stars, 95000);
-    assert_eq!(rust_fetched.metadata.description, "A language empowering everyone to build reliable and efficient software.");
-    
+    assert_eq!(
+        rust_fetched.metadata.description,
+        "A language empowering everyone to build reliable and efficient software."
+    );
+
     // Verify manual curation fields preserved in mock
     assert!(rust_fetched.manually_curated);
-    assert_eq!(rust_fetched.curator_notes, Some("Important compiler project".to_string()));
-    
+    assert_eq!(
+        rust_fetched.curator_notes,
+        Some("Important compiler project".to_string())
+    );
+
     let react_result = mock_adapter.fetch_repository("facebook/react").await;
     assert!(react_result.is_ok());
     let react_fetched = react_result.unwrap();
     assert_eq!(react_fetched.metadata.stars, 230000);
-    
+
     // Verify non-existent repo returns error
     let not_found = mock_adapter.fetch_repository("nonexistent/repo").await;
     assert!(not_found.is_err());
-    
+
     println!("✅ Sync workflow test passed (mock adapter verified)");
     println!("   Note: Full SyncOrchestrator integration requires adapter injection pattern");
 }
@@ -933,22 +964,22 @@ async fn test_sync_workflow() {
 #[tokio::test]
 async fn test_sync_rate_limit_handling() {
     use mock_adapter::MockGitHubAdapter;
-    
+
     // Create mock adapter that simulates rate limit error
     let mut mock_adapter = MockGitHubAdapter::new();
     mock_adapter.set_connection_result(Err(anyhow::anyhow!(
         "Rate limit exhausted. Please wait 3600 seconds. Resets at 2024-12-11T21:00:00Z"
     )));
-    
+
     // Verify connection check fails with rate limit error
     let result = mock_adapter.check_connection().await;
     assert!(result.is_err());
-    
+
     let error_msg = result.unwrap_err().to_string();
     assert!(error_msg.contains("Rate limit exhausted"));
     assert!(error_msg.contains("3600 seconds"));
     assert!(error_msg.contains("Resets at"));
-    
+
     println!("✅ Rate limit handling test passed");
     println!("   Mock adapter correctly simulates rate limit errors");
 }
@@ -956,36 +987,38 @@ async fn test_sync_rate_limit_handling() {
 /// Test 33: Credential failures
 #[tokio::test]
 async fn test_sync_authentication_failure() {
-    use od_core::{CredentialManager, OmnidatumConfig};
-    use od_sync::GitHubAdapter;
-    
+    use rq_core::{CredentialManager, RepoqueryConfig};
+    use rq_sync::GitHubAdapter;
+
     // Create config with file-based credentials (will fail if file doesn't exist)
-    let mut config = OmnidatumConfig::default();
-    config.credentials.source = od_core::CredentialSource::File;
+    let mut config = RepoqueryConfig::default();
+    config.credentials.source = rq_core::CredentialSource::File;
     config.credentials.file_path = Some("/nonexistent/path/to/credentials".into());
-    
+
     // Attempt to create GitHub adapter (should fail due to missing credentials)
     let result = GitHubAdapter::new(&config).await;
     assert!(result.is_err(), "Expected authentication failure");
-    
+
     let error_msg = format!("{:?}", result.err().unwrap());
-    
+
     // Verify error message is helpful
     assert!(
-        error_msg.contains("configure") || error_msg.contains("credential") || error_msg.contains("token"),
+        error_msg.contains("configure")
+            || error_msg.contains("credential")
+            || error_msg.contains("token"),
         "Error message should mention credentials or configure command"
     );
-    
+
     // Test token redaction
     let test_token = "ghp_secrettoken1234567890";
     let redacted = CredentialManager::redact(test_token);
-    
+
     // Verify token is redacted (should not contain the secret part)
     assert!(!redacted.contains("secrettoken"));
     assert!(!redacted.contains("1234567890"));
     assert!(redacted.contains("***REDACTED***"));
     assert!(redacted.starts_with("ghp_"));
-    
+
     println!("✅ Authentication failure test passed");
     println!("   Error handling provides helpful guidance");
     println!("   Token redaction prevents credential exposure");

@@ -178,11 +178,16 @@ fn test_invalid_flag_fails() {
 fn test_query_list_with_multiple_filters() {
     repoquery()
         .args([
-            "query", "list",
-            "--language", "Rust",
-            "--min-stars", "100",
-            "--sort", "stars",
-            "--limit", "10",
+            "query",
+            "list",
+            "--language",
+            "Rust",
+            "--min-stars",
+            "100",
+            "--sort",
+            "stars",
+            "--limit",
+            "10",
             "--store",
         ])
         .arg(test_data_path())
@@ -194,10 +199,7 @@ fn test_query_list_with_multiple_filters() {
 fn test_query_list_sort_by_name_asc() {
     repoquery()
         .args([
-            "query", "list",
-            "--sort", "name",
-            "--order", "asc",
-            "--store",
+            "query", "list", "--sort", "name", "--order", "asc", "--store",
         ])
         .arg(test_data_path())
         .assert()

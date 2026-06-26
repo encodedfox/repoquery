@@ -2,7 +2,7 @@
 
 ## Overview
 
-OmniDatum's backend is a Rust CLI application designed for high-performance repository documentation processing. The architecture emphasizes type safety, modularity, and sub-second processing times.
+RepoQuery's backend is a Rust CLI application designed for high-performance repository documentation processing. The architecture emphasizes type safety, modularity, and sub-second processing times.
 
 ## Project Structure
 
@@ -29,7 +29,7 @@ src/
 
 ## Data Flow
 
-![Data Flow Diagram](../generated-diagrams/omnidatum_pipeline.png)
+![Data Flow Diagram](../generated-diagrams/repoquery_pipeline.png)
 
 ### Processing Pipeline
 

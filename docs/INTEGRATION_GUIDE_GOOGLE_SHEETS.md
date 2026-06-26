@@ -2,9 +2,9 @@
 
 ## Overview
 
-This guide shows how to integrate Google Sheets as an external data source for OmniDatum. This is useful for maintaining curated lists in spreadsheets that can be synced into the canonical repository data.
+This guide shows how to integrate Google Sheets as an external data source for RepoQuery. This is useful for maintaining curated lists in spreadsheets that can be synced into the canonical repository data.
 
-**Use Case:** Maintain a Google Sheet with columns for repository URL, description, tags, quality notes that gets synced into OmniDatum's canonical format.
+**Use Case:** Maintain a Google Sheet with columns for repository URL, description, tags, quality notes that gets synced into RepoQuery's canonical format.
 
 ---
 
@@ -31,7 +31,7 @@ hyper-rustls = "0.27"
 2. Enable Google Sheets API
 3. Create Service Account or OAuth2 credentials
 4. Download credentials JSON file
-5. Store at `~/.config/omnidatum/google-credentials.json`
+5. Store at `~/.config/repoquery/google-credentials.json`
 
 ---
 
@@ -86,7 +86,7 @@ Create [`src/sync/adapters/google_sheets.rs`](../src/sync/adapters/google_sheets
 //! Google Sheets data source adapter
 
 use super::DataSourceAdapter;
-use crate::config::OmnidatumConfig;
+use crate::config::RepoqueryConfig;
 use crate::models::{
     Platform, PlatformInfo, PlatformStatus, QualityMetrics, Repository,
     RepositoryClassification, RepositoryMetadata, RepositorySource,
@@ -126,14 +126,14 @@ impl GoogleSheetsAdapter {
     /// # Returns
     /// Configured adapter ready to fetch data
     pub async fn new(
-        config: &OmnidatumConfig,
+        config: &RepoqueryConfig,
         spreadsheet_id: String,
         range: String,
     ) -> Result<Self> {
         // Load service account credentials
         let creds_path = dirs::config_dir()
             .unwrap_or_else(|| std::path::PathBuf::from("."))
-            .join("omnidatum")
+            .join("repoquery")
             .join("google-credentials.json");
 
         let service_account_key = yup_oauth2::read_service_account_key(&creds_path)
@@ -401,7 +401,7 @@ pub struct GoogleSheetsConfig {
 
 ### Step 4: Update Configuration File
 
-Add to `~/.config/omnidatum/config.toml`:
+Add to `~/.config/repoquery/config.toml`:
 
 ```toml
 [sync.google_sheets]
@@ -556,7 +556,7 @@ async fn test_google_sheets_sync() {
     // Skip if not configured
     let creds_path = dirs::config_dir()
         .unwrap()
-        .join("omnidatum")
+        .join("repoquery")
         .join("google-credentials.json");
     
     if !creds_path.exists() {
@@ -564,7 +564,7 @@ async fn test_google_sheets_sync() {
         return;
     }
 
-    let config = OmnidatumConfig::default();
+    let config = RepoqueryConfig::default();
     let adapter = GoogleSheetsAdapter::new(
         &config,
         "test_spreadsheet_id".to_string(),
@@ -589,7 +589,7 @@ Error: Failed to read Google service account credentials
 
 Solution: 
 1. Download credentials JSON from Google Cloud Console
-2. Save to ~/.config/omnidatum/google-credentials.json
+2. Save to ~/.config/repoquery/google-credentials.json
 3. Ensure file has proper read permissions
 ```
 
@@ -619,7 +619,7 @@ Solution:
 
 ### Complete Config Example
 
-`~/.config/omnidatum/config.toml`:
+`~/.config/repoquery/config.toml`:
 
 ```toml
 [sync]
@@ -643,7 +643,7 @@ source = "env"
 
 ```bash
 # Google credentials (if using OAuth instead of service account)
-export GOOGLE_APPLICATION_CREDENTIALS=~/.config/omnidatum/google-credentials.json
+export GOOGLE_APPLICATION_CREDENTIALS=~/.config/repoquery/google-credentials.json
 
 # GitHub token (for hybrid sync)
 export GITHUB_TOKEN=ghp_your_token_here
@@ -676,7 +676,7 @@ Use cron to sync daily:
 
 ```bash
 # crontab -e
-0 2 * * * cd /path/to/omnidatum && cargo run --release -- sync --from-sheets && cargo run --release -- generate
+0 2 * * * cd /path/to/repoquery && cargo run --release -- sync --from-sheets && cargo run --release -- generate
 ```
 
 ---
@@ -702,7 +702,7 @@ Use cron to sync daily:
 ## Troubleshooting
 
 **Issue: "Failed to read Google service account credentials"**
-- Check file exists at `~/.config/omnidatum/google-credentials.json`
+- Check file exists at `~/.config/repoquery/google-credentials.json`
 - Verify JSON format is valid
 - Ensure file permissions allow reading
 
@@ -726,7 +726,7 @@ Use cron to sync daily:
 cargo add google-sheets4 yup-oauth2 hyper hyper-rustls
 
 # Configure
-echo 'spreadsheet_id = "YOUR_SHEET_ID"' >> ~/.config/omnidatum/config.toml
+echo 'spreadsheet_id = "YOUR_SHEET_ID"' >> ~/.config/repoquery/config.toml
 ```
 
 ### 2. Create Adapter File
@@ -779,4 +779,4 @@ cargo run -- stats
 
 ---
 
-This guide provides everything needed to integrate Google Sheets as a data source for OmniDatum.
+This guide provides everything needed to integrate Google Sheets as a data source for RepoQuery.

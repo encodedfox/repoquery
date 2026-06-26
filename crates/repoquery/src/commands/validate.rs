@@ -1,6 +1,6 @@
 use anyhow::Result;
-use od_core::CanonicalData;
-use od_validate::{
+use rq_core::CanonicalData;
+use rq_validate::{
     DuplicateRepositoryNameRule, ExternalDataConsistencyRule, MissingLicenseRule,
     MissingMetadataRule, NoDuplicateReposRule, PlatformMigrationRule, ReadmeCrossReferenceRule,
     StaleContentRule, ValidUrlsRule, Validator,

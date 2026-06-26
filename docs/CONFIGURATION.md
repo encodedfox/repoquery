@@ -47,7 +47,7 @@ repoquery config set storage.mode sqlite
 [storage]
 mode = "yaml"                        # yaml | sqlite | dual
 yaml_path = "data/canonical/repositories.yml"
-sqlite_path = "data/omnidatum.db"
+sqlite_path = "data/repoquery.db"
 
 [sync]
 enabled = true

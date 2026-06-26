@@ -1,8 +1,8 @@
 //! Mock GitHub adapter for testing sync functionality
 
 use async_trait::async_trait;
-use od_sync::adapters::DataSourceAdapter;
-use od_core::Repository;
+use rq_core::Repository;
+use rq_sync::adapters::DataSourceAdapter;
 use std::collections::HashMap;
 use std::sync::{Arc, Mutex};
 
@@ -51,7 +51,7 @@ impl Default for MockGitHubAdapter {
 impl DataSourceAdapter for MockGitHubAdapter {
     async fn fetch_repository(&self, identifier: &str) -> anyhow::Result<Repository> {
         let responses = self.responses.lock().unwrap();
-        
+
         match responses.get(identifier) {
             Some(repo) => Ok(repo.clone()),
             None => Err(anyhow::anyhow!(
@@ -77,7 +77,7 @@ impl DataSourceAdapter for MockGitHubAdapter {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use od_core::{
+    use rq_core::{
         Platform, PlatformInfo, PlatformStatus, QualityMetrics, RepositoryClassification,
         RepositoryMetadata, RepositorySource,
     };
@@ -131,11 +131,14 @@ mod tests {
             manually_curated: false,
             curator_notes: None,
             relations: vec![],
-                    fork_parent: None,
+            fork_parent: None,
             fork_parent_url: None,
             custom_tags: vec![],
             fork_ahead: None,
             fork_behind: None,
+            domain: None,
+            unified_owner_id: None,
+            discovered_via: None,
         }
     }
 
@@ -147,7 +150,7 @@ mod tests {
 
         let result = adapter.fetch_repository("rust-lang/rust").await;
         assert!(result.is_ok());
-        
+
         let fetched = result.unwrap();
         assert_eq!(fetched.metadata.full_name, "rust-lang/rust");
         assert_eq!(fetched.metadata.stars, 50000);
@@ -156,7 +159,7 @@ mod tests {
     #[tokio::test]
     async fn test_mock_adapter_fetch_not_found() {
         let adapter = MockGitHubAdapter::new();
-        
+
         let result = adapter.fetch_repository("nonexistent/repo").await;
         assert!(result.is_err());
         assert!(result.unwrap_err().to_string().contains("not found"));
@@ -165,7 +168,7 @@ mod tests {
     #[tokio::test]
     async fn test_mock_adapter_check_connection_success() {
         let adapter = MockGitHubAdapter::new();
-        
+
         let result = adapter.check_connection().await;
         assert!(result.is_ok());
     }
@@ -174,10 +177,13 @@ mod tests {
     async fn test_mock_adapter_check_connection_failure() {
         let mut adapter = MockGitHubAdapter::new();
         adapter.set_connection_result(Err(anyhow::anyhow!("Connection failed")));
-        
+
         let result = adapter.check_connection().await;
         assert!(result.is_err());
-        assert!(result.unwrap_err().to_string().contains("Connection failed"));
+        assert!(result
+            .unwrap_err()
+            .to_string()
+            .contains("Connection failed"));
     }
 
     #[test]
@@ -190,10 +196,10 @@ mod tests {
     fn test_mock_adapter_response_count() {
         let mut adapter = MockGitHubAdapter::new();
         assert_eq!(adapter.response_count(), 0);
-        
+
         adapter.add_response("test/repo1", create_test_repo("test/repo1", 100));
         assert_eq!(adapter.response_count(), 1);
-        
+
         adapter.add_response("test/repo2", create_test_repo("test/repo2", 200));
         assert_eq!(adapter.response_count(), 2);
     }
