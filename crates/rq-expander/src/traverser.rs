@@ -110,7 +110,10 @@ impl FgatPool {
 
         let token = &guard.tokens[best_idx];
         let token_id = token.id.clone();
-        let raw = token.token_hash.clone();
+        let raw = token
+            .raw_token
+            .clone()
+            .unwrap_or_else(|| token.token_hash.clone());
 
         // Mark as in-flight.
         if let Some(entry) = guard.in_flight.iter_mut().find(|(id, _)| id == &token_id) {

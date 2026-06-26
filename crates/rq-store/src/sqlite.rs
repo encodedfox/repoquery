@@ -421,8 +421,9 @@ impl RepoStore for SqliteStore {
             param_values.push(Box::new(src.clone()));
         }
         if let Some(tag) = &filter.tag {
-            conditions.push("custom_tags_json LIKE ?".to_string());
-            param_values.push(Box::new(format!("%\"{}\"%", tag)));
+            let escaped = tag.replace('\\', "\\\\").replace('%', "\\%").replace('_', "\\_");
+            conditions.push("custom_tags_json LIKE ? ESCAPE '\\'".to_string());
+            param_values.push(Box::new(format!("%\"{}\"%", escaped)));
         }
 
         let where_clause = if conditions.is_empty() {
@@ -819,6 +820,7 @@ impl GraphStore for SqliteStore {
                         .parse::<PlatformKind>()
                         .unwrap_or(PlatformKind::GitHub),
                     token_hash: row.get(2)?,
+                    raw_token: None,
                     status: serde_json::from_str(&row.get::<_, String>(3)?)
                         .unwrap_or(TokenStatus::Available),
                     requests_used: row.get::<_, i64>(4)? as u64,
@@ -840,6 +842,14 @@ impl GraphStore for SqliteStore {
         self.conn.execute(
             "UPDATE fgat_tokens SET status = ?1 WHERE id = ?2",
             params![json, id],
+        )?;
+        Ok(())
+    }
+
+    fn delete_fgat_token(&self, id: &str) -> Result<()> {
+        self.conn.execute(
+            "DELETE FROM fgat_tokens WHERE id = ?1",
+            params![id],
         )?;
         Ok(())
     }

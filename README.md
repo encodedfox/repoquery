@@ -101,6 +101,13 @@ cargo run -p repoquery -- tui
 - Path traversal protection
 - Cargo audit in CI pipeline
 - Clippy deny-level lints
+- FGAT token hashing (SHA-256, raw tokens never persisted to SQLite)
+- Credential file symlink rejection + TOCTOU protection
+- SQL LIKE wildcard escape in tag filters
+- HTTP client timeout enforcement (sync: 30s, configure: 10s)
+- Concurrent sync file lock protection (fs2 exclusive lock)
+- Required GitHub token scope validation (repo, public_repo)
+- GraphQL error message redaction via `redact_sensitive()`
 
 ### Shell Completions & Man Page
 - Generate completions for bash, zsh, fish, and powershell
@@ -189,7 +196,7 @@ Run `cargo run -p repoquery -- configure --show` to view current configuration.
 ## Project Status
 
 - **Repositories**: 845 tracked (797 active, 48 archived)
-- **Tests**: 171 passing
+- **Tests**: 191 passing
 - **Performance**: Sub-second processing for full dataset
 - **Phases**: 0–8 + security hardening, config overhaul, query commands, activity monitoring, testing infrastructure, documentation (6 phases ported from RepoSQL specs)
 

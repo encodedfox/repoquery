@@ -4,6 +4,7 @@ title: GitHub API Sync Sequence
 sequenceDiagram
     actor User
     participant CLI
+    participant Lock as SyncLock
     participant Orch as SyncOrchestrator
     participant Cache as SyncCache
     participant GitHub as GitHub API
@@ -11,6 +12,16 @@ sequenceDiagram
     
     User->>CLI: cargo run -- sync
     CLI->>Orch: Initialize(config)
+    Orch->>Lock: try_lock(canonical_path)
+    
+    alt Lock acquired
+        Lock-->>Orch: Exclusive lock held
+    else Lock held by another process
+        Lock-->>Orch: Error: "Another sync in progress"
+        Orch-->>CLI: Return error
+        CLI-->>User: ❌ Sync already running
+    end
+    
     Orch->>Cache: Load cache entries
     Cache-->>Orch: Existing cached data
     
@@ -51,10 +62,10 @@ sequenceDiagram
     Orch->>Storage: Save updated repositories.yml<br/>(atomic write)
     Orch->>Cache: Persist cache to disk
     Orch->>Orch: Calculate sync statistics
-    
+    Note over Orch,Lock: SyncLock released on drop
     Orch->>CLI: Return SyncResult<br/>(synced, cached, failed, duration)
     CLI->>User: Display summary:<br/>✅ X synced, ⚠️ Y cached, ❌ Z failed
 
-%% Last updated: 2025-12-11
-%% Shows the complete synchronization flow including caching, error handling, and rate limiting
-%% Note the preservation of manual curation fields during merge_sync_data()
+%% Last updated: 2026-06-26
+%% Shows the complete synchronization flow including file lock, caching, error handling, and rate limiting
+%% SyncLock is acquired first and released on drop (RAII)

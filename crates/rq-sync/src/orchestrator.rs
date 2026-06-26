@@ -9,11 +9,46 @@ use rq_core::{
     SyncQualityReport,
 };
 use std::collections::HashMap;
+use std::fs::File;
 use std::path::{Path, PathBuf};
 use std::sync::Arc;
 use tokio::sync::Semaphore;
 use tokio::task::JoinSet;
 use tracing::{debug, error, info, info_span, warn, Instrument};
+
+/// RAII guard that holds an exclusive file lock for sync.
+/// The lock is released when the guard is dropped.
+struct SyncLock {
+    _file: File,
+}
+
+impl SyncLock {
+    /// Try to acquire an exclusive file lock. Returns an error if
+    /// another sync process is already running.
+    fn try_lock(canonical_path: &Path) -> Result<Self> {
+        let lock_path = {
+            let mut p = canonical_path.to_path_buf();
+            let ext = p
+                .extension()
+                .map(|e| format!(".{}.lock", e.to_string_lossy()))
+                .unwrap_or_else(|| ".lock".to_string());
+            p.set_extension("");
+            let base = p.to_string_lossy().to_string();
+            PathBuf::from(format!("{}{}", base, ext))
+        };
+        let file = File::create(&lock_path).map_err(|e| {
+            anyhow::anyhow!("Failed to create sync lock file {:?}: {}", lock_path, e)
+        })?;
+        fs2::FileExt::try_lock_exclusive(&file).map_err(|_| {
+            anyhow::anyhow!(
+                "Another sync is already in progress (lock file: {:?}). \
+                 If no other sync is running, delete the lock file manually.",
+                lock_path
+            )
+        })?;
+        Ok(Self { _file: file })
+    }
+}
 
 /// Sync orchestrator for coordinating external data fetches
 pub struct SyncOrchestrator {
@@ -42,6 +77,7 @@ impl SyncOrchestrator {
 
     /// Sync all repositories from configured sources
     pub async fn sync_all(&mut self, canonical_path: &Path) -> Result<SyncResult> {
+        let _lock = SyncLock::try_lock(canonical_path)?;
         let start = std::time::Instant::now();
 
         let mut data = CanonicalData::from_yaml_file(canonical_path)?;
@@ -185,6 +221,7 @@ impl SyncOrchestrator {
         relations: &[Relation],
         canonical_path: &Path,
     ) -> Result<SyncResult> {
+        let _lock = SyncLock::try_lock(canonical_path)?;
         let start = std::time::Instant::now();
         let mut data = CanonicalData::from_yaml_file(canonical_path)?;
         let adapter = Arc::new(GitHubAdapter::new(&self.config).await?);
@@ -277,6 +314,7 @@ impl SyncOrchestrator {
 
     /// Sync repos for a specific GitHub organisation
     pub async fn sync_org_repos(&mut self, org: &str, canonical_path: &Path) -> Result<SyncResult> {
+        let _lock = SyncLock::try_lock(canonical_path)?;
         let start = std::time::Instant::now();
         let mut data = CanonicalData::from_yaml_file(canonical_path)?;
         let adapter = GitHubAdapter::new(&self.config).await?;
@@ -506,6 +544,7 @@ impl SyncOrchestrator {
         repo_identifiers: Vec<String>,
         canonical_path: &Path,
     ) -> Result<SyncResult> {
+        let _lock = SyncLock::try_lock(canonical_path)?;
         let start = std::time::Instant::now();
 
         // Load existing canonical data

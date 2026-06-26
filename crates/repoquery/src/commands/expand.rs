@@ -272,11 +272,13 @@ pub async fn run_token(action: TokenAction) -> Result<()> {
         } => {
             let platform = parse_platform(&platform)?;
             let store = open_store(&store_path)?;
-            let id = format!("{}-{}", platform, &token[..token.len().min(8)]);
+            let hash = rq_core::hash_token(&token);
+            let id = format!("{}-{}", platform, &hash[..8]);
             let fgat = FgatToken {
                 id,
                 platform,
-                token_hash: token,
+                token_hash: hash,
+                raw_token: Some(token),
                 status: TokenStatus::Available,
                 requests_used: 0,
                 rate_limit_limit: rate_limit,
@@ -307,11 +309,12 @@ pub async fn run_token(action: TokenAction) -> Result<()> {
             );
             println!("{}", "-".repeat(80));
             for t in &tokens {
+                let hash_display = &t.token_hash[..t.token_hash.len().min(16)];
                 println!(
                     "{:<24} {:<10} {:<20} {:<8} {:<10}",
                     t.id,
                     t.platform.to_string(),
-                    &t.token_hash[..t.token_hash.len().min(16)],
+                    hash_display,
                     t.rate_limit_remaining
                         .map(|r| r.to_string())
                         .unwrap_or_else(|| "-".to_string()),
@@ -327,8 +330,8 @@ pub async fn run_token(action: TokenAction) -> Result<()> {
         } => {
             let store = open_store(&store_path)?;
             let guard = store.lock().await;
-            guard.update_fgat_token_status(&id, "revoked")?;
-            println!("Token '{}' revoked.", id);
+            guard.delete_fgat_token(&id)?;
+            println!("Token '{}' deleted.", id);
             Ok(())
         }
     }

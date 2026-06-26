@@ -6,6 +6,33 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [2.2.0] - 2026-06-26
+
+### Added - Security Hardening (Phase 1-3)
+
+- **FGAT Token Hashing** — Raw tokens are SHA-256 hashed before storage; `FgatToken.raw_token` held in memory only (`#[serde(skip)]`), only `token_hash` persisted to SQLite.
+- **UUID-Based Token IDs** — Token IDs derived from the first 8 hex characters of the SHA-256 hash instead of raw token prefixes.
+- **Credential File Symlink Protection** — `symlink_metadata` rejects symlinks outright; permission check and read use the same metadata result to close TOCTOU window.
+- **SQL LIKE Wildcard Escape** — Tag filter values escape `\`, `%`, `_` before LIKE pattern matching with `ESCAPE '\'` clause.
+- **HTTP Client Timeouts** — GraphQL sync adapter applies `request_timeout_secs` from config (default 30s); configure token validation uses 10s timeout.
+- **Required Token Scope Validation** — Configure command warns if token lacks `repo` or `public_repo` scope.
+- **GraphQL Error Redaction** — Error response bodies passed through `redact_sensitive()` before inclusion in `bail!()` messages.
+- **Hard Token Deletion** — `delete_fgat_token()` method on `GraphStore` trait performs real SQL DELETE; `expand token remove` now fully removes tokens instead of soft-deleting to "revoked".
+- **Concurrent Sync File Lock** — `SyncLock` RAII guard uses `fs2::FileExt::try_lock_exclusive()` at the start of all four sync entry points (`sync_all`, `sync_by_relation`, `sync_org_repos`, `sync_specific`). Lock file: `{canonical_path}.lock`.
+- **Stub Adapter Error Returns** — `GitLabAdapter` and `CodebergAdapter` now return `Err(anyhow::anyhow!(...))` instead of `unimplemented!()`.
+
+### Changed
+- `expand token remove` now permanently deletes tokens via `DELETE FROM fgat_tokens` (was soft-delete via `update_fgat_token_status(id, "revoked")`)
+- `expand token list` displays hash-prefix IDs (was raw token material)
+- `expand token add` UUID derived from hash first 8 hex chars (was token-prefix based)
+
+### Fixed
+- **CI**: Replaced broken `rustsec/audit-action@v3` with `taiki-e/install-action` running `cargo audit`
+- **Clippy**: Fixed 15+ warnings across all crates (`derivable-impls`, `needless-ifs`, `ptr-arg`, `expect-used`, `unwrap-used`, `unnecessary-sort-by`, `useless format!`, `comparison to empty slice`, `print-literal`, `needless-update`, `manual-str-repeat`, `manual-checked-ops`)
+- Removed orphaned root-level `tests/` directory (never compiled — workspace has no `[package]`)
+- Fixed `GitHubGraphQL::new()` to accept and apply `timeout_secs` parameter
+
+
 ## [2.0.0] - 2025-12-11
 
 ### Added - External Data Synchronization

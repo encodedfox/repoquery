@@ -47,7 +47,7 @@ impl GitHubAdapter {
 
         tracing::info!("Successfully authenticated with GitHub API");
 
-        let graphql = GitHubGraphQL::new(token)?;
+        let graphql = GitHubGraphQL::new(token, config.sync.request_timeout_secs)?;
 
         Ok(Self {
             client,

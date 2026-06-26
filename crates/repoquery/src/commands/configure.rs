@@ -98,7 +98,11 @@ pub async fn run(interactive: bool, github_token: Option<String>, show: bool) ->
 
 /// Validate GitHub token scopes by making an API request to the /user endpoint
 async fn validate_token_scopes(token: &str) -> Result<()> {
-    let client = reqwest::Client::new();
+    use std::time::Duration;
+    let client = reqwest::Client::builder()
+        .timeout(Duration::from_secs(10))
+        .build()
+        .map_err(|e| anyhow::anyhow!("Failed to build HTTP client: {}", e))?;
     let response = client
         .get("https://api.github.com/user")
         .header("Authorization", format!("Bearer {}", token))
@@ -115,10 +119,18 @@ async fn validate_token_scopes(token: &str) -> Result<()> {
         .unwrap_or("")
         .to_string();
 
-    let scope_list: Vec<&str> = scopes.split(',').map(|s| s.trim()).collect();
+    let scope_list: Vec<&str> = scopes.split(',').map(|s| s.trim()).filter(|s| !s.is_empty()).collect();
 
     if status.is_success() {
-        if !scope_list.is_empty() && !scope_list[0].is_empty() {
+        let required: [&str; 2] = ["repo", "public_repo"];
+        let missing: Vec<&str> = required.iter().filter(|r| !scope_list.contains(r)).copied().collect();
+        if !missing.is_empty() {
+            println!(
+                "   Warning: Token is missing required scopes: {}. Some features may not work.",
+                missing.join(", ")
+            );
+        }
+        if !scope_list.is_empty() {
             println!("   GitHub API responded with scopes: {}", scopes);
         } else {
             println!("   GitHub token validated (no scopes reported by API)");

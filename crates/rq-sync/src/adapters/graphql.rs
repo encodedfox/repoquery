@@ -1,5 +1,8 @@
 //! GitHub GraphQL client for bulk repository fetching.
 
+use std::time::Duration;
+
+use crate::redact_sensitive;
 use anyhow::{Context, Result};
 use reqwest::Client;
 use rq_core::{
@@ -83,9 +86,10 @@ pub struct GitHubGraphQL {
 }
 
 impl GitHubGraphQL {
-    pub fn new(token: String) -> Result<Self> {
+    pub fn new(token: String, timeout_secs: u64) -> Result<Self> {
         let client = Client::builder()
             .user_agent("repoquery/0.1")
+            .timeout(Duration::from_secs(timeout_secs))
             .build()
             .context("Failed to build reqwest client")?;
         Ok(Self { client, token })
@@ -188,10 +192,12 @@ impl GitHubGraphQL {
             .context("Failed to parse GraphQL response")?;
 
         if !status.is_success() {
-            anyhow::bail!("GitHub GraphQL returned {}: {}", status, json);
+            let body = redact_sensitive(&json.to_string());
+            anyhow::bail!("GitHub GraphQL returned {}: {}", status, body);
         }
         if let Some(errors) = json.get("errors") {
-            anyhow::bail!("GitHub GraphQL errors: {}", errors);
+            let body = redact_sensitive(&errors.to_string());
+            anyhow::bail!("GitHub GraphQL errors: {}", body);
         }
         Ok(json["data"].clone())
     }

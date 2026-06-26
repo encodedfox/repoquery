@@ -108,7 +108,12 @@ pub enum TokenStatus {
 pub struct FgatToken {
     pub id: String,
     pub platform: PlatformKind,
+    /// SHA-256 hex hash of the token (stored in DB). Not the raw token.
     pub token_hash: String,
+    /// Raw token value in memory only (not persisted).
+    /// Populated by `expand token add` at runtime.
+    #[serde(skip)]
+    pub raw_token: Option<String>,
     pub status: TokenStatus,
     pub requests_used: u64,
     pub rate_limit_limit: Option<u32>,
@@ -118,6 +123,14 @@ pub struct FgatToken {
     pub added_at: String,
     pub expires_at: Option<String>,
     pub notes: Option<String>,
+}
+
+/// Compute SHA-256 hex hash of a token string
+pub fn hash_token(token: &str) -> String {
+    use sha2::{Digest, Sha256};
+    let mut hasher = Sha256::new();
+    hasher.update(token.as_bytes());
+    hex::encode(hasher.finalize())
 }
 
 /// A normalized domain for cross-platform indexing

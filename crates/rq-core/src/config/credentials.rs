@@ -55,14 +55,27 @@ impl CredentialManager {
             .clone()
             .unwrap_or_else(Self::credentials_file_path);
 
-        // Check file permissions on Unix
+        // Check for symlinks (defense against symlink attacks)
         #[cfg(unix)]
         {
             use std::os::unix::fs::PermissionsExt;
-            let metadata = fs::metadata(&path).map_err(|_| crate::CoreError::Config(
+            // Use symlink_metadata — does NOT follow symlinks, so we check the
+            // file entry itself rather than its target.  This prevents a TOCTOU
+            // race where an attacker swaps a regular file for a symlink between
+            // the permission check and the read.
+            let meta = fs::symlink_metadata(&path).map_err(|_| crate::CoreError::Config(
                 "Credentials file not found. Run 'cargo run -- configure' to set up credentials.".to_string()
             ))?;
-            let mode = metadata.permissions().mode();
+
+            // Reject symlinks outright.
+            if meta.file_type().is_symlink() {
+                return Err(crate::CoreError::Config(format!(
+                    "Credentials file is a symlink: {:?}. Symlinks are not allowed for security reasons.",
+                    path
+                )));
+            }
+
+            let mode = meta.permissions().mode();
             if mode & 0o077 != 0 {
                 return Err(crate::CoreError::Config(format!(
                     "Credentials file has insecure permissions ({:o}). Run: chmod 600 {:?}",

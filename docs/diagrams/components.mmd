@@ -7,35 +7,51 @@ graph TB
         Main[main.rs<br/>CLI Entry Point<br/>Clap commands]
     end
     
-    subgraph NewSync["🆕 Sync Layer"]
+    subgraph NewSync["Sync Layer"]
         SyncOrch[SyncOrchestrator<br/>Coordination logic]
         GitHubAdapt[GitHubAdapter<br/>octocrab client]
         CBAdapt[CodebergAdapter<br/>stub for future]
         GLAdapt[GitLabAdapter<br/>stub for future]
         SyncCache[SyncCache<br/>ETag + TTL]
         Progress[ProgressTracker<br/>indicatif bars]
+        SyncLock[SyncLock<br/>fs2 exclusive file lock]
+        FgatPool[FgatPool<br/>Token distribution<br/>Round-robin]
+        Acquired[AcquiredToken<br/>RAII guard]
     end
     
-    subgraph NewConfig["🆕 Config Layer"]
+    subgraph NewConfig["Config Layer"]
         ConfigMgr[ConfigManager<br/>TOML parsing]
-        CredMgr[CredentialManager<br/>env/file/keychain]
+        CredMgr[CredentialManager<br/>env/file/keychain<br/>symlink+TOCTOU]
     end
     
-    subgraph Core["Existing: Core Processing"]
+    subgraph Core["Core Processing"]
         Parser[ListParser<br/>Markdown → YAML]
         Merger[DataMerger<br/>Multi-source]
         Validator[Validator<br/>8 rules]
         Generator[MarkdownGenerator<br/>Tera templates]
     end
     
-    subgraph Models["Enhanced: Models"]
+    subgraph Models["Models"]
         Repo[Repository<br/>Core model]
         Platform[PlatformInfo<br/>Multi-platform]
         Canon[CanonicalData<br/>Container]
-        SyncMeta[SyncMetadata<br/>🆕 Sync types]
+        SyncMeta[SyncMetadata<br/>Sync types]
+        FgatToken[FgatToken<br/>token_hash only<br/>raw_token in memory]
+        hash[hash_token()<br/>SHA-256 hex]
     end
     
-    subgraph CrossRefs["Existing: Cross-References"]
+    subgraph Store["Persistence"]
+        GraphStore[GraphStore trait<br/>add/list/update/delete FGAT]
+        Sqlite[SqliteStore<br/>PRAGMA integrity_check<br/>LIKE escape]
+    end
+    
+    subgraph Security["Security Controls"]
+        Redact[redact_sensitive<br/>Token + error redaction]
+        Timeouts[HTTP Timeouts<br/>sync:30s, cfg:10s]
+        ScopeCheck[Scope Validation<br/>repo, public_repo]
+    end
+    
+    subgraph CrossRefs["Cross-References"]
         Graph[CrossRefGraph<br/>PetGraph]
         Nav[Navigator<br/>Bidirectional]
     end
@@ -52,9 +68,17 @@ graph TB
     SyncOrch --> GLAdapt
     SyncOrch --> SyncCache
     SyncOrch --> Progress
+    SyncOrch --> SyncLock
+    SyncOrch --> FgatPool
+    FgatPool --> Acquired
     
     GitHubAdapt --> CredMgr
     ConfigMgr --> CredMgr
+    
+    FgatPool --> GraphStore
+    GraphStore --> Sqlite
+    FgatToken --> hash
+    FgatToken --> FgatPool
     
     SyncOrch --> Canon
     Parser --> Canon
@@ -69,14 +93,24 @@ graph TB
     Validator --> Graph
     Generator --> Nav
     
+    GitHubAdapt --> Redact
+    GitHubAdapt --> Timeouts
+    CredMgr --> Redact
+    SyncOrch --> Redact
+    Main --> ScopeCheck
+
     style SyncOrch fill:#e1f5fe,stroke:#0277bd,stroke-width:2px
     style GitHubAdapt fill:#e1f5fe,stroke:#0277bd,stroke-width:2px
     style ConfigMgr fill:#fff3e0,stroke:#f57c00,stroke-width:2px
     style CredMgr fill:#fff3e0,stroke:#f57c00,stroke-width:2px
     style Canon fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
     style SyncMeta fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
+    style FgatToken fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
+    style SyncLock fill:#ffcdd2,stroke:#c62828,stroke-width:2px
+    style FgatPool fill:#e1f5fe,stroke:#0277bd,stroke-width:2px
+    style Redact fill:#fff9c4,stroke:#f9a825,stroke-width:2px
+    style GraphStore fill:#e8f5e9,stroke:#388e3c,stroke-width:2px
 
-%% Last updated: 2025-12-11
-%% Shows module dependencies and data flow
-%% Legend: Blue=New Sync, Orange=New Config, Purple=Core Models, Green=New Types
-%% Existing modules (Parser, Merger, Generator, Validator, CrossRefs) preserved
+%% Last updated: 2026-06-26
+%% Shows module dependencies and data flow with security controls
+%% Legend: Blue=Sync, Orange=Config, Purple=Core Models, Green=New Types, Red=Security, Yellow=Cross-cut

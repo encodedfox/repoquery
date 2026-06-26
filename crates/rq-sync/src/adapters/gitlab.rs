@@ -14,18 +14,18 @@ pub struct GitLabAdapter;
 impl GitLabAdapter {
     /// Create new GitLab adapter
     pub async fn new() -> Result<Self> {
-        unimplemented!("GitLab adapter not yet implemented")
+        Err(anyhow::anyhow!("GitLab adapter not yet implemented"))
     }
 }
 
 #[async_trait]
 impl DataSourceAdapter for GitLabAdapter {
     async fn fetch_repository(&self, _identifier: &str) -> Result<Repository> {
-        unimplemented!("GitLab adapter not yet implemented")
+        Err(anyhow::anyhow!("GitLab adapter not yet implemented"))
     }
 
     async fn check_connection(&self) -> Result<()> {
-        unimplemented!("GitLab adapter not yet implemented")
+        Err(anyhow::anyhow!("GitLab adapter not yet implemented"))
     }
 
     fn source_name(&self) -> &str {

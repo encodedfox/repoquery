@@ -24,7 +24,7 @@ pub use models::{
     MigrationStatus, NormalizedDomain, Platform, PlatformInfo, PlatformKind, PlatformStatus,
     QualityMetrics, ReferenceStatus, Relation, Repository, RepositoryClassification,
     RepositoryMetadata, RepositorySource, Seed, SeedStatus, SyncQualityReport, TokenStatus,
-    TraversalEdge, UnifiedIdentity, WebReference,
+    TraversalEdge, UnifiedIdentity, WebReference, hash_token,
 };
 pub use parsers::ListParser;
 

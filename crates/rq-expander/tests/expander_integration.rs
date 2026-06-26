@@ -21,6 +21,7 @@ fn make_token(id: &str, hash: &str, remaining: u32) -> FgatToken {
         id: id.to_string(),
         platform: PlatformKind::GitHub,
         token_hash: hash.to_string(),
+        raw_token: Some(hash.to_string()),
         status: TokenStatus::Available,
         requests_used: 0,
         rate_limit_limit: Some(5000),

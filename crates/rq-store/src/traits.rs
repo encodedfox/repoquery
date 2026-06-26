@@ -86,6 +86,7 @@ pub trait GraphStore {
     fn add_fgat_token(&self, token: &rq_core::FgatToken) -> Result<()>;
     fn list_fgat_tokens(&self) -> Result<Vec<rq_core::FgatToken>>;
     fn update_fgat_token_status(&self, id: &str, status: &str) -> Result<()>;
+    fn delete_fgat_token(&self, id: &str) -> Result<()>;
 
     fn add_domain(&self, domain: &rq_core::NormalizedDomain) -> Result<()>;
     fn get_domain(&self, domain: &str) -> Result<Option<rq_core::NormalizedDomain>>;
